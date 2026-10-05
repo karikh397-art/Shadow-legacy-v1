@@ -147,9 +147,11 @@ function openShop(){
   const skinHtml=skins.map(x=>{
     const owned=!!save.skins[x[0]];
     const equipped=owned&&save.skin===x[0];
-    const button=owned
-      ? `<button class="${equipped?'gold':'purple'}" ${equipped?'disabled':''} onclick="${equipped?'':'equipSkin(\\''+x[0]+'\\')'}">${equipped?'ÉQUIPÉ':'ÉQUIPER'}</button>`
-      : `<button class="purple" onclick="buySkin('${x[0]}',${x[3]})">💰 ${x[3]} • ACHETER</button>`;
+    const button=equipped
+      ? `<button class="gold" disabled>ÉQUIPÉ</button>`
+      : owned
+        ? `<button class="purple" onclick="equipSkin('${x[0]}')">ÉQUIPER</button>`
+        : `<button class="purple" onclick="buySkin('${x[0]}',${x[3]})">💰 ${x[3]} • ACHETER</button>`;
     return `<div class="card skin ${owned?'':'locked'}">
       <div class="skinIcon">${x[1]}</div>
       <div class="skinInfo"><b>${x[2]}</b><br>${owned?'<span class="onlineBadge">Possédé</span>':`<span class="price">💰 ${x[3]}</span>`}</div>
