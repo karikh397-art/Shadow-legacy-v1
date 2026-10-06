@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#05060c">
-<title>Shadow Legacy — V9</title>
+<title>Shadow Legacy — V10</title>
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#03040a;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;color:#fff;border:1px solid #665b78;background:linear-gradient(#272437,#11131e);border-radius:14px;padding:12px 16px;font-weight:800;box-shadow:0 7px 20px #0008;cursor:pointer}button:active{transform:scale(.97)}button:focus{outline:none}button:focus-visible{outline:2px solid #e7c76c;outline-offset:2px}button:disabled{opacity:.4;filter:grayscale(.7)}.gold{border-color:#d8b55f;background:linear-gradient(#624a21,#2b2112)}.purple{border-color:#9c7ac5}.green{border-color:#5da77d}.red{border-color:#a45d68}.screen{position:absolute;inset:0;display:none;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));overflow:auto}.screen.active{display:flex;flex-direction:column}.panel{width:min(980px,96vw);margin:auto;background:#080b13ed;border:1px solid #8d779666;border-radius:22px;padding:18px;box-shadow:0 25px 100px #000b;backdrop-filter:blur(9px)}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.card{background:#111522;border:1px solid #343b50;border-radius:17px;padding:14px}.card.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c33,0 0 25px #e7c76c18}.muted{opacity:.68}.tiny{font-size:12px;opacity:.65}.big{font-size:30px}.price{color:#f0cf70;font-weight:900}.spacer{flex:1}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#03040a;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;color:#fff;border:1px solid #665b78;background:linear-gradient(#272437,#11131e);border-radius:14px;padding:12px 16px;font-weight:800;box-shadow:0 7px 20px #0008;cursor:pointer}button:active{transform:scale(.97)}button:focus{outline:none}button:focus-visible{outline:2px solid #e7c76c;outline-offset:2px}button:disabled{opacity:.4;filter:grayscale(.7)}.gold{border-color:#d8b55f;background:linear-gradient(#624a21,#2b2112)}.purple{border-color:#9c7ac5}.green{border-color:#5da77d}.red{border-color:#a45d68}.screen{position:absolute;inset:0;display:none;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior-x:none}.screen.active{display:flex;flex-direction:column}.panel{width:min(980px,calc(100vw - 32px));max-width:980px;margin:auto;background:#080b13ed;border:1px solid #8d779666;border-radius:22px;padding:18px;box-shadow:0 25px 100px #000b;backdrop-filter:blur(9px)}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.card{background:#111522;border:1px solid #343b50;border-radius:17px;padding:14px}.card.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c33,0 0 25px #e7c76c18}.muted{opacity:.68}.tiny{font-size:12px;opacity:.65}.big{font-size:30px}.price{color:#f0cf70;font-weight:900}.spacer{flex:1}
 #loading{align-items:center;justify-content:center;text-align:center;background:#03040a}.loadLogo{font-size:clamp(46px,13vw,80px);font-weight:1000;letter-spacing:9px;animation:pulse 1.5s infinite}.loadSub{letter-spacing:5px;opacity:.7}.loader{width:min(430px,82vw);height:9px;background:#171a25;border-radius:20px;overflow:hidden;margin:22px 0 8px}.loader i{display:block;width:0;height:100%;background:linear-gradient(90deg,#7657a8,#e5c765);animation:load 2.3s forwards}@keyframes load{to{width:100%}}@keyframes pulse{50%{transform:scale(1.04);opacity:.72}}
 #menu{justify-content:flex-end;align-items:center;text-align:center;overflow:hidden}#menuBg{position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 28%,#302747,#111525 38%,#03040a 76%);overflow:hidden}#menuBg:before,#menuBg:after{content:"";position:absolute;width:150%;height:150%;left:-25%;top:-25%;background:conic-gradient(from 0deg,transparent,#8d68bc18,transparent,#d6b75b12,transparent);animation:spin 18s linear infinite}#menuBg:after{animation-duration:30s;animation-direction:reverse;transform:scale(1.3)}@keyframes spin{to{transform:rotate(360deg)}}.logo{font-size:clamp(42px,11vw,82px);line-height:.9;letter-spacing:8px;font-weight:1000;text-shadow:0 0 28px #b899ef66,0 5px #17121d}.sub{letter-spacing:4px;opacity:.7;margin:8px 0 18px}.menuBtns{width:min(400px,92vw);display:grid;gap:9px}.menuBtns button{font-size:17px;padding:15px}.menuStats{margin:10px 0 10px;background:#070a11bb;border:1px solid #77708a44;border-radius:13px;padding:8px 12px;font-size:13px}
 #story{justify-content:center;align-items:center;text-align:center;background:#02030ae8}.storyArt{font-size:72px;animation:float 2s infinite}.storyTitle{font-size:35px;font-weight:1000}.storyText{max-width:720px;line-height:1.6;font-size:17px}@keyframes float{50%{transform:translateY(-9px)}}
@@ -57,7 +57,7 @@
 .fightFlash{position:absolute;z-index:20;left:50%;top:48%;width:85px;height:85px;transform:translate(-50%,-50%) scale(.2);border-radius:50%;opacity:0;pointer-events:none;background:radial-gradient(circle,#fff 0 10%,#e9cb69 25%,#a56be8 45%,transparent 70%);filter:blur(1px)}
 .fightFlash.show{animation:impactFlash .34s ease-out}
 @keyframes impactFlash{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}35%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
-.worldMap{display:flex;flex-direction:column;gap:14px}
+.worldMap{display:flex;width:100%;max-width:100%;overflow-x:hidden;flex-direction:column;gap:14px}
 .worldCard{border:1px solid #353b50;border-radius:18px;padding:14px;background:linear-gradient(145deg,#121827,#080b13);text-align:left}
 .worldCard.locked{opacity:.42}
 .worldCard.unlocked{border-color:#6e5b8e}
@@ -69,6 +69,9 @@
 .chapterNode.done{border-color:#5da77d}
 .chapterNode.locked{opacity:.4}
 .chapterNode button{width:100%;margin-top:8px}
+#characters{justify-content:flex-start;align-items:center;overflow-x:hidden;touch-action:pan-y}.characterPanel{width:min(980px,calc(100vw - 32px));margin:auto}.characterGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.characterCard{position:relative;overflow:hidden}.characterCard.locked{opacity:.58}.characterCard.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c22}.characterCard .heroMini{height:118px;display:grid;place-items:center}.characterCard .heroMini .skinPreview{transform:scale(1.05)}.characterActions{display:grid;gap:7px;margin-top:9px}.levelPill{display:inline-block;padding:4px 8px;border-radius:999px;background:#242031;border:1px solid #7d6695;color:#f0cf70;font-weight:900;font-size:12px}.upgradeBox{background:#0d111c;border:1px solid #3c4356;border-radius:14px;padding:12px;margin-top:10px}.charStat{display:flex;justify-content:space-between;gap:8px;margin:3px 0}.lockedLabel{color:#ffb6b6}.shopPotion{border-color:#5da77d}.skinLegend{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid #6d5b87;font-size:11px}.skinGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skinPreview{transform:scale(1.05)}
+.skin-obsidian .body,.skin-obsidian .battleSkin .body{background:linear-gradient(145deg,#303848,#070910)}.skin-obsidian .cape,.battleSkin.skin-obsidian .cape{background:linear-gradient(145deg,#566078,#0a0d16)}.skin-obsidian .visor,.battleSkin.skin-obsidian .visor{background:#d9e4ff;box-shadow:0 0 18px #9ab7ff}.skin-obsidian .mark,.battleSkin.skin-obsidian .mark{background:#a8c4ff}.skin-solar .body,.skin-solar .battleSkin .body{background:linear-gradient(145deg,#d9a72f,#4d2506)}.skin-solar .cape,.battleSkin.skin-solar .cape{background:linear-gradient(145deg,#ffe16a,#7b3d08)}.skin-solar .visor,.battleSkin.skin-solar .visor{background:#fff4ad;box-shadow:0 0 20px #ffd43b}.skin-solar .mark,.battleSkin.skin-solar .mark{background:#fff0a0}.skin-celestial .body,.skin-celestial .battleSkin .body{background:linear-gradient(145deg,#4e72d9,#17104a)}.skin-celestial .cape,.battleSkin.skin-celestial .cape{background:linear-gradient(145deg,#8d7bff,#21145f)}.skin-celestial .visor,.battleSkin.skin-celestial .visor{background:#d8d1ff;box-shadow:0 0 22px #9f8cff}.skin-celestial .mark,.battleSkin.skin-celestial .mark{background:#bba9ff}.skin-bloodmoon .body,.skin-bloodmoon .battleSkin .body{background:linear-gradient(145deg,#711b38,#17060e)}.skin-bloodmoon .cape,.battleSkin.skin-bloodmoon .cape{background:linear-gradient(145deg,#c33b68,#2a0714)}.skin-bloodmoon .visor,.battleSkin.skin-bloodmoon .visor{background:#ff6e9d;box-shadow:0 0 20px #ff3d7d}.skin-bloodmoon .mark,.battleSkin.skin-bloodmoon .mark{background:#ffd27d}.skin-dragon .body,.skin-dragon .battleSkin .body{background:linear-gradient(145deg,#3c8c61,#071e14)}.skin-dragon .cape,.battleSkin.skin-dragon .cape{background:linear-gradient(145deg,#6ed28e,#092d1d)}.skin-dragon .visor,.battleSkin.skin-dragon .visor{background:#b8ffcf;box-shadow:0 0 20px #4cff8a}.skin-dragon .mark,.battleSkin.skin-dragon .mark{background:#f5d56c}
+@media(max-width:520px){.characterGrid{grid-template-columns:1fr}.chapterNodes{grid-template-columns:1fr}.skinPreview{transform:scale(.95)}}
 .accountRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
 .accountRow input{min-width:0;padding:12px;border-radius:12px;border:1px solid #454c62;background:#0d111c;color:#fff}
 .cloudBadge{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid #5da77d;color:#79d99d;font-size:12px}
@@ -80,11 +83,12 @@
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openWorldMap()">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V9 • progression sauvegardée</div></section>
-<section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button></div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openWorldMap()">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V10 • progression sauvegardée</div></section>
+<section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters()">👥 Personnages</button></div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
+<section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Chaque personnage possède son propre niveau. Améliorer l’un ne change pas les autres.</p></div><button onclick="show('menu')">Retour</button></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
 <section id="select" class="screen"><div class="panel"><h2>Choisis ton personnage</h2><p class="muted">Chaque héros possède son propre style. Ton skin équipé sera visible pendant les combats.</p><div id="chars" class="grid"></div><div class="row" style="margin-top:12px"><button class="gold" onclick="confirmCharacter()">▶ COMMENCER</button><button onclick="openWorldMap()">Carte</button></div></div></section>
-<section id="gameplay" class="screen"><div id="arena"><div class="ground"></div><div class="mist"></div><div id="particles"></div><div id="chapterTag"></div><div id="chest" class="chest">🎁</div><div id="fighters"><div id="hero" class="fighter heroPos"><div id="heroSprite" class="sprite"><div class="battleSkin skin-default"><span class="cape"></span><span class="head"></span><span class="visor"></span><span class="body"></span><span class="mark"></span><span class="blade"></span></div></div><div class="name" id="heroName"></div><div class="bar"><i id="heroHP"></i></div><div class="tiny" id="heroHPText"></div><div id="heroDmg" class="damage"></div><div id="heroSlash" class="slash">✦</div></div><div id="fightFlash" class="fightFlash"></div><div id="enemy" class="fighter enemyPos enemy"><div id="enemySprite" class="sprite">👹</div><div class="name" id="enemyName"></div><div class="bar enemyBar"><i id="enemyHP"></i></div><div class="tiny" id="enemyHPText"></div><div id="enemyDmg" class="damage"></div></div></div></div><div id="hud"><div class="hudBox"><b id="hudHero"></b><div>⚡ Pouvoir <b id="hudPower"></b>/11</div><div class="bar"><i id="hudHP"></i></div></div><div class="hudBox" style="text-align:right">💰 <b id="hudGold"></b><br><span id="hudEnemy"></span></div></div><div id="controls"><button class="ctrl attack" onclick="normalAttack()">⚔️ ATTAQUER</button><button id="p1Btn" class="ctrl p1" onclick="usePower(1)">⚡ POUVOIR 1<span class="cool" id="p1Cd"></span></button><button id="p7Btn" class="ctrl p7" onclick="usePower(7)">⚡ ÉVEIL 7<span class="cool" id="p7Cd"></span></button><button id="p9Btn" class="ctrl p9" onclick="usePower(9)">🔥 FRAPPE 9<span class="cool" id="p9Cd"></span></button><button id="p11Btn" class="ctrl p11" onclick="usePower(11)">👑 SUPRÊME 11<span class="cool" id="p11Cd"></span></button><button class="ctrl heal" onclick="healAttack()">💚 SOIN<span class="cool" id="healCd"></span></button></div><div id="toast"></div><div id="cutscene"><div class="cs"><div class="csIcon" id="csIcon">🌑</div><h2 id="csTitle"></h2><p id="csText"></p><div class="cinBar"><i id="cinProgress"></i></div><br><button class="gold" onclick="advanceCutscene()">CONTINUER</button></div></div></section>
+<section id="gameplay" class="screen"><div id="arena"><div class="ground"></div><div class="mist"></div><div id="particles"></div><div id="chapterTag"></div><div id="chest" class="chest">🎁</div><div id="fighters"><div id="hero" class="fighter heroPos"><div id="heroSprite" class="sprite"><div class="battleSkin skin-default"><span class="cape"></span><span class="head"></span><span class="visor"></span><span class="body"></span><span class="mark"></span><span class="blade"></span></div></div><div class="name" id="heroName"></div><div class="bar"><i id="heroHP"></i></div><div class="tiny" id="heroHPText"></div><div id="heroDmg" class="damage"></div><div id="heroSlash" class="slash">✦</div></div><div id="fightFlash" class="fightFlash"></div><div id="enemy" class="fighter enemyPos enemy"><div id="enemySprite" class="sprite">👹</div><div class="name" id="enemyName"></div><div class="bar enemyBar"><i id="enemyHP"></i></div><div class="tiny" id="enemyHPText"></div><div id="enemyDmg" class="damage"></div></div></div></div><div id="hud"><div class="hudBox"><b id="hudHero"></b><div>⚡ Pouvoir <b id="hudPower"></b>/11</div><div class="bar"><i id="hudHP"></i></div></div><div class="hudBox" style="text-align:right">💰 <b id="hudGold"></b><br><span id="hudEnemy"></span><br>🧪 Potions : <b id="hudPotions"></b></div></div><div id="controls"><button class="ctrl attack" onclick="normalAttack()">⚔️ ATTAQUER</button><button id="p1Btn" class="ctrl p1" onclick="usePower(1)">⚡ POUVOIR 1<span class="cool" id="p1Cd"></span></button><button id="p7Btn" class="ctrl p7" onclick="usePower(7)">⚡ ÉVEIL 7<span class="cool" id="p7Cd"></span></button><button id="p9Btn" class="ctrl p9" onclick="usePower(9)">🔥 FRAPPE 9<span class="cool" id="p9Cd"></span></button><button id="p11Btn" class="ctrl p11" onclick="usePower(11)">👑 SUPRÊME 11<span class="cool" id="p11Cd"></span></button><button class="ctrl heal" onclick="healAttack()">🧪 POTION<span class="cool" id="healCd"></span></button></div><div id="toast"></div><div id="cutscene"><div class="cs"><div class="csIcon" id="csIcon">🌑</div><h2 id="csTitle"></h2><p id="csText"></p><div class="cinBar"><i id="cinProgress"></i></div><br><button class="gold" onclick="advanceCutscene()">CONTINUER</button></div></div></section>
 <section id="result" class="screen"><div class="resultIcon" id="resultIcon">🏆</div><div id="resultTitle" class="resultTitle victory">VICTOIRE</div><div id="resultText"></div><div class="scoreline" id="resultScore"></div><div class="row" style="justify-content:center;margin-top:12px"><button class="gold" onclick="resultContinue()">CONTINUER</button><button onclick="show('menu')">MENU</button></div></section>
 <div id="modal" class="modal"><div class="modalPanel"><div class="row" style="justify-content:space-between"><h2 id="modalTitle" style="margin:0"></h2><button onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
 </div>
@@ -93,10 +97,14 @@
 const $=id=>document.getElementById(id);
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const chars={
- kaien:{name:'Kaien',icon:'⚔️',baseHP:120,baseAtk:12,hpStep:8,atkStep:2,desc:'Équilibré',power:'Lame spectrale'},
- aiko:{name:'Aiko',icon:'🗡️',baseHP:90,baseAtk:16,hpStep:7,atkStep:2.3,desc:'Rapide et puissante',power:'Danse des ombres'},
- ren:{name:'Ren',icon:'🛡️',baseHP:160,baseAtk:9,hpStep:11,atkStep:1.7,desc:'Très résistant',power:'Mur du gardien'},
- mia:{name:'Mia',icon:'🔥',baseHP:105,baseAtk:14,hpStep:8,atkStep:2.1,desc:'Énergie offensive',power:'Flamme astrale'}
+ kaien:{name:'Kaien',icon:'⚔️',baseHP:110,baseAtk:10,hpStep:8,atkStep:1.8,desc:'Héros de départ • équilibré',power:'Lame spectrale',unlock:0,role:'Équilibré'},
+ aiko:{name:'Aiko',icon:'🗡️',baseHP:95,baseAtk:14,hpStep:7,atkStep:2.0,desc:'Rapide • dégâts élevés',power:'Danse des ombres',unlock:500,role:'Assassin'},
+ ren:{name:'Ren',icon:'🛡️',baseHP:155,baseAtk:9,hpStep:11,atkStep:1.5,desc:'Tank • très résistant',power:'Mur du gardien',unlock:1200,role:'Gardien'},
+ mia:{name:'Mia',icon:'🔥',baseHP:105,baseAtk:13,hpStep:8,atkStep:2.0,desc:'Offensive • puissance brute',power:'Flamme astrale',unlock:2500,role:'Mage'},
+ sora:{name:'Sora',icon:'🌌',baseHP:125,baseAtk:15,hpStep:9,atkStep:2.2,desc:'Élite • équilibré+',power:'Lance céleste',unlock:5000,role:'Élite'},
+ yuna:{name:'Yuna',icon:'❄️',baseHP:145,baseAtk:16,hpStep:10,atkStep:2.3,desc:'Rare • contrôle et puissance',power:'Givre éternel',unlock:9000,role:'Rare'},
+ ryo:{name:'Ryo',icon:'🐉',baseHP:180,baseAtk:18,hpStep:12,atkStep:2.5,desc:'Légendaire • très puissant',power:'Rage du dragon',unlock:16000,role:'Légendaire'},
+ kuro:{name:'Kuro',icon:'🌑',baseHP:205,baseAtk:21,hpStep:13,atkStep:2.8,desc:'Mythique • puissance ultime',power:'Néant absolu',unlock:28000,role:'Mythique'}
 };
 const chapters=[
  {world:'Monde I — Les Terres de l’Ombre',name:'Chapitre I — Le Sanctuaire',introIcon:'🌑',intro:'Une ancienne force se réveille dans les ruines. Traverse le sanctuaire et vaincs son gardien.',enemies:[['Éclaireur de l’ombre','👤',85,9],['Guerrier noir','🗿',120,11],['Chasseur spectral','👺',145,13]],boss:['Gardien du Sanctuaire','👹',320,20]},
@@ -110,24 +118,37 @@ const chapters=[
 ];
 let save=loadSave();
 let state={chapter:0,enemyIndex:0,enemy:null,selected:'kaien',storyStep:0,cutsceneStep:0,mode:'intro',busy:false,finished:false,lastFrame:0,cd:{1:0,7:0,9:0,11:0,heal:0},enemyTimer:null,attackReadyAt:0,score:0};
-function defaultSave(){return {gold:350,powerLevel:1,selected:'kaien',skin:'default',skins:{default:true},specialPowers:{7:false,9:false,11:false},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],cloudEmail:''}}
+const UPGRADE_COSTS={2:100,3:200,4:350,5:600,6:1200,7:1800,8:2700,9:4000,10:6000,11:9000,12:12800};
+const MAX_CHARACTER_LEVEL=12;
+function freshCharacterLevels(){return Object.fromEntries(Object.keys(chars).map(id=>[id,1]))}
+function freshCharacterUnlocks(){return Object.fromEntries(Object.keys(chars).map(id=>[id,id==='kaien']))}
+function freshCharacterPowers(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{7:false,9:false,11:false}]))}
+function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],cloudEmail:'',characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers()}}
+function upgradeCost(nextLevel){return UPGRADE_COSTS[nextLevel]||Math.round(12800*Math.pow(1.55,nextLevel-12))}
+function charLevel(id=save.selected){return Math.max(1,Number(save.characterLevels?.[id]||1))}
+function isCharUnlocked(id){return !!save.characterUnlocked?.[id]}
 function loadSave(){try{
-  const raw=localStorage.getItem('shadowLegacyV9')||localStorage.getItem('shadowLegacyV8')||localStorage.getItem('shadowLegacyV7');
-  const x=raw?JSON.parse(raw):{};
-  const d=defaultSave();
-  return Object.assign(d,x,{
-    settings:Object.assign(d.settings,x.settings||{}),
-    skins:Object.assign({default:true},x.skins||{}),
-    specialPowers:Object.assign({7:false,9:false,11:false},x.specialPowers||{}),
-    completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],
-    potions:Number.isFinite(x.potions)?x.potions:2
-  });
+  const raw=localStorage.getItem('shadowLegacyV10')||localStorage.getItem('shadowLegacyV9')||localStorage.getItem('shadowLegacyV8')||localStorage.getItem('shadowLegacyV7');
+  const x=raw?JSON.parse(raw):{};const d=defaultSave();
+  const levels=Object.assign(d.characterLevels,x.characterLevels||{});
+  if(x.powerLevel&&(!x.characterLevels||!x.characterLevels[x.selected||'kaien'])) levels[x.selected||'kaien']=Math.max(1,Math.min(MAX_CHARACTER_LEVEL,Number(x.powerLevel)));
+  const unlocked=Object.assign(d.characterUnlocked,x.characterUnlocked||{});unlocked.kaien=true;
+  const powers=Object.assign({},d.characterPowers,x.characterPowers||{});
+  if(x.specialPowers&&x.selected){powers[x.selected]=Object.assign(powers[x.selected],x.specialPowers)}
+  return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins:Object.assign({default:true},x.skins||{}),completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers});
 }catch(e){return defaultSave()}}
-function persist(){localStorage.setItem('shadowLegacyV9',JSON.stringify(save));localStorage.setItem('shadowLegacyV8',JSON.stringify(save));localStorage.setItem('shadowLegacyV7',JSON.stringify(save));updateMenu();cloudAutosave()}
-function stats(key=save.selected){const c=chars[key];const p=save.powerLevel;return {maxHP:Math.round(c.baseHP+(p-1)*c.hpStep),atk:Math.round((c.baseAtk+(p-1)*c.atkStep)*10)/10}}
-function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');if(id==='menu')updateMenu()}
-function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Pouvoir <b>${save.powerLevel}/11</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🗺️ ${done}/8 chapitres`}
-function renderChars(){const wrap=$('chars');wrap.innerHTML='';Object.entries(chars).forEach(([id,c])=>{const st=stats(id);const d=document.createElement('div');d.className='card char'+(state.selected===id?' selected':'');d.onclick=()=>{state.selected=id;renderChars()};d.innerHTML=`${skinArt(skinPack[save.skin]?.cls||'skin-default')}<h3 style="margin:5px 0">${c.name}</h3><span class="tag">${c.desc}</span><div class="stats"><b>❤️ ${st.maxHP} PV</b><br><b>⚔️ ${st.atk} dégâts</b><br>⚡ Pouvoir : ${c.power}</div>`;wrap.appendChild(d)})}
+function persist(){localStorage.setItem('shadowLegacyV10',JSON.stringify(save));localStorage.setItem('shadowLegacyV9',JSON.stringify(save));updateMenu();cloudAutosave()}
+function stats(key=save.selected){const c=chars[key]||chars.kaien;const p=charLevel(key);return {maxHP:Math.round(c.baseHP+(p-1)*c.hpStep),atk:Math.round((c.baseAtk+(p-1)*c.atkStep)*10)/10}}
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');if(id==='menu')updateMenu();if(id==='characters')renderCharacters()}
+function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Niveau <b>${charLevel()}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🧪 ${save.potions} • 🗺️ ${done}/8 chapitres`}
+function renderChars(){renderCharacters()}
+function renderCharacters(){const grid=$('characterGrid');if(!grid)return;const selected=save.selected;const s=stats();$('characterSummary').innerHTML=`🎮 <b>${chars[selected].name}</b> est sélectionné • Niveau <b>${charLevel(selected)}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts<br><span class="muted">Les améliorations ne s'appliquent qu'au personnage choisi.</span>`;grid.innerHTML=Object.entries(chars).map(([id,c])=>{const unlocked=isCharUnlocked(id),lvl=charLevel(id),st=stats(id),sel=selected===id;const cost=lvl>=MAX_CHARACTER_LEVEL?0:upgradeCost(lvl+1);const buyUnlock=unlocked?`<button class="${sel?'gold':'purple'}" onclick="selectCharacter('${id}')">${sel?'✓ SÉLECTIONNÉ':'CHOISIR'}</button>`:`<button class="gold" onclick="unlockCharacter('${id}')">🔓 ${c.unlock} 💰<br>DÉBLOQUER</button>`;const up=unlocked?(lvl>=MAX_CHARACTER_LEVEL?`<button disabled>⚡ NIVEAU MAX</button>`:`<button class="gold" onclick="upgradeCharacter('${id}')">⚡ AMÉLIORER • 💰 ${cost}</button>`):'';return `<div class="card characterCard ${sel?'selected':''} ${unlocked?'':'locked'}"><div class="heroMini">${skinArt(skinPack[save.skin]?.cls||'skin-default')}</div><h3 style="margin:4px 0">${c.icon} ${c.name}</h3><span class="tag">${c.role}</span> <span class="levelPill">Niveau ${lvl}/${MAX_CHARACTER_LEVEL}</span><p class="muted" style="margin:7px 0">${c.desc}</p><div class="charStat"><span>❤️ PV</span><b>${st.maxHP}</b></div><div class="charStat"><span>⚔️ Dégâts</span><b>${st.atk}</b></div><div class="charStat"><span>✨ Pouvoir</span><b>${c.power}</b></div><div class="characterActions">${buyUnlock}${up}</div></div>`}).join('')}
+function openCharacters(){show('characters')}
+function selectCharacter(id){if(!isCharUnlocked(id))return;save.selected=id;state.selected=id;persist();renderCharacters();showToast(`${chars[id].name} sélectionné.`)}
+function unlockCharacter(id){const c=chars[id];if(!c||isCharUnlocked(id))return;if(save.gold<c.unlock){showToast('Pas assez de pièces.');return}save.gold-=c.unlock;save.characterUnlocked[id]=true;save.characterLevels[id]=1;persist();renderCharacters();showToast(`🔓 ${c.name} est maintenant disponible !`)}
+function upgradeCharacter(id){if(!isCharUnlocked(id))return;const lvl=charLevel(id);if(lvl>=MAX_CHARACTER_LEVEL)return;const cost=upgradeCost(lvl+1);if(save.gold<cost){showToast(`Il faut ${cost} pièces.`);return}save.gold-=cost;save.characterLevels[id]=lvl+1;persist();renderCharacters();if(id===save.selected){game.hp=stats().maxHP}showToast(`⚡ ${chars[id].name} passe au niveau ${lvl+1} !`)}
+function startGame(){state.selected=save.selected;state.enemyIndex=0;state.score=0;state.finished=false;state.storyStep=0;state.cd={1:0,7:0,9:0,11:0,heal:0};state.attackReadyAt=0;openWorldMap()}
+
 function startGame(){state.selected=save.selected;state.enemyIndex=0;state.score=0;state.finished=false;state.storyStep=0;state.cd={1:0,7:0,9:0,11:0,heal:0};state.attackReadyAt=0;openWorldMap()}
 
 const worldNames=[
@@ -138,7 +159,7 @@ const worldNames=[
 ];
 function worldOfChapter(i){return Math.floor(i/2)}
 function worldUnlocked(w){if(w===0)return true;return chapters.slice((w-1)*2,w*2).every((_,j)=>save.completedChapters.includes((w-1)*2+j))}
-function chapterUnlocked(i){if(i===0)return true;return save.completedChapters.includes(i-1)||worldUnlocked(worldOfChapter(i))}
+function chapterUnlocked(i){return i===0||save.completedChapters.includes(i-1)}
 function openWorldMap(){
   renderWorldMap();
   show('worldmap');
@@ -167,14 +188,14 @@ function playChapter(index){
   showStory();
 }
 function showStory(){const ch=chapters[state.chapter];$('storyArt').textContent=ch.introIcon;$('storyTitle').textContent=ch.world+' — '+ch.name;$('storyText').textContent=ch.intro;show('story')}
-function nextStory(){show('select');renderChars()}
-function confirmCharacter(){save.selected=state.selected;persist();startChapterIntro()}
+function nextStory(){openCharacters();}
+function confirmCharacter(){if(!isCharUnlocked(state.selected))return;save.selected=state.selected;persist();startChapterIntro()}
 function startChapterIntro(){state.enemyIndex=0;state.mode='intro';state.cutsceneStep=0;show('gameplay');showCutscene(chapters[state.chapter].name,chapters[state.chapter].intro,chapters[state.chapter].introIcon)}
 function showCutscene(title,text,icon){$('csTitle').textContent=title;$('csText').textContent=text;$('csIcon').textContent=icon;$('cinProgress').style.width='0%';$('cutscene').classList.add('show');state.mode='cutscene';let t=0;clearInterval(state.cinTimer);state.cinTimer=setInterval(()=>{t+=5;$('cinProgress').style.width=t+'%';if(t>=100)clearInterval(state.cinTimer)},100)}
 function advanceCutscene(){ $('cutscene').classList.remove('show'); clearInterval(state.cinTimer); if(state.mode==='cutscene'){startEnemy()} }
-function makeEnemy(){const ch=chapters[state.chapter];const isBoss=state.enemyIndex>=ch.enemies.length;const e=isBoss?ch.boss:ch.enemies[state.enemyIndex];const scale=1+(save.powerLevel-1)*.035 + state.chapter*.035;return {name:e[0],icon:e[1],maxHP:Math.round(e[2]*scale),hp:Math.round(e[2]*scale),atk:Math.round(e[3]*scale),boss:isBoss}}
+function makeEnemy(){const ch=chapters[state.chapter];const isBoss=state.enemyIndex>=ch.enemies.length;const e=isBoss?ch.boss:ch.enemies[state.enemyIndex];const scale=1+(charLevel()-1)*.035 + state.chapter*.035;return {name:e[0],icon:e[1],maxHP:Math.round(e[2]*scale),hp:Math.round(e[2]*scale),atk:Math.round(e[3]*scale),boss:isBoss}}
 function startEnemy(){state.enemy=makeEnemy();state.busy=false;$('enemy').classList.remove('dead');$('enemySprite').textContent=state.enemy.icon;$('enemyName').innerHTML=state.enemy.name+(state.enemy.boss?' <span class="bossTitle">• BOSS</span>':'');$('chapterTag').textContent=chapters[state.chapter].world+' • '+chapters[state.chapter].name+' • '+(state.enemy.boss?'BOSS':`Ennemi ${state.enemyIndex+1}/${chapters[state.chapter].enemies.length}`);$('chest').classList.remove('show');renderBattle();clearInterval(state.enemyTimer);state.enemyTimer=setInterval(enemyAutoAttack,3200);showToast(state.enemy.boss?'Le boss entre dans l’arène !':'Un ennemi approche !')}
-function renderBattle(){const s=stats();$('heroSprite').innerHTML=skinArt(skinPack[save.skin]?.cls||'skin-default',true);$('heroName').textContent=chars[save.selected].name;$('heroHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('hudHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('heroHPText').textContent=`${Math.max(0,Math.ceil(game.hp))}/${s.maxHP} PV`;$('enemyHP').style.width=clamp((state.enemy.hp/state.enemy.maxHP)*100,0,100)+'%';$('enemyHPText').textContent=`${Math.max(0,Math.ceil(state.enemy.hp))}/${state.enemy.maxHP} PV`;$('hudHero').textContent=chars[save.selected].name;$('hudPower').textContent=save.powerLevel;$('hudGold').textContent=save.gold;$('hudEnemy').textContent=state.enemy.name;updatePowerButtons()}
+function renderBattle(){const s=stats();$('heroSprite').innerHTML=skinArt(skinPack[save.skin]?.cls||'skin-default',true);$('heroName').textContent=chars[save.selected].name;$('heroHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('hudHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('heroHPText').textContent=`${Math.max(0,Math.ceil(game.hp))}/${s.maxHP} PV`;$('enemyHP').style.width=clamp((state.enemy.hp/state.enemy.maxHP)*100,0,100)+'%';$('enemyHPText').textContent=`${Math.max(0,Math.ceil(state.enemy.hp))}/${state.enemy.maxHP} PV`;$('hudHero').textContent=chars[save.selected].name;$('hudPower').textContent=charLevel();$('hudGold').textContent=save.gold;$('hudEnemy').textContent=state.enemy.name;$('hudPotions').textContent=save.potions;updatePowerButtons()}
 let game={hp:0};
 function resetPlayerHP(full=true){const s=stats();if(full||!game.hp)game.hp=s.maxHP;else game.hp=clamp(game.hp,0,s.maxHP)}
 function beginBattle(){if(!game.hp)resetPlayerHP(true);startEnemy()}
@@ -182,9 +203,9 @@ function canAttack(){const now=Date.now();if(now<state.attackReadyAt){showToast(
 function normalAttack(){if(!state.enemy||state.busy||state.enemy.hp<=0)return;if(!canAttack())return;const s=stats();let dmg=s.atk*(.92+Math.random()*.16);hitEnemy(dmg,'⚔️');playSfx('attack')}
 function usePower(level){
   if(!state.enemy||state.busy||state.enemy.hp<=0)return;
-  if(save.powerLevel<level){showToast(`Il faut le niveau de pouvoir ${level}/11.`);return}
-  if([7,9,11].includes(level)&&!save.specialPowers[level]){
-    showToast(`Achète le pouvoir ${level} dans la boutique.`);
+  if(charLevel()<level){showToast(`Il faut le niveau ${level}/${MAX_CHARACTER_LEVEL}.`);return}
+  if([7,9,11].includes(level)&&!save.characterPowers[save.selected]?.[level]){
+    showToast(`Achète le pouvoir ${level} pour ${chars[save.selected].name} dans la boutique.`);
     return;
   }if(!canAttack())return;const now=Date.now();if(now<state.cd[level]){showToast(`Pouvoir ${level} : encore ${Math.ceil((state.cd[level]-now)/1000)} s`);return}const s=stats();let dmg=s.atk,heal=0,kind='power';if(level===1){dmg*=1.8;state.cd[1]=now+4000;kind='power1'}if(level===7){dmg*=2.7;state.cd[7]=now+8000;kind='power7'}if(level===9){dmg*=4.2;state.cd[9]=now+12000;kind='power9'}if(level===11){dmg*=6.5;state.cd[11]=now+20000;kind='power11'}hitEnemy(dmg,kind);playSfx('power');updateBattleLoop()}
 function healAttack(){
@@ -207,20 +228,19 @@ function showDamage(id,text,type){const el=$(id);el.textContent=text;el.style.co
 function enemyAutoAttack(){if(state.busy||!state.enemy||state.enemy.hp<=0)return;const dmg=Math.round(state.enemy.atk*(.88+Math.random()*.2));$('enemy').classList.add('attackAnim');$('hero').classList.add('hit');$('fightFlash').classList.remove('show');void $('fightFlash').offsetWidth;$('fightFlash').classList.add('show');setTimeout(()=>{$('enemy').classList.remove('attackAnim')},320);game.hp=clamp(game.hp-dmg,0,stats().maxHP);showDamage('heroDmg','-'+dmg,'enemy');$('hero').classList.add('hit');setTimeout(()=>$('hero').classList.remove('hit'),250);playSfx('hit');updateBattleLoop();if(game.hp<=0)loseGame()}
 function updateBattleLoop(){renderBattle();updateCooldowns()}
 function updateCooldowns(){
-  const now=Date.now();
+  const now=Date.now(),lvl=charLevel(),powers=save.characterPowers[save.selected]||{};
   for(const n of [1,7,9,11]){
-    const lockedLevel=save.powerLevel<n;
-    const lockedPurchase=[7,9,11].includes(n)&&!save.specialPowers[n];
+    const lockedLevel=lvl<n;const lockedPurchase=[7,9,11].includes(n)&&!powers[n];
     if(lockedLevel)$('p'+n+'Cd').textContent='🔒 niveau '+n;
-    else if(lockedPurchase)$('p'+n+'Cd').textContent='🛒 boutique';
+    else if(lockedPurchase)$('p'+n+'Cd').textContent='🛒 personnages';
     else $('p'+n+'Cd').textContent=state.cd[n]>now?`${Math.ceil((state.cd[n]-now)/1000)} s`:'PRÊT';
     $('p'+n+'Btn').disabled=lockedLevel||lockedPurchase||state.cd[n]>now;
   }
-  $('healCd').textContent=state.cd.heal>now?`${Math.ceil((state.cd.heal-now)/1000)} s`:'PRÊT';
-  $('p1Btn').disabled=save.powerLevel<1||state.cd[1]>now;
-  $('p7Btn').disabled=save.powerLevel<7||!save.specialPowers[7]||state.cd[7]>now;
-  $('p9Btn').disabled=save.powerLevel<9||!save.specialPowers[9]||state.cd[9]>now;
-  $('p11Btn').disabled=save.powerLevel<11||!save.specialPowers[11]||state.cd[11]>now;
+  $('healCd').textContent='🧪 '+save.potions;
+  $('p1Btn').disabled=lvl<1||state.cd[1]>now;
+  $('p7Btn').disabled=lvl<7||!powers[7]||state.cd[7]>now;
+  $('p9Btn').disabled=lvl<9||!powers[9]||state.cd[9]>now;
+  $('p11Btn').disabled=lvl<11||!powers[11]||state.cd[11]>now;
 }
 function updatePowerButtons(){updateCooldowns()}
 function winEnemy(){
@@ -259,91 +279,39 @@ function bossVictory(){
 function loseGame(){if(state.finished)return;state.finished=true;clearInterval(state.enemyTimer);save.defeats++;persist();show('result');$('resultIcon').textContent='🌑';$('resultTitle').textContent='DÉFAITE';$('resultTitle').className='resultTitle defeat';$('resultText').textContent='Ton aventure s’arrête ici pour cette fois. Tes améliorations sont conservées.';$('resultScore').textContent=`Score : ${state.score}`}
 function resultContinue(){state.finished=false;state.busy=false;clearInterval(state.enemyTimer);state.enemyIndex=0;show('menu')}
 const specialPowerData={
-  7:{name:'Éveil des ombres',icon:'⚡',cost:400,desc:'Renforce l’Éveil 7 et ajoute une régénération pendant son attaque.'},
-  9:{name:'Frappe abyssale',icon:'🔥',cost:700,desc:'Débloque la Frappe 9 avec des dégâts renforcés.'},
-  11:{name:'Suprême du Néant',icon:'👑',cost:1000,desc:'Débloque le pouvoir ultime du niveau 11.'}
+  7:{name:'Éveil des ombres',icon:'⚡',cost:400,desc:'Pouvoir spécial du niveau 7.'},
+  9:{name:'Frappe abyssale',icon:'🔥',cost:700,desc:'Pouvoir spécial du niveau 9.'},
+  11:{name:'Suprême du Néant',icon:'👑',cost:1000,desc:'Pouvoir spécial du niveau 11.'}
 };
-
 const skinPack={
   default:{name:'Ombre classique',price:0,cls:'skin-default'},
-  crimson:{name:'Ombre écarlate',price:300,cls:'skin-crimson'},
-  azure:{name:'Ombre azur',price:500,cls:'skin-azure'},
-  royal:{name:'Ombre royale',price:800,cls:'skin-royal'},
-  void:{name:'Ombre du Néant',price:1200,cls:'skin-void'},
-  emerald:{name:'Gardien émeraude',price:1600,cls:'skin-emerald'}
+  crimson:{name:'Ombre écarlate',price:1200,cls:'skin-crimson'},
+  azure:{name:'Ombre azur',price:1800,cls:'skin-azure'},
+  royal:{name:'Ombre royale',price:3500,cls:'skin-royal'},
+  void:{name:'Ombre du Néant',price:7000,cls:'skin-void'},
+  emerald:{name:'Gardien émeraude',price:12000,cls:'skin-emerald'},
+  obsidian:{name:'Seigneur d’obsidienne',price:20000,cls:'skin-obsidian'},
+  solar:{name:'Roi solaire',price:35000,cls:'skin-solar'},
+  celestial:{name:'Guerrier céleste',price:60000,cls:'skin-celestial'},
+  bloodmoon:{name:'Lune de sang',price:90000,cls:'skin-bloodmoon'},
+  dragon:{name:'Dragon ancien',price:150000,cls:'skin-dragon'}
 };
 function skinArt(cls='skin-default',battle=false){
   return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="cape"></span><span class="head"></span><span class="visor"></span><span class="body"></span><span class="mark"></span><span class="blade"></span></div>`;
 }
 function openShop(){
-  const s=stats();
-  const powerCost=save.powerLevel>=11?0:Math.round(100*Math.pow(2,save.powerLevel-1));
-  const skins=Object.entries(skinPack);
-
-  const specialHtml=Object.entries(specialPowerData).map(([level,x])=>{
-    const n=Number(level);
-    const unlocked=save.powerLevel>=n;
-    const owned=!!save.specialPowers[n];
-    let action='';
-    if(owned) action='<button class="green" disabled>ACHETÉ</button>';
-    else if(!unlocked) action=`<button disabled>🔒 NIVEAU ${n}</button>`;
-    else action=`<button class="gold" onclick="buySpecialPower(${n})">💰 ${x.cost}<br>ACHETER</button>`;
-    return `<div class="shopItem specialPower">
-      <div class="spInfo"><b>${x.icon} ${x.name}</b><br><span class="tiny">Niveau ${n} • ${x.desc}</span></div>
-      <div>${action}</div>
-    </div>`;
-  }).join('');
-
-  const skinHtml=skins.map(([id,x])=>{
-    const owned=!!save.skins[id];
-    const equipped=owned&&save.skin===id;
-    const button=equipped
-      ? `<button class="gold" disabled>ÉQUIPÉ</button>`
-      : owned
-        ? `<button class="purple" onclick="equipSkin('${id}')">ÉQUIPER</button>`
-        : `<button class="purple" onclick="buySkin('${id}',${x.price})">💰 ${x.price} • ACHETER</button>`;
-    return `<div class="card skin ${owned?'':'locked'}">
-      ${skinArt(x.cls)}
-      <div class="skinInfo"><b>${x.name}</b><br>${owned?'<span class="onlineBadge">Possédé</span>':`<span class="price">💰 ${x.price}</span>`}</div>
-      ${button}
-    </div>`;
-  }).join('');
-
-  const html=`<div class="shopCoins">💰 <b>${save.gold}</b> pièces disponibles</div>
-    <div class="notice">⚡ Niveau de pouvoir <b>${save.powerLevel}/11</b><br>❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts<br><span class="muted">Le niveau de pouvoir améliore automatiquement les PV et les dégâts du personnage.</span></div>
-    <div class="shopItem"><div><b>⚡ Améliorer le pouvoir</b><br><span class="muted">Améliore le niveau de pouvoir avec les pièces gagnées. Maximum 11.</span></div>
-      <div>${save.powerLevel>=11?'<b>MAX</b>':`<span class="price">💰 ${powerCost}</span> <button class="gold" onclick="buyPower()">AMÉLIORER</button>`}</div>
-    </div>
-    <h3>✨ Pouvoirs spéciaux</h3>
-    <div class="notice">À partir des niveaux 7, 9 et 11, le niveau seul ne suffit plus : il faut acheter chaque pouvoir spécial dans la boutique.</div>
-    ${specialHtml}
-    <h3>🎨 Skins — pack de textures original</h3><div class="notice tiny">6 skins visuels originaux, sans emojis : chaque skin change l’armure, la cape, le viseur et l’arme du personnage.</div>
-    <div class="skinGrid">${skinHtml}</div>`;
-
+  const s=stats(),lvl=charLevel(),powers=save.characterPowers[save.selected]||{};const skins=Object.entries(skinPack);const next=lvl<MAX_CHARACTER_LEVEL?upgradeCost(lvl+1):0;
+  const specialHtml=Object.entries(specialPowerData).map(([level,x])=>{const n=Number(level),unlocked=lvl>=n,owned=!!powers[n];let action=owned?'<button class="green" disabled>ACHETÉ</button>':!unlocked?`<button disabled>🔒 NIVEAU ${n}</button>`:`<button class="gold" onclick="buySpecialPower(${n})">💰 ${x.cost}<br>ACHETER</button>`;return `<div class="shopItem specialPower"><div class="spInfo"><b>${x.icon} ${x.name}</b><br><span class="tiny">Niveau ${n} • ${x.desc} • ${chars[save.selected].name}</span></div><div>${action}</div></div>`}).join('');
+  const skinHtml=skins.map(([id,x])=>{const owned=!!save.skins[id],equipped=owned&&save.skin===id;const button=equipped?'<button class="gold" disabled>ÉQUIPÉ</button>':owned?`<button class="purple" onclick="equipSkin('${id}')">ÉQUIPER</button>`:`<button class="purple" onclick="buySkin('${id}',${x.price})">💰 ${x.price} • ACHETER</button>`;return `<div class="card skin ${owned?'':'locked'}">${skinArt(x.cls)}<div class="skinInfo"><b>${x.name}</b><br>${owned?'<span class="onlineBadge">Possédé</span>':`<span class="price">💰 ${x.price.toLocaleString('fr-FR')}</span>`}</div>${button}</div>`}).join('');
+  const html=`<div class="shopCoins">💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces disponibles</div>
+    <div class="notice">🎮 Personnage actif : <b>${chars[save.selected].name}</b> • ⚡ Niveau <b>${lvl}/${MAX_CHARACTER_LEVEL}</b><br>❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts<br><span class="muted">Les améliorations se font maintenant dans l’écran Personnages et ne renforcent que le personnage choisi.</span></div>
+    <div class="shopItem shopPotion"><div><b>🧪 Potion de soin</b><br><span class="muted">Restaure 30% des PV pendant un combat.</span><br>Stock actuel : <b>${save.potions}</b></div><div class="row"><button class="green" onclick="buyPotion(1)">💰 150 • +1</button><button class="green" onclick="buyPotion(5)">💰 700 • +5</button></div></div>
+    <h3>✨ Pouvoirs spéciaux de ${chars[save.selected].name}</h3>${specialHtml}
+    <h3>🎨 Skins légendaires</h3><div class="notice tiny">Des skins originaux, beaucoup plus rares et chers. Le skin équipé est utilisé par le personnage sélectionné.</div><div class="skinGrid">${skinHtml}</div>`;
   openModal('🛒 Boutique',html);
 }
-function buyPower(){
-  if(save.powerLevel>=11){showToast('⚡ Pouvoir déjà au niveau maximum.');return}
-  const cost=Math.round(100*Math.pow(2,save.powerLevel-1));
-  if(save.gold<cost){showToast(`🪙 Il te faut ${cost} pièces.`);return}
-  save.gold-=cost;
-  save.powerLevel++;
-  persist();
-  openShop();
-  showToast(`⚡ Pouvoir amélioré au niveau ${save.powerLevel} ! -${cost} pièces`);
-}
-
-function buySpecialPower(level){
-  const x=specialPowerData[level];
-  if(!x||save.powerLevel<level)return;
-  if(save.specialPowers[level]){showToast('Pouvoir déjà acheté.');return}
-  if(save.gold<x.cost){showToast('Pas assez de pièces.');return}
-  save.gold-=x.cost;
-  save.specialPowers[level]=true;
-  persist();
-  openShop();
-  showToast(`${x.icon} ${x.name} débloqué !`);
-}
+function buyPotion(amount){const cost=amount===5?700:150;if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.potions+=amount;persist();openShop();showToast(`🧪 +${amount} potion${amount>1?'s':''}.`)}
+function buySpecialPower(level){const x=specialPowerData[level],id=save.selected;if(!x||charLevel(id)<level)return;save.characterPowers[id]=save.characterPowers[id]||{7:false,9:false,11:false};if(save.characterPowers[id][level]){showToast('Pouvoir déjà acheté pour ce personnage.');return}if(save.gold<x.cost){showToast('Pas assez de pièces.');return}save.gold-=x.cost;save.characterPowers[id][level]=true;persist();openShop();showToast(`${x.icon} ${x.name} débloqué pour ${chars[id].name} !`)}
 function equipSkin(id){
   if(!save.skins[id])return;
   save.skin=id;
@@ -394,7 +362,7 @@ async function cloudLoadNow(){
   const {data:{user}}=await supa.auth.getUser();if(!user){showToast('Connecte-toi avec ton email.');return}
   const {data,error}=await supa.from('shadow_saves').select('save_data').eq('user_id',user.id).maybeSingle();
   if(error||!data){showToast('Aucune sauvegarde cloud trouvée.');return}
-  const d=data.save_data;if(d&&typeof d==='object'){save=Object.assign(defaultSave(),d,{settings:Object.assign(defaultSave().settings,d.settings||{}),skins:Object.assign({default:true},d.skins||{}),specialPowers:Object.assign({7:false,9:false,11:false},d.specialPowers||{}),completedChapters:Array.isArray(d.completedChapters)?d.completedChapters:[]});persist();renderWorldMap();updateMenu();showToast('☁️ Progression récupérée.');}
+  const d=data.save_data;if(d&&typeof d==='object'){save=Object.assign(defaultSave(),d,{settings:Object.assign(defaultSave().settings,d.settings||{}),skins:Object.assign({default:true},d.skins||{}),characterLevels:Object.assign(defaultSave().characterLevels,d.characterLevels||{}),characterUnlocked:Object.assign(defaultSave().characterUnlocked,d.characterUnlocked||{}),characterPowers:Object.assign(defaultSave().characterPowers,d.characterPowers||{}),completedChapters:Array.isArray(d.completedChapters)?d.completedChapters:[]});persist();renderWorldMap();updateMenu();showToast('☁️ Progression récupérée.');}
 }
 function cloudAutosave(){if(!cloudReady()||!supa)return;clearTimeout(cloudTimer);cloudTimer=setTimeout(()=>cloudSaveNow(),1200)}
 
