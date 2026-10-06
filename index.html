@@ -161,13 +161,16 @@
 /* V14 — enemy-only skin system */
 .enemySkinArt{position:relative;width:150px;height:170px;margin:auto;transform:scale(.82);transform-origin:center bottom;filter:drop-shadow(0 12px 12px #0008)}.enemySkinArt .eAura{position:absolute;inset:8px;border-radius:45%;background:radial-gradient(circle,#ffffff18,transparent 65%);filter:blur(6px)}.enemySkinArt .eHead{position:absolute;z-index:4;left:48px;top:22px;width:54px;height:48px;display:grid;place-items:center;font-size:40px;filter:drop-shadow(0 0 7px #fff5)}.enemySkinArt .eBody{position:absolute;z-index:2;left:35px;top:66px;width:82px;height:78px;border-radius:35% 35% 22% 22%;background:linear-gradient(145deg,#333a4c,#090c15);border:2px solid #141827}.enemySkinArt .eEyes{position:absolute;z-index:5;left:59px;top:45px;width:34px;height:8px;border-radius:10px;background:#ff6578;box-shadow:0 0 15px #ff334f}.enemySkinArt .eCore{position:absolute;z-index:5;left:67px;top:91px;width:18px;height:18px;border-radius:50%;background:#d7e0ff;box-shadow:0 0 18px #a9c4ff}.enemySkinArt .eWeapon{position:absolute;z-index:3;left:103px;top:73px;width:10px;height:72px;border-radius:10px;background:#e6ecff;transform:rotate(18deg);box-shadow:0 0 12px #fff}.enemy-wolf .eHead{font-size:48px;top:14px}.enemy-wolf .eBody{background:linear-gradient(145deg,#586477,#171c28);clip-path:polygon(18% 0,82% 0,100% 28%,92% 100%,8% 100%,0 28%)}.enemy-wolf .eEyes{background:#f7b45c;box-shadow:0 0 16px #ff8a2b}.enemy-wolf .eCore{background:#bfe7ff}.enemy-magma .eBody{background:linear-gradient(145deg,#d84a22,#35100a);box-shadow:inset 0 0 22px #ff7a24}.enemy-magma .eEyes{background:#ffe16a}.enemy-magma .eCore{background:#ff6b35;box-shadow:0 0 22px #ff3b16}.enemy-frost .eBody{background:linear-gradient(145deg,#bcecff,#315d91);border-color:#8be8ff}.enemy-frost .eEyes{background:#d7ffff}.enemy-frost .eCore{background:#8ff7ff}.enemy-void .eBody{background:linear-gradient(145deg,#5b1b86,#090313);box-shadow:inset 0 0 22px #a34cff}.enemy-void .eEyes{background:#e39bff}.enemy-void .eCore{background:#a75cff;box-shadow:0 0 24px #9c35ff}.enemy-crystal .eBody{background:linear-gradient(145deg,#3a8fa7,#17233a);clip-path:polygon(50% 0,100% 28%,82% 100%,18% 100%,0 28%)}.enemy-crystal .eCore{background:#7ffff1}.enemy-royal .eBody{background:linear-gradient(145deg,#a57a2c,#211606);border-color:#e5c66d}.enemy-royal .eEyes{background:#fff0a1}.enemy-royal .eCore{background:#ffd34f}.enemy-spectral .eBody{background:linear-gradient(145deg,#b8b4e6,#25233e);opacity:.82;box-shadow:0 0 28px #9f9cff}.enemy-spectral .eEyes{background:#fff}.enemy-beast .eBody{width:96px;height:90px;left:27px;border-radius:45% 45% 20% 20%;background:linear-gradient(145deg,#5f4636,#1b120e)}.enemy-beast .eEyes{background:#ff8b45}.enemy-plague .eBody{background:linear-gradient(145deg,#4c8b57,#102717);box-shadow:inset 0 0 22px #55e47b}.enemy-plague .eEyes{background:#a9ff7a}.enemy-boss .eBody{width:104px;height:98px;left:23px;top:61px;background:linear-gradient(145deg,#7a203f,#120611);border:3px solid #e0a64e;box-shadow:0 0 28px #d14c7c}.enemy-boss .eEyes{background:#ffe07a;box-shadow:0 0 20px #ff9c32}.enemy-boss .eCore{background:#ff5b8b;box-shadow:0 0 24px #ff2d6f}.enemyPos .enemySkinArt{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%) scale(.82)}.enemyPos{overflow:visible}.enemyPos .sprite{overflow:visible;width:180px;height:190px;display:grid;place-items:center}
 .characterPowerBox{margin-top:10px;padding:10px;border:1px solid #3f4560;border-radius:14px;background:#0b0f19}.powerMini,.powerMiniBtn{width:100%;margin-top:6px;padding:8px;border-radius:10px;font-size:12px}.powerMini{color:#aeb5c8}.powerMini.owned{color:#7be0a2;border:1px solid #3f9b68}.powerMiniBtn{border:1px solid #7356a2;background:#19142a;color:#fff}.talentChoices{margin-top:9px;padding-top:8px;border-top:1px solid #34394b}.talentChoices .row{flex-wrap:wrap}.talentChoices button{flex:1;min-width:82px;font-size:11px;padding:7px}.talentLock{margin-top:7px;color:#858ca0;font-size:12px}.talentChosen{margin-top:7px;color:#7fe1a0;font-size:12px}
+
+/* Journal de progression + succès */
+.activityList{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow:auto;margin-top:10px}.activityItem{padding:10px 12px;border:1px solid #353b52;border-radius:12px;background:#0d1220}.activityItem .time{font-size:11px;color:#858ca0}.achievementGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.achievement{padding:11px;border:1px solid #3b4057;border-radius:13px;background:#0d1220}.achievement.done{border-color:#4fa873;box-shadow:0 0 14px #4fa87322}.achievement.locked{opacity:.62}.achievement b{display:block;margin-bottom:4px}.commandBox{display:flex;gap:8px;margin-top:10px}.commandBox input{flex:1;min-width:0}.chatHint{font-size:12px;color:#8e95aa;margin-top:7px}@media(max-width:700px){.achievementGrid{grid-template-columns:1fr}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V12 • progression sauvegardée</div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V12 • progression sauvegardée</div></section>
 <section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
 <section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Après le lancement d’un chapitre, aucun écran de sélection obligatoire ne s’affiche.</p></div><div class="row"><button id="characterBackBtn" onclick="show('menu')">Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
@@ -257,7 +260,7 @@ function freshCharacterLevels(){return Object.fromEntries(Object.keys(chars).map
 function freshCharacterUnlocks(){return Object.fromEntries(Object.keys(chars).map(id=>[id,['kaien','aiko','ren'].includes(id)]))}
 function freshCharacterPowers(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{7:false,9:false,11:false}]))}
 function freshCharacterTalents(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{8:null,10:null}]))}
-function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),v14SkinsReset:false}}
+function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],activityLog:[{text:'Bienvenue dans SHADOW LEGACY ! Ton journal de progression est prêt.',type:'system',time:Date.now()}],achievements:{world1:false,world2:false,world3:false,world4:false,world5:false,world6:false,world7:false,world8:false,world9:false,world10:false,chapters10:false,chapters25:false,chapters50:false,level12:false,firstSkin:false,tenSkins:false,gold10000:false},cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),v14SkinsReset:false}}
 function upgradeCost(nextLevel){return UPGRADE_COSTS[nextLevel]||5500}
 function charLevel(id=save.selected){return Math.max(1,Number(save.characterLevels?.[id]||1))}
 function isCharUnlocked(id){return !!save.characterUnlocked?.[id]}
@@ -275,7 +278,7 @@ function loadSave(){try{
   // Une seule fois : on efface les anciens achats de skins payants qui avaient été attribués par erreur.
   if(!x.v14SkinsReset){Object.keys(skins).forEach(id=>{if(id!=='default'&&!id.endsWith('Base'))skins[id]=false});Object.keys(d.characterSkins).forEach(id=>characterSkins[id]=d.characterSkins[id]);x.v14SkinsReset=true}
   Object.keys(d.skins).filter(id=>id==='default'||id.endsWith('Base')).forEach(id=>skins[id]=true);
-  return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins,characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers,characterTalents:talents,v14SkinsReset:true});
+  return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins,characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers,characterTalents:talents,activityLog:Array.isArray(x.activityLog)?x.activityLog:d.activityLog,achievements:Object.assign(d.achievements,x.achievements||{}),v14SkinsReset:true});
 }catch(e){return defaultSave()}}
 function persist(){localStorage.setItem('shadowLegacyV10',JSON.stringify(save));localStorage.setItem('shadowLegacyV9',JSON.stringify(save));updateMenu();cloudAutosave()}
 function baseSkinFor(id){const key=id==='kaien'?'default':id+'Base';return skinPack?.[key]?key:'default'}
@@ -292,7 +295,7 @@ function openCharacters(from='menu'){characterReturn=from==='map'?'worldmap':(fr
 function characterContinue(){if(characterReturn==='launch'){startGame();return}show(characterReturn);if(characterReturn==='worldmap')renderWorldMap()}
 function selectCharacter(id){if(!isCharUnlocked(id))return;save.selected=id;state.selected=id;save.skin=equippedSkinFor(id);persist();renderCharacters();showToast(`${chars[id].name} sélectionné.`)}
 function unlockCharacter(id){const c=chars[id];if(!c||isCharUnlocked(id))return;if(save.gold<c.unlock){showToast('Pas assez de pièces.');return}save.gold-=c.unlock;save.characterUnlocked[id]=true;save.characterLevels[id]=1;persist();renderCharacters();showToast(`🔓 ${c.name} est maintenant disponible !`)}
-function upgradeCharacter(id){if(!isCharUnlocked(id))return;const lvl=charLevel(id);if(lvl>=MAX_CHARACTER_LEVEL)return;const cost=upgradeCost(lvl+1);if(save.gold<cost){showToast(`Il faut ${cost} pièces.`);return}save.gold-=cost;save.characterLevels[id]=lvl+1;persist();renderCharacters();if(id===save.selected){game.hp=stats().maxHP}showToast(`⚡ ${chars[id].name} passe au niveau ${lvl+1} !`)}
+function upgradeCharacter(id){if(!isCharUnlocked(id))return;const lvl=charLevel(id);if(lvl>=MAX_CHARACTER_LEVEL)return;const cost=upgradeCost(lvl+1);if(save.gold<cost){showToast(`Il faut ${cost} pièces.`);return}save.gold-=cost;save.characterLevels[id]=lvl+1;checkAchievements();persist();renderCharacters();if(id===save.selected){game.hp=stats().maxHP}showToast(`⚡ ${chars[id].name} passe au niveau ${lvl+1} !`)}
 function buySpecialPowerFor(id,level){const x=specialPowerData[level];if(!x||!isCharUnlocked(id)||charLevel(id)<level)return;save.characterPowers[id]=save.characterPowers[id]||{7:false,9:false,11:false};if(save.characterPowers[id][level]){showToast('Pouvoir déjà acheté pour ce personnage.');return}if(save.gold<x.cost){showToast('Pas assez de pièces.');return}save.gold-=x.cost;save.characterPowers[id][level]=true;persist();renderCharacters();showToast(`${x.icon} ${x.name} acheté pour ${chars[id].name} !`)}
 function chooseTalent(id,level,choice){if(!isCharUnlocked(id)||charLevel(id)<level)return;save.characterTalents=save.characterTalents||freshCharacterTalents();if(save.characterTalents[id]?.[level])return;save.characterTalents[id]=save.characterTalents[id]||{8:null,10:null};save.characterTalents[id][level]=choice;persist();renderCharacters();showToast(`✨ Talent choisi pour ${chars[id].name} : ${choice==='shield'?'Bouclier':choice==='resistance'?'Résistance':'Soins améliorés'}.`)}
 function startGame(){state.selected=save.selected;state.enemyIndex=0;state.score=0;state.finished=false;state.storyStep=0;state.cd={1:0,7:0,9:0,11:0,heal:0};state.attackReadyAt=0;openWorldMap()}
@@ -387,7 +390,7 @@ function updatePowerButtons(){updateCooldowns()}
 function winEnemy(){
   clearInterval(state.enemyTimer);state.enemy.hp=0;renderBattle();$('enemy').classList.add('dead');
   const s=state.enemy.boss?300:80;state.score+=s;save.gold+=state.enemy.boss?180:45;
-  save.history.unshift(`${state.enemy.name} vaincu`);save.history=save.history.slice(0,10);persist();
+  save.history.unshift(`${state.enemy.name} vaincu`);save.history=save.history.slice(0,10);checkAchievements();persist();
   if(state.enemy.boss){
     save.wins++;save.bestScore=Math.max(save.bestScore,state.score);persist();
     setTimeout(()=>openGift(true),700);
@@ -405,14 +408,17 @@ function openGift(isBoss=false){
     if(roll<.55){const g=isBoss?220+Math.floor(Math.random()*181):70+Math.floor(Math.random()*91);save.gold+=g;showToast(`💰 Cadeau : +${g} pièces`)}
     else if(roll<.82){save.potions++;showToast(`🧪 Cadeau : +1 potion • ${save.potions} au total`)}
     else {const g=isBoss?400:180;save.gold+=g;showToast(`💎 Gros cadeau : +${g} pièces`)}
-    persist();
+    checkAchievements();persist();
     setTimeout(()=>isBoss?bossVictory():nextEnemy(),900);
   }
 }
 function nextEnemy(){state.enemyIndex++;startEnemy()}
 function bossVictory(){
-  if(!save.completedChapters.includes(state.chapter))save.completedChapters.push(state.chapter);
+  const wasDone=save.completedChapters.includes(state.chapter);
+  if(!wasDone)save.completedChapters.push(state.chapter);
   save.completedChapters.sort((a,b)=>a-b);
+  if(!wasDone){const nextWorld=Math.floor(state.chapter/5)+1;if(state.chapter%5===4 && nextWorld<10){addActivity(`🌍 Nouveau monde débloqué : ${worldNames[nextWorld].name}`,'achievement');}else if(state.chapter===49){addActivity('👑 Tu as terminé les 50 chapitres : le Trône des Ombres est vaincu !','achievement');}else{addActivity(`📖 Chapitre terminé : ${chapters[state.chapter].name}`,'system');}}
+  checkAchievements();
   const s=stats();game.hp=s.maxHP;persist();
   showCutscene(chapters[state.chapter].name+' — Victoire','Le boss est vaincu ! Tes PV sont entièrement régénérés. Le chapitre est maintenant sauvegardé sur ta carte des mondes.','✦');
   state.mode='bossVictory';
@@ -450,7 +456,7 @@ function equipSkin(id){
   if(x.owner!==save.selected){showToast(`Ce skin appartient à ${chars[x.owner]?.name||'un autre personnage'}.`);return}
   save.characterSkins=save.characterSkins||{};save.characterSkins[save.selected]=id;save.skin=id;persist();openShop();
 }
-function buySkin(id,cost){const x=skinPack[id];if(!x)return;if(x.base){save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();return}if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();showToast(`${x.name} acheté !`)}
+function buySkin(id,cost){const x=skinPack[id];if(!x)return;if(x.base){save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();return}if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.skins[id]=true;addActivity(`🎨 Skin acheté : ${x.name}.`,'achievement');checkAchievements();save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();showToast(`${x.name} acheté !`)}
 function openScores(){const rows=[['1','ShadowMaster','98 420'],['2','Kaien_77','82 100'],['3','AikoMoon','75 630'],['4','RenGuard','69 440'],['5','MiaFire','61 200']];openModal('🏆 Classement',`<div class="notice"><span class="offlineBadge">MODE LOCAL</span> Ce classement est préparé pour être relié à un serveur. GitHub Pages seul ne peut pas stocker un classement mondial partagé entre tous les joueurs.</div><table class="miniTable"><tr><th>#</th><th>Joueur</th><th>Score</th></tr>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</table><p class="muted">Ton meilleur score local : <b>${save.bestScore}</b></p>`)}
 function openSocial(){openModal('👥 Amis & duel',`<div class="notice">👤 Amis</div><div class="grid">${save.friends.map(f=>`<div class="card"><b>🟢 ${f}</b><br><span class="muted">Ami</span><br><button onclick="showToast('Invitation envoyée à ${f}')">Inviter en duel</button></div>`).join('')}</div><div class="notice">⚔️ <b>Duels joueurs</b><br><span class="muted">L'interface est prête, mais un vrai duel entre deux iPhone nécessite un serveur temps réel. Cette version GitHub Pages garde le jeu solo fonctionnel sans faux multijoueur.</span></div><button onclick="showToast('Mode duel en attente du serveur')">Créer une partie</button>`)}
 function openSettings(){openModal('⚙ Réglages',`<div class="shopItem"><div>🎵 Musique</div><button onclick="toggleSetting('music')">${save.settings.music?'ON':'OFF'}</button></div><div class="shopItem"><div>🔊 Sons</div><button onclick="toggleSetting('sfx')">${save.settings.sfx?'ON':'OFF'}</button></div><div class="shopItem"><div>📳 Vibration</div><button onclick="toggleSetting('vibration')">${save.settings.vibration?'ON':'OFF'}</button></div><div class="shopItem"><div>💾 Sauvegarde</div><button class="red" onclick="resetSave()">RÉINITIALISER</button></div>`)}
@@ -498,6 +504,55 @@ async function cloudLoadNow(){
 }
 function cloudAutosave(){if(!cloudReady()||!supa)return;clearTimeout(cloudTimer);cloudTimer=setTimeout(()=>cloudSaveNow(),1200)}
 
+function addActivity(text,type='system'){
+  save.activityLog=Array.isArray(save.activityLog)?save.activityLog:[];
+  save.activityLog.unshift({text,type,time:Date.now()});
+  save.activityLog=save.activityLog.slice(0,80);
+}
+function unlockAchievement(id,title,desc){
+  save.achievements=save.achievements||{};
+  if(save.achievements[id])return false;
+  save.achievements[id]=true;
+  addActivity(`🏆 Succès débloqué : ${title} — ${desc}`,'achievement');
+  return true;
+}
+function checkAchievements(){
+  const done=save.completedChapters.length, skins=Object.entries(save.skins||{}).filter(([id,v])=>v && !skinPack[id]?.base).length;
+  let changed=false;
+  if(done>=5)changed=unlockAchievement('world1','Premier monde','Termine les 5 chapitres du monde I.')||changed;
+  if(done>=10)changed=unlockAchievement('world2','Deuxième monde','Termine 10 chapitres.')||changed;
+  if(done>=15)changed=unlockAchievement('world3','Toujours plus loin','Termine 15 chapitres.')||changed;
+  if(done>=20)changed=unlockAchievement('world4','Maître des ruines','Termine 20 chapitres.')||changed;
+  if(done>=25)changed=unlockAchievement('world5','Moitié du voyage','Termine 25 chapitres.')||changed;
+  if(done>=30)changed=unlockAchievement('world6','Au-delà du vide','Termine 30 chapitres.')||changed;
+  if(done>=35)changed=unlockAchievement('world7','Brume éternelle','Termine 35 chapitres.')||changed;
+  if(done>=40)changed=unlockAchievement('world8','Royaume lunaire','Termine 40 chapitres.')||changed;
+  if(done>=45)changed=unlockAchievement('world9','Porte du Néant','Termine 45 chapitres.')||changed;
+  if(done>=50)changed=unlockAchievement('world10','Trône des Ombres','Termine les 50 chapitres.')||changed;
+  if(done>=10)changed=unlockAchievement('chapters10','Dix victoires','Termine 10 chapitres.')||changed;
+  if(done>=25)changed=unlockAchievement('chapters25','Vétéran','Termine 25 chapitres.')||changed;
+  if(done>=50)changed=unlockAchievement('chapters50','Légende','Termine tous les chapitres.')||changed;
+  if(Object.values(save.characterLevels||{}).some(v=>Number(v)>=12))changed=unlockAchievement('level12','Niveau ultime','Monte un personnage au niveau 12.')||changed;
+  if(skins>=1)changed=unlockAchievement('firstSkin','Nouvelle apparence','Achète ton premier skin premium.')||changed;
+  if(skins>=10)changed=unlockAchievement('tenSkins','Collectionneur','Achète 10 skins premium.')||changed;
+  if(save.gold>=10000)changed=unlockAchievement('gold10000','Trésorier','Possède 10 000 pièces ou plus.')||changed;
+  if(changed)persist();
+}
+function openJournal(){
+  const achievements=[
+    ['world1','🌑 Premier monde','Terminer les 5 chapitres du monde I.'],['world2','🗺️ Deuxième monde','Terminer 10 chapitres.'],['world3','🌲 Toujours plus loin','Terminer 15 chapitres.'],['world4','💎 Maître des ruines','Terminer 20 chapitres.'],['world5','🔥 Moitié du voyage','Terminer 25 chapitres.'],['world6','🌀 Au-delà du vide','Terminer 30 chapitres.'],['world7','🌫️ Brume éternelle','Terminer 35 chapitres.'],['world8','🌙 Royaume lunaire','Terminer 40 chapitres.'],['world9','🚪 Porte du Néant','Terminer 45 chapitres.'],['world10','👑 Trône des Ombres','Terminer les 50 chapitres.'],['level12','⚡ Niveau ultime','Monter un personnage au niveau 12.'],['firstSkin','🎨 Nouvelle apparence','Acheter un premier skin premium.'],['tenSkins','🧳 Collectionneur','Acheter 10 skins premium.'],['gold10000','💰 Trésorier','Posséder 10 000 pièces ou plus.']
+  ];
+  const achHtml=achievements.map(a=>{const done=!!save.achievements?.[a[0]];return `<div class="achievement ${done?'done':'locked'}"><b>${done?'✅':'🔒'} ${a[1]}</b><span class="tiny">${a[2]}</span></div>`}).join('');
+  const logs=(save.activityLog||[]).map(x=>`<div class="activityItem"><div>${x.type==='achievement'?'🏆':'📜'} ${x.text}</div><div class="time">${new Date(x.time).toLocaleString('fr-FR')}</div></div>`).join('');
+  openModal('💬 Journal & succès',`<div class="notice"><b>Journal personnel</b><br><span class="muted">Ce chat est uniquement ton journal : aucun message avec d'autres joueurs.</span></div><div class="commandBox"><input id="journalCommand" placeholder="Écris une commande…" onkeydown="if(event.key==='Enter')runJournalCommand()"><button class="gold" onclick="runJournalCommand()">ENVOYER</button></div><div class="chatHint">Commande disponible : <b>/argent 5000</b> ajoute 5 000 pièces. Alias : <b>/money 5000</b> ou <b>/gold 5000</b>.</div><h3>🏆 Succès</h3><div class="achievementGrid">${achHtml}</div><h3>📜 Historique</h3><div class="activityList">${logs||'<div class="muted">Aucun événement.</div>'}</div>`);
+}
+function runJournalCommand(){
+  const input=$('journalCommand');if(!input)return;const raw=input.value.trim();if(!raw)return;
+  const m=raw.match(/^\/(?:argent|money|gold)\s+(\d+)$/i);
+  if(m){const amount=Number(m[1]);if(!Number.isSafeInteger(amount)||amount<1||amount>100000000){showToast('Montant invalide : 1 à 100 000 000.');return}save.gold+=amount;addActivity(`💰 Commande utilisée : +${amount.toLocaleString('fr-FR')} pièces.`,'command');persist();checkAchievements();openJournal();return;}
+  if(/^\/(?:succès|succes|achievements)$/i.test(raw)){openJournal();showToast('🏆 Tes succès sont affichés ci-dessus.');return}
+  showToast('Commande inconnue. Utilise /argent 5000');
+}
 function openModal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').classList.add('open')}
 function closeModal(){$('modal').classList.remove('open')}
 function showToast(t){const el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),1800)}
