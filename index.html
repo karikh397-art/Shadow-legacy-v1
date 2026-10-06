@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#05060c">
-<title>Shadow Legacy — V10</title>
+<title>Shadow Legacy — V12</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#03040a;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;color:#fff;border:1px solid #665b78;background:linear-gradient(#272437,#11131e);border-radius:14px;padding:12px 16px;font-weight:800;box-shadow:0 7px 20px #0008;cursor:pointer}button:active{transform:scale(.97)}button:focus{outline:none}button:focus-visible{outline:2px solid #e7c76c;outline-offset:2px}button:disabled{opacity:.4;filter:grayscale(.7)}.gold{border-color:#d8b55f;background:linear-gradient(#624a21,#2b2112)}.purple{border-color:#9c7ac5}.green{border-color:#5da77d}.red{border-color:#a45d68}.screen{position:absolute;inset:0;display:none;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior-x:none}.screen.active{display:flex;flex-direction:column}.panel{width:min(980px,calc(100vw - 32px));max-width:980px;margin:auto;background:#080b13ed;border:1px solid #8d779666;border-radius:22px;padding:18px;box-shadow:0 25px 100px #000b;backdrop-filter:blur(9px)}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.card{background:#111522;border:1px solid #343b50;border-radius:17px;padding:14px}.card.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c33,0 0 25px #e7c76c18}.muted{opacity:.68}.tiny{font-size:12px;opacity:.65}.big{font-size:30px}.price{color:#f0cf70;font-weight:900}.spacer{flex:1}
 #loading{align-items:center;justify-content:center;text-align:center;background:#03040a}.loadLogo{font-size:clamp(46px,13vw,80px);font-weight:1000;letter-spacing:9px;animation:pulse 1.5s infinite}.loadSub{letter-spacing:5px;opacity:.7}.loader{width:min(430px,82vw);height:9px;background:#171a25;border-radius:20px;overflow:hidden;margin:22px 0 8px}.loader i{display:block;width:0;height:100%;background:linear-gradient(90deg,#7657a8,#e5c765);animation:load 2.3s forwards}@keyframes load{to{width:100%}}@keyframes pulse{50%{transform:scale(1.04);opacity:.72}}
@@ -81,7 +81,7 @@
 
 
 /* V11 skin expansion — original silhouettes and layered details */
-.skinPreview .gem,.battleSkin .gem{position:absolute;z-index:7;width:10px;height:10px;left:40px;top:84px;border-radius:3px;transform:rotate(45deg);background:#fff;box-shadow:0 0 12px #fff8}.skinPreview .trim,.battleSkin .trim{position:absolute;z-index:5;width:56px;height:5px;left:18px;top:107px;border-radius:5px;background:linear-gradient(90deg,transparent,#d9dff5,transparent);opacity:.75}.skinOwner{font-size:12px;color:#c9cedc;font-weight:800}.skinBuyBtn{min-height:52px}.skin{position:relative;overflow:hidden}.skin:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,#ffffff0b 50%,transparent 65%);transform:translateX(-120%);animation:skinSheen 3.8s ease-in-out infinite;pointer-events:none}@keyframes skinSheen{0%,55%{transform:translateX(-120%)}75%,100%{transform:translateX(120%)}}
+.skinPreview .gem,.battleSkin .gem{position:absolute;z-index:7;width:10px;height:10px;left:40px;top:84px;border-radius:3px;transform:rotate(45deg);background:#fff;box-shadow:0 0 12px #fff8}.skinPreview .trim,.battleSkin .trim{position:absolute;z-index:5;width:56px;height:5px;left:18px;top:107px;border-radius:5px;background:linear-gradient(90deg,transparent,#d9dff5,transparent);opacity:.75}.skinOwner{font-size:12px;color:#c9cedc;font-weight:800}
 .skin-aiko .body,.battleSkin.skin-aiko .body{background:linear-gradient(145deg,#5d3ab0,#15132d)}.skin-aiko .cape,.battleSkin.skin-aiko .cape{background:linear-gradient(145deg,#8c5cf0,#21153d)}.skin-aiko .visor,.battleSkin.skin-aiko .visor{background:#ff9fe8;box-shadow:0 0 18px #ff4bd1}.skin-aiko .armor,.battleSkin.skin-aiko .armor{background:linear-gradient(145deg,#7b5fe0,#20173f)}.skin-aiko .shoulder,.battleSkin.skin-aiko .shoulder{background:linear-gradient(90deg,#21113c,#ff72d8,#21113c)}.skin-aiko .gem,.battleSkin.skin-aiko .gem{background:#ff75db;box-shadow:0 0 14px #ff3bc8}
 .skin-ren .body,.battleSkin.skin-ren .body{background:linear-gradient(145deg,#42516e,#111724)}.skin-ren .cape,.battleSkin.skin-ren .cape{background:linear-gradient(145deg,#637899,#151d2e)}.skin-ren .visor,.battleSkin.skin-ren .visor{background:#d7ecff;box-shadow:0 0 16px #70b8ff}.skin-ren .armor,.battleSkin.skin-ren .armor{background:linear-gradient(145deg,#7d8ea9,#202a3d)}.skin-ren .shoulder,.battleSkin.skin-ren .shoulder{background:linear-gradient(90deg,#1c273a,#a9c3df,#1c273a)}.skin-ren .gem,.battleSkin.skin-ren .gem{background:#9fd5ff;box-shadow:0 0 14px #62b7ff}
 .skin-crimson .head,.battleSkin.skin-crimson .head{background:linear-gradient(145deg,#e1b49d,#7a3f39)}.skin-crimson .cape,.battleSkin.skin-crimson .cape{clip-path:polygon(8% 0,92% 0,100% 100%,68% 78%,50% 100%,32% 78%,0 100%)}
@@ -115,79 +115,50 @@
 .skin-dragon .shoulder,.battleSkin.skin-dragon .shoulder{background:linear-gradient(90deg,#062117,#70e89a,#062117)}.skin-dragon .sash,.battleSkin.skin-dragon .sash{background:linear-gradient(90deg,#08251a,#f5d56c,#08251a)}.skin-dragon .armor,.battleSkin.skin-dragon .armor{background:linear-gradient(145deg,#438f61,#082016)}.skin-dragon .horn,.battleSkin.skin-dragon .horn{opacity:1;background:#a9efbc;clip-path:polygon(0 100%,15% 0,38% 65%,62% 65%,85% 0,100% 100%)}
 .skin-eclipse .body,.battleSkin.skin-eclipse .body{background:linear-gradient(145deg,#27203d,#08050f)}.skin-eclipse .cape,.battleSkin.skin-eclipse .cape{background:linear-gradient(145deg,#5d3c9d,#09040f)}.skin-eclipse .visor,.battleSkin.skin-eclipse .visor{background:#fff1a8;box-shadow:0 0 24px #ffe45b}.skin-eclipse .mark,.battleSkin.skin-eclipse .mark{background:#ffdd66}.skin-eclipse .shoulder,.battleSkin.skin-eclipse .shoulder{background:linear-gradient(90deg,#120a24,#c39aff,#120a24)}.skin-eclipse .sash,.battleSkin.skin-eclipse .sash{background:linear-gradient(90deg,#1b0c32,#fff0a0,#1b0c32)}.skin-eclipse .armor,.battleSkin.skin-eclipse .armor{background:linear-gradient(145deg,#6e4cb0,#12081f)}.skin-eclipse .horn,.battleSkin.skin-eclipse .horn{opacity:1;background:#d5b8ff;clip-path:polygon(0 100%,12% 0,33% 58%,50% 12%,67% 58%,88% 0,100% 100%)}.skin-eclipse .aura,.battleSkin.skin-eclipse .aura{background:radial-gradient(circle,#c09aff4a,transparent 65%)}
 
-/* V11.1 — premium skin VFX: original, detailed and animated */
-.skin-crimson{--glow:#ff5a66;--accent:#ffcf79;--spark:#ff9a72;--blade:#ffcf79;}
-.skin-azure{--glow:#35d9ff;--accent:#8cf4ff;--spark:#dffcff;--blade:#8cf4ff;}
-.skin-royal{--glow:#ffd34e;--accent:#fff0a4;--spark:#fff7cf;--blade:#fff0a4;}
-.skin-void{--glow:#b55cff;--accent:#dc9fff;--spark:#f0d7ff;--blade:#dc9fff;}
-.skin-emerald{--glow:#36e6a5;--accent:#7dffd2;--spark:#d9fff1;--blade:#7dffd2;}
-.skin-obsidian{--glow:#8ea8d9;--accent:#a9b5d8;--spark:#e8efff;--blade:#a9b5d8;}
-.skin-solar{--glow:#ffd43b;--accent:#fff1a2;--spark:#fff9d6;--blade:#fff1a2;}
-.skin-celestial{--glow:#9f8cff;--accent:#c8c2ff;--spark:#f0eeff;--blade:#c8c2ff;}
-.skin-bloodmoon{--glow:#ff3d7d;--accent:#ff4f8b;--spark:#ffd2e8;--blade:#ff4f8b;}
-.skin-dragon{--glow:#4cff8a;--accent:#ff8c5b;--spark:#d9ffdf;--blade:#ff8c5b;}
-.skin-aiko{--glow:#ff4bd1;--accent:#ff75db;--spark:#ffd8f5;--blade:#ff75db;}
-.skin-ren{--glow:#62b7ff;--accent:#9fd5ff;--spark:#e6f6ff;--blade:#9fd5ff;}
-.skin-neon{--glow:#35fff0;--accent:#7affff;--spark:#d9ffff;--blade:#7affff;}
-.skin-frost{--glow:#72e5ff;--accent:#dffcff;--spark:#ffffff;--blade:#dffcff;}
-.skin-astral{--glow:#6ee7ff;--accent:#a78bfa;--spark:#ffffff;--blade:#a78bfa;}
-.skin-bloom{--glow:#ff73c8;--accent:#ffd2e8;--spark:#fff1fb;--blade:#ffd2e8;}
-.skin-royal2{--glow:#ffe45b;--accent:#fff0a4;--spark:#fffde5;--blade:#fff0a4;}
-.skin-ember{--glow:#ff6b35;--accent:#ffb15c;--spark:#fff0c4;--blade:#ffb15c;}
-.skin-abyss{--glow:#8b5cf6;--accent:#c4b5fd;--spark:#f0e9ff;--blade:#c4b5fd;}
-.skin-celestial2{--glow:#60a5fa;--accent:#fff3b0;--spark:#ffffff;--blade:#fff3b0;}
-.skin-toxic{--glow:#39ff9c;--accent:#8affc5;--spark:#eafff5;--blade:#8affc5;}
-.skin-crystal{--glow:#8be9ff;--accent:#c9f7ff;--spark:#ffffff;--blade:#c9f7ff;}
-.skin-samurai{--glow:#ffb84d;--accent:#f3d18a;--spark:#fff4d0;--blade:#f3d18a;}
-.skin-orbit{--glow:#72d8ff;--accent:#a5f3fc;--spark:#ffffff;--blade:#a5f3fc;}
-.skin-dusk{--glow:#d946ef;--accent:#ff8ad7;--spark:#ffe1f7;--blade:#ff8ad7;}
-.skin-storm{--glow:#60a5fa;--accent:#d8f6ff;--spark:#ffffff;--blade:#d8f6ff;}
-.skinPreview .trail,.battleSkin .trail{position:absolute;z-index:0;left:-18px;top:34px;width:128px;height:82px;border-radius:50%;background:radial-gradient(ellipse at 58% 50%,var(--glow,#8ce7ff),transparent 63%);filter:blur(7px);opacity:.65;transform:rotate(-16deg);animation:skinTrail 1.5s ease-in-out infinite alternate}
-.skinPreview .trail2,.battleSkin .trail2{position:absolute;z-index:0;left:-4px;top:72px;width:112px;height:28px;border-radius:50%;background:linear-gradient(90deg,transparent,var(--accent,#8ce7ff),transparent);filter:blur(5px);transform:rotate(-8deg);opacity:.65;animation:skinTrail2 1.1s ease-in-out infinite alternate}
-.skinPreview .spark,.battleSkin .spark{position:absolute;z-index:8;right:-5px;top:23px;width:8px;height:8px;border-radius:50%;background:var(--spark,#fff);box-shadow:0 0 10px var(--spark,#fff),0 0 22px var(--spark,#fff);animation:skinSpark 1.25s ease-in-out infinite}
-.skinPreview .blade,.battleSkin .blade{background:linear-gradient(180deg,#ffffff 0%,var(--blade,#cbd7ff) 45%,#697696 100%);}
-.skinPreview .mark,.battleSkin .mark{background:linear-gradient(180deg,#fff2a5,var(--accent,#e6c665));}
-.skinPreview .cape,.battleSkin .cape{box-shadow:inset 0 0 0 2px #ffffff14,0 0 16px var(--glow,#8ce7ff22)}
-.skinPreview .head,.battleSkin .head{box-shadow:inset -8px -8px 14px #0005,0 0 8px var(--glow,#8ce7ff22)}
-.skin-neon .cape,.battleSkin.skin-neon .cape{clip-path:polygon(0 0,100% 0,92% 48%,78% 37%,70% 100%,53% 64%,36% 100%,25% 44%,8% 60%)}
-.skin-neon .armor,.battleSkin.skin-neon .armor{clip-path:polygon(0 18%,28% 0,50% 20%,72% 0,100% 18%,82% 100%,50% 72%,18% 100%);}
-.skin-frost .cape,.battleSkin.skin-frost .cape{clip-path:polygon(7% 0,93% 0,100% 55%,82% 42%,70% 100%,50% 67%,30% 100%,18% 42%,0 55%)}
-.skin-frost .horn,.battleSkin.skin-frost .horn{opacity:1;background:#dffcff;clip-path:polygon(0 100%,18% 8%,39% 67%,50% 0,61% 67%,82% 8%,100% 100%)}
-.skin-astral .aura,.battleSkin.skin-astral .aura{background:radial-gradient(circle,#6ee7ff55 0 12%,#8b5cf633 34%,transparent 70%)}
-.skin-astral .cape,.battleSkin.skin-astral .cape{clip-path:polygon(12% 0,88% 0,100% 100%,73% 83%,50% 100%,27% 83%,0 100%)}
-.skin-bloom .cape,.battleSkin.skin-bloom .cape{clip-path:polygon(0 0,100% 0,84% 34%,100% 62%,72% 55%,50% 100%,28% 55%,0 62%,16% 34%)}
-.skin-bloom .horn,.battleSkin.skin-bloom .horn{opacity:1;background:#ffd2e8;clip-path:polygon(0 100%,24% 12%,45% 74%,55% 74%,76% 12%,100% 100%)}
-.skin-royal2 .cape,.battleSkin.skin-royal2 .cape{clip-path:polygon(4% 0,96% 0,100% 78%,83% 62%,73% 100%,50% 73%,27% 100%,17% 62%,0 78%)}
-.skin-royal2 .horn,.battleSkin.skin-royal2 .horn{opacity:1;background:#fff0a4;clip-path:polygon(0 100%,20% 0,42% 58%,58% 58%,80% 0,100% 100%)}
-.skin-ember .cape,.battleSkin.skin-ember .cape{clip-path:polygon(0 0,100% 0,92% 40%,72% 31%,100% 100%,63% 76%,50% 100%,37% 76%,0 100%,28% 31%,8% 40%)}
-.skin-ember .horn,.battleSkin.skin-ember .horn{opacity:1;background:#ffb15c;clip-path:polygon(0 100%,18% 20%,34% 62%,50% 0,66% 62%,82% 20%,100% 100%)}
-.skin-abyss .aura,.battleSkin.skin-abyss .aura{background:radial-gradient(circle,#7c3aed55,#03000a 70%)}
-.skin-abyss .cape,.battleSkin.skin-abyss .cape{clip-path:polygon(10% 0,90% 0,100% 100%,72% 68%,50% 100%,28% 68%,0 100%)}
-.skin-celestial2 .cape,.battleSkin.skin-celestial2 .cape{clip-path:polygon(0 0,100% 0,86% 50%,100% 100%,67% 74%,50% 100%,33% 74%,0 100%,14% 50%)}
-.skin-celestial2 .horn,.battleSkin.skin-celestial2 .horn{opacity:1;background:#fff3b0;clip-path:polygon(0 100%,20% 12%,40% 70%,50% 0,60% 70%,80% 12%,100% 100%)}
-.skin-toxic .aura,.battleSkin.skin-toxic .aura{background:radial-gradient(circle,#39ff9c55,#0b2b1c 35%,transparent 70%)}
-.skin-toxic .cape,.battleSkin.skin-toxic .cape{clip-path:polygon(5% 0,95% 0,100% 70%,77% 53%,66% 100%,50% 69%,34% 100%,23% 53%,0 70%)}
-.skin-crystal .cape,.battleSkin.skin-crystal .cape{clip-path:polygon(12% 0,88% 0,100% 100%,78% 80%,61% 100%,50% 68%,39% 100%,22% 80%,0 100%)}
-.skin-crystal .armor,.battleSkin.skin-crystal .armor{clip-path:polygon(50% 0,96% 35%,75% 100%,25% 100%,4% 35%)}
-.skin-samurai .cape,.battleSkin.skin-samurai .cape{clip-path:polygon(0 0,100% 0,92% 100%,74% 78%,50% 100%,26% 78%,8% 100%)}
-.skin-samurai .horn,.battleSkin.skin-samurai .horn{opacity:1;background:#f3d18a;clip-path:polygon(0 100%,15% 10%,35% 62%,50% 20%,65% 62%,85% 10%,100% 100%)}
-.skin-orbit .aura,.battleSkin.skin-orbit .aura{background:radial-gradient(ellipse,#72d8ff33,transparent 58%)}
-.skin-orbit .cape,.battleSkin.skin-orbit .cape{clip-path:polygon(8% 0,92% 0,100% 100%,72% 84%,50% 64%,28% 84%,0 100%)}
-.skin-dusk .cape,.battleSkin.skin-dusk .cape{clip-path:polygon(0 0,100% 0,86% 48%,100% 100%,65% 76%,50% 100%,35% 76%,0 100%,14% 48%)}
-.skin-dusk .horn,.battleSkin.skin-dusk .horn{opacity:1;background:#ff8ad7;clip-path:polygon(0 100%,18% 4%,40% 65%,60% 65%,82% 4%,100% 100%)}
-.skin-storm .cape,.battleSkin.skin-storm .cape{clip-path:polygon(4% 0,96% 0,80% 48%,100% 100%,68% 72%,50% 100%,32% 72%,0 100%,20% 48%)}
-.skin-storm .horn,.battleSkin.skin-storm .horn{opacity:1;background:#d8f6ff;clip-path:polygon(0 100%,25% 0,44% 70%,56% 70%,75% 0,100% 100%)}
-@keyframes skinTrail{from{transform:translateX(-3px) rotate(-16deg);opacity:.42}to{transform:translateX(7px) rotate(-10deg);opacity:.82}}
-@keyframes skinTrail2{from{transform:translateX(3px) rotate(-8deg);opacity:.35}to{transform:translateX(-5px) rotate(-3deg);opacity:.72}}
-@keyframes skinSpark{0%,100%{transform:translate(0,0) scale(.7);opacity:.45}50%{transform:translate(9px,-7px) scale(1.35);opacity:1}}
-.skinPreview .trail,.skinPreview .trail2,.skinPreview .spark{pointer-events:none}
+/* V12 — premium detailed skin direction inspired by the four approved concepts */
+.skinPreview,.battleSkin{filter:drop-shadow(0 16px 20px #000b)}
+.skinPreview .head,.battleSkin .head{border-width:3px;box-shadow:inset -5px -7px 10px #0005,0 0 0 1px #ffffff12}
+.skinPreview .body,.battleSkin .body{box-shadow:inset 7px 8px 12px #ffffff10,inset -8px -10px 14px #0008,0 0 0 2px #ffffff0a}
+.skinPreview .cape,.battleSkin .cape{box-shadow:inset 0 0 18px #0008,0 0 14px #ffffff12}
+.skinPreview .shoulder,.battleSkin .shoulder{box-shadow:inset 0 0 8px #fff2,0 0 10px #0008}
+.skinPreview .armor,.battleSkin .armor{box-shadow:inset 0 0 10px #fff2,0 0 10px #0008}
+.skinPreview .sash,.battleSkin .sash{box-shadow:0 0 8px #0008}
+.skinPreview .trim,.battleSkin .trim{position:absolute;z-index:7;width:58px;height:4px;left:17px;top:111px;border-radius:8px;background:linear-gradient(90deg,transparent,#fff8,transparent);box-shadow:0 0 9px currentColor;opacity:.75}
+.skinPreview .gem,.battleSkin .gem{position:absolute;z-index:8;width:13px;height:13px;left:37px;top:80px;border-radius:4px;transform:rotate(45deg);box-shadow:0 0 14px currentColor}
+.skinPreview .rune,.battleSkin .rune{box-shadow:0 0 12px currentColor}
+.skinPreview .aura,.battleSkin .aura{animation:skinAura 2.2s ease-in-out infinite}
+@keyframes skinAura{50%{transform:scale(1.08);opacity:.78}}
+/* Approved concept palette: every skin keeps the same premium silhouette but has its own identity. */
+.skin-default .body,.battleSkin.skin-default .body{background:linear-gradient(145deg,#4d5b82,#11182c)}.skin-default .cape,.battleSkin.skin-default .cape{background:linear-gradient(145deg,#33405f,#080c18)}.skin-default .visor,.battleSkin.skin-default .visor{background:#8fe8ff;box-shadow:0 0 18px #42dfff}.skin-default .shoulder,.battleSkin.skin-default .shoulder{background:linear-gradient(90deg,#111a2e,#7e8fb9,#111a2e)}.skin-default .armor,.battleSkin.skin-default .armor{background:linear-gradient(145deg,#6477a4,#18213a)}.skin-default .gem,.battleSkin.skin-default .gem{background:#8eeaff;color:#8eeaff}.skin-default .aura,.battleSkin.skin-default .aura{background:radial-gradient(circle,#6de7ff3d,transparent 65%)}
+.skin-aiko .body,.battleSkin.skin-aiko .body{background:linear-gradient(145deg,#6b43b9,#15102e)}.skin-aiko .cape,.battleSkin.skin-aiko .cape{background:linear-gradient(145deg,#9b67ff,#241347)}.skin-aiko .visor,.battleSkin.skin-aiko .visor{background:#ff9fe8;box-shadow:0 0 20px #ff4bd1}.skin-aiko .gem,.battleSkin.skin-aiko .gem{background:#ff75db;color:#ff75db}.skin-aiko .aura,.battleSkin.skin-aiko .aura{background:radial-gradient(circle,#d46cff42,transparent 65%)}
+.skin-ren .body,.battleSkin.skin-ren .body{background:linear-gradient(145deg,#536784,#111a29)}.skin-ren .cape,.battleSkin.skin-ren .cape{background:linear-gradient(145deg,#718baa,#162337)}.skin-ren .visor,.battleSkin.skin-ren .visor{background:#d7ecff;box-shadow:0 0 20px #70b8ff}.skin-ren .gem,.battleSkin.skin-ren .gem{background:#9fd5ff;color:#9fd5ff}.skin-ren .aura,.battleSkin.skin-ren .aura{background:radial-gradient(circle,#6ebaff32,transparent 65%)}
+.skin-mia .body,.battleSkin.skin-mia .body{background:linear-gradient(145deg,#385a9e,#0a142c)}.skin-mia .cape,.battleSkin.skin-mia .cape{background:linear-gradient(145deg,#4b8de0,#07162d)}.skin-mia .visor,.battleSkin.skin-mia .visor{background:#a9f5ff;box-shadow:0 0 20px #4be4ff}.skin-mia .gem,.battleSkin.skin-mia .gem{background:#72f2ff;color:#72f2ff}.skin-mia .aura,.battleSkin.skin-mia .aura{background:radial-gradient(circle,#55eaff3e,transparent 65%)}
+.skin-sora .body,.battleSkin.skin-sora .body{background:linear-gradient(145deg,#3157a9,#121331)}.skin-sora .cape,.battleSkin.skin-sora .cape{background:linear-gradient(145deg,#5c78df,#181548)}.skin-sora .visor,.battleSkin.skin-sora .visor{background:#e3ddff;box-shadow:0 0 20px #9f8cff}.skin-sora .gem,.battleSkin.skin-sora .gem{background:#c8c2ff;color:#c8c2ff}.skin-sora .aura,.battleSkin.skin-sora .aura{background:radial-gradient(circle,#8f83ff40,transparent 65%)}
+.skin-yuna .body,.battleSkin.skin-yuna .body{background:linear-gradient(145deg,#d7f4ff,#203e67)}.skin-yuna .cape,.battleSkin.skin-yuna .cape{background:linear-gradient(145deg,#b6eaff,#214a7d)}.skin-yuna .visor,.battleSkin.skin-yuna .visor{background:#ffffff;box-shadow:0 0 20px #83e8ff}.skin-yuna .gem,.battleSkin.skin-yuna .gem{background:#b7f5ff;color:#b7f5ff}.skin-yuna .aura,.battleSkin.skin-yuna .aura{background:radial-gradient(circle,#9ceeff4a,transparent 65%)}
+.skin-ryo .body,.battleSkin.skin-ryo .body{background:linear-gradient(145deg,#3e9a68,#081e16)}.skin-ryo .cape,.battleSkin.skin-ryo .cape{background:linear-gradient(145deg,#70d893,#092d1d)}.skin-ryo .visor,.battleSkin.skin-ryo .visor{background:#b8ffcf;box-shadow:0 0 20px #4cff8a}.skin-ryo .gem,.battleSkin.skin-ryo .gem{background:#ff8c5b;color:#ff8c5b}.skin-ryo .horn,.battleSkin.skin-ryo .horn{opacity:1;background:#b9f0a1;clip-path:polygon(0 100%,15% 0,38% 65%,62% 65%,85% 0,100% 100%)}.skin-ryo .aura,.battleSkin.skin-ryo .aura{background:radial-gradient(circle,#5cff9b3e,transparent 65%)}
+.skin-kuro .body,.battleSkin.skin-kuro .body{background:linear-gradient(145deg,#2c2348,#08050f)}.skin-kuro .cape,.battleSkin.skin-kuro .cape{background:linear-gradient(145deg,#7044b7,#10061d)}.skin-kuro .visor,.battleSkin.skin-kuro .visor{background:#d9a8ff;box-shadow:0 0 22px #a75cff}.skin-kuro .gem,.battleSkin.skin-kuro .gem{background:#e0a8ff;color:#e0a8ff}.skin-kuro .aura,.battleSkin.skin-kuro .aura{background:radial-gradient(circle,#b75cff4a,transparent 65%)}
+.skin-elara .body,.battleSkin.skin-elara .body{background:linear-gradient(145deg,#3f956f,#09251b)}.skin-elara .cape,.battleSkin.skin-elara .cape{background:linear-gradient(145deg,#6acb92,#0b3222)}.skin-elara .visor,.battleSkin.skin-elara .visor{background:#a5ffd3;box-shadow:0 0 20px #43e6ae}.skin-elara .gem,.battleSkin.skin-elara .gem{background:#7dffd2;color:#7dffd2}.skin-elara .aura,.battleSkin.skin-elara .aura{background:radial-gradient(circle,#43e6ae3d,transparent 65%)}
+.skin-vex .body,.battleSkin.skin-vex .body{background:linear-gradient(145deg,#56657d,#0a0e17)}.skin-vex .cape,.battleSkin.skin-vex .cape{background:linear-gradient(145deg,#778ba9,#0e1420)}.skin-vex .visor,.battleSkin.skin-vex .visor{background:#d9e4ff;box-shadow:0 0 20px #9ab7ff}.skin-vex .gem,.battleSkin.skin-vex .gem{background:#a9b5d8;color:#a9b5d8}.skin-vex .aura,.battleSkin.skin-vex .aura{background:radial-gradient(circle,#a9c2ff38,transparent 65%)}
+.skin-orion .body,.battleSkin.skin-orion .body{background:linear-gradient(145deg,#e1b43c,#4d2606)}.skin-orion .cape,.battleSkin.skin-orion .cape{background:linear-gradient(145deg,#ffe16a,#783c08)}.skin-orion .visor,.battleSkin.skin-orion .visor{background:#fff5b4;box-shadow:0 0 22px #ffd43b}.skin-orion .gem,.battleSkin.skin-orion .gem{background:#fff1a2;color:#fff1a2}.skin-orion .aura,.battleSkin.skin-orion .aura{background:radial-gradient(circle,#ffd43b4a,transparent 65%)}
+.skin-nyx .body,.battleSkin.skin-nyx .body{background:linear-gradient(145deg,#6f254d,#150611)}.skin-nyx .cape,.battleSkin.skin-nyx .cape{background:linear-gradient(145deg,#c13e79,#280714)}.skin-nyx .visor,.battleSkin.skin-nyx .visor{background:#ff82bd;box-shadow:0 0 22px #ff3d7d}.skin-nyx .gem,.battleSkin.skin-nyx .gem{background:#ff4f8b;color:#ff4f8b}.skin-nyx .horn,.battleSkin.skin-nyx .horn{opacity:1;background:#f2c1d4}.skin-nyx .aura,.battleSkin.skin-nyx .aura{background:radial-gradient(circle,#ff3d7d45,transparent 65%)}
+/* Four approved premium skins */
+.skin-crimson .aura,.battleSkin.skin-crimson .aura{background:radial-gradient(circle,#ff684d45,transparent 65%)}
+.skin-azure .aura,.battleSkin.skin-azure .aura{background:radial-gradient(circle,#29d9ff45,transparent 65%)}
+.skin-royal .aura,.battleSkin.skin-royal .aura{background:radial-gradient(circle,#ffd43b48,transparent 65%)}
+.skin-void .aura,.battleSkin.skin-void .aura{background:radial-gradient(circle,#b75cff48,transparent 65%)}
+.skin-emerald .aura,.battleSkin.skin-emerald .aura{background:radial-gradient(circle,#33e4a645,transparent 65%)}
+.skin-obsidian .aura,.battleSkin.skin-obsidian .aura{background:radial-gradient(circle,#9ab7ff40,transparent 65%)}
+.skin-solar .aura,.battleSkin.skin-solar .aura{background:radial-gradient(circle,#ffd43b50,transparent 65%)}
+.skin-celestial .aura,.battleSkin.skin-celestial .aura{background:radial-gradient(circle,#9f8cff4a,transparent 65%)}
+.skin-bloodmoon .aura,.battleSkin.skin-bloodmoon .aura{background:radial-gradient(circle,#ff3d7d4a,transparent 65%)}
+.skin-dragon .aura,.battleSkin.skin-dragon .aura{background:radial-gradient(circle,#5cff9b45,transparent 65%)}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V11 • progression sauvegardée</div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V12 • progression sauvegardée</div></section>
 <section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
 <section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Après le lancement d’un chapitre, aucun écran de sélection obligatoire ne s’affiche.</p></div><div class="row"><button id="characterBackBtn" onclick="show('menu')">Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
@@ -230,7 +201,7 @@ const MAX_CHARACTER_LEVEL=12;
 function freshCharacterLevels(){return Object.fromEntries(Object.keys(chars).map(id=>[id,1]))}
 function freshCharacterUnlocks(){return Object.fromEntries(Object.keys(chars).map(id=>[id,['kaien','aiko','ren'].includes(id)]))}
 function freshCharacterPowers(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{7:false,9:false,11:false}]))}
-function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers()}}
+function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers()}}
 function upgradeCost(nextLevel){return UPGRADE_COSTS[nextLevel]||Math.round(12800*Math.pow(1.55,nextLevel-12))}
 function charLevel(id=save.selected){return Math.max(1,Number(save.characterLevels?.[id]||1))}
 function isCharUnlocked(id){return !!save.characterUnlocked?.[id]}
@@ -242,10 +213,10 @@ function loadSave(){try{
   const unlocked=Object.assign(d.characterUnlocked,x.characterUnlocked||{});unlocked.kaien=true;unlocked.aiko=true;unlocked.ren=true;
   const powers=Object.assign({},d.characterPowers,x.characterPowers||{});
   if(x.specialPowers&&x.selected){powers[x.selected]=Object.assign(powers[x.selected],x.specialPowers)}
-  const characterSkins=Object.assign(d.characterSkins,x.characterSkins||{});characterSkins.kaien=characterSkins.kaien||'default';characterSkins.aiko=characterSkins.aiko||'aikoBase';characterSkins.ren=characterSkins.ren||'renBase'; return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins:Object.assign({default:true,aikoBase:true,renBase:true},x.skins||{}),characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers});
+  const characterSkins=Object.assign(d.characterSkins,x.characterSkins||{});Object.keys(d.characterSkins).forEach(id=>{characterSkins[id]=characterSkins[id]||d.characterSkins[id]}); return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins:Object.assign({},d.skins,x.skins||{}),characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers});
 }catch(e){return defaultSave()}}
 function persist(){localStorage.setItem('shadowLegacyV10',JSON.stringify(save));localStorage.setItem('shadowLegacyV9',JSON.stringify(save));updateMenu();cloudAutosave()}
-function baseSkinFor(id){return id==='aiko'?'aikoBase':id==='ren'?'renBase':'default'}
+function baseSkinFor(id){const key=id==='kaien'?'default':id+'Base';return skinPack?.[key]?key:'default'}
 function equippedSkinFor(id=save.selected){const map=save.characterSkins||{};return map[id]||baseSkinFor(id)}
 function stats(key=save.selected){const c=chars[key]||chars.kaien;const p=charLevel(key);return {maxHP:Math.round(c.baseHP+(p-1)*c.hpStep),atk:Math.round((c.baseAtk+(p-1)*c.atkStep)*10)/10,crit:c.crit||0,reduction:c.reduction||0,control:c.control||0,healBonus:c.healBonus||0}}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');if(id==='menu')updateMenu();if(id==='characters')renderCharacters()}
@@ -394,46 +365,44 @@ const specialPowerData={
   11:{name:'Suprême du Néant',icon:'👑',cost:1000,desc:'Pouvoir spécial du niveau 11.'}
 };
 const skinPack={
-  default:{name:'Kaien — Ombre originelle',price:0,cls:'skin-default',owner:'kaien',rarity:'Base'},
-  aikoBase:{name:'Aiko — Lame lunaire',price:0,cls:'skin-aiko',owner:'aiko',rarity:'Base'},
-  renBase:{name:'Ren — Bastion runique',price:0,cls:'skin-ren',owner:'ren',rarity:'Base'},
-  crimson:{name:'Kaien — Ronin écarlate',price:1200,cls:'skin-crimson',owner:'kaien',rarity:'Rare'},
-  azure:{name:'Aiko — Tempête néon',price:1800,cls:'skin-azure',owner:'aiko',rarity:'Rare'},
-  royal:{name:'Ren — Garde solaire',price:2600,cls:'skin-royal',owner:'ren',rarity:'Super rare'},
-  void:{name:'Kuro — Héraut du Néant',price:4200,cls:'skin-void',owner:'kuro',rarity:'Épique'},
-  emerald:{name:'Elara — Druidesse astrale',price:5200,cls:'skin-emerald',owner:'elara',rarity:'Épique'},
-  obsidian:{name:'Vex — Corsaire de l’ombre',price:7000,cls:'skin-obsidian',owner:'vex',rarity:'Épique'},
-  solar:{name:'Orion — Paladin solaire',price:9500,cls:'skin-solar',owner:'orion',rarity:'Mythique'},
-  celestial:{name:'Sora — Archer céleste',price:12000,cls:'skin-celestial',owner:'sora',rarity:'Mythique'},
-  bloodmoon:{name:'Nyx — Reine de l’éclipse',price:15000,cls:'skin-bloodmoon',owner:'nyx',rarity:'Mythique'},
-  dragon:{name:'Ryo — Seigneur draconique',price:60000,cls:'skin-dragon',owner:'ryo',rarity:'Légendaire'},
-  neon:{name:'Mia — Circuit astral',price:3800,cls:'skin-neon',owner:'mia',rarity:'Super rare'},
-  frost:{name:'Yuna — Impératrice de givre',price:8500,cls:'skin-frost',owner:'yuna',rarity:'Épique'},
-  astral:{name:'Sora — Voyageur astral',price:14000,cls:'skin-astral',owner:'sora',rarity:'Mythique'},
-  bloom:{name:'Elara — Reine florale',price:11000,cls:'skin-bloom',owner:'elara',rarity:'Mythique'},
-  royal2:{name:'Orion — Empereur du zénith',price:18000,cls:'skin-royal2',owner:'orion',rarity:'Légendaire'},
-  ember:{name:'Ryo — Cœur de braise',price:24000,cls:'skin-ember',owner:'ryo',rarity:'Légendaire'},
-  abyss:{name:'Kuro — Seigneur abyssal',price:32000,cls:'skin-abyss',owner:'kuro',rarity:'Légendaire'},
-  celestial2:{name:'Vex — Oracle céleste',price:21000,cls:'skin-celestial2',owner:'vex',rarity:'Légendaire'},
-  toxic:{name:'Mia — Alchimiste toxique',price:6500,cls:'skin-toxic',owner:'mia',rarity:'Épique'},
-  crystal:{name:'Yuna — Gardienne de cristal',price:13000,cls:'skin-crystal',owner:'yuna',rarity:'Mythique'},
-  samurai:{name:'Ren — Shogun des ruines',price:16000,cls:'skin-samurai',owner:'ren',rarity:'Légendaire'},
-  orbit:{name:'Aiko — Pilote orbital',price:10000,cls:'skin-orbit',owner:'aiko',rarity:'Mythique'},
-  dusk:{name:'Nyx — Danseuse du crépuscule',price:20000,cls:'skin-dusk',owner:'nyx',rarity:'Légendaire'},
-  storm:{name:'Kaien — Maître de la tempête',price:27000,cls:'skin-storm',owner:'kaien',rarity:'Légendaire'}
+  default:{name:'Kaien — Ombre originelle',price:0,cls:'skin-default',owner:'kaien',rarity:'Base',base:true},
+  aikoBase:{name:'Aiko — Lame lunaire',price:0,cls:'skin-aiko',owner:'aiko',rarity:'Base',base:true},
+  renBase:{name:'Ren — Bastion runique',price:0,cls:'skin-ren',owner:'ren',rarity:'Base',base:true},
+  miaBase:{name:'Mia — Oracle cristalline',price:0,cls:'skin-mia',owner:'mia',rarity:'Base',base:true},
+  soraBase:{name:'Sora — Archer céleste',price:0,cls:'skin-sora',owner:'sora',rarity:'Base',base:true},
+  yunaBase:{name:'Yuna — Gardienne du givre',price:0,cls:'skin-yuna',owner:'yuna',rarity:'Base',base:true},
+  ryoBase:{name:'Ryo — Héritier draconique',price:0,cls:'skin-ryo',owner:'ryo',rarity:'Base',base:true},
+  kuroBase:{name:'Kuro — Voyageur du Néant',price:0,cls:'skin-kuro',owner:'kuro',rarity:'Base',base:true},
+  elaraBase:{name:'Elara — Druidesse astrale',price:0,cls:'skin-elara',owner:'elara',rarity:'Base',base:true},
+  vexBase:{name:'Vex — Trickster spectral',price:0,cls:'skin-vex',owner:'vex',rarity:'Base',base:true},
+  orionBase:{name:'Orion — Paladin solaire',price:0,cls:'skin-orion',owner:'orion',rarity:'Base',base:true},
+  nyxBase:{name:'Nyx — Spectre de lune',price:0,cls:'skin-nyx',owner:'nyx',rarity:'Base',base:true},
+  crimson:{name:'Kaien — Ronin écarlate',price:30000,cls:'skin-crimson',owner:'kaien',rarity:'Légendaire'},
+  azure:{name:'Aiko — Tempête néon',price:30000,cls:'skin-azure',owner:'aiko',rarity:'Légendaire'},
+  royal:{name:'Ren — Garde solaire',price:30000,cls:'skin-royal',owner:'ren',rarity:'Légendaire'},
+  void:{name:'Kuro — Héraut du Néant',price:30000,cls:'skin-void',owner:'kuro',rarity:'Légendaire'},
+  emerald:{name:'Elara — Druidesse astrale',price:30000,cls:'skin-emerald',owner:'elara',rarity:'Légendaire'},
+  obsidian:{name:'Vex — Corsaire de l’ombre',price:30000,cls:'skin-obsidian',owner:'vex',rarity:'Légendaire'},
+  solar:{name:'Orion — Paladin solaire',price:30000,cls:'skin-solar',owner:'orion',rarity:'Légendaire'},
+  celestial:{name:'Sora — Archer céleste',price:30000,cls:'skin-celestial',owner:'sora',rarity:'Légendaire'},
+  bloodmoon:{name:'Nyx — Reine de l’éclipse',price:30000,cls:'skin-bloodmoon',owner:'nyx',rarity:'Légendaire'},
+  dragon:{name:'Ryo — Seigneur draconique',price:30000,cls:'skin-dragon',owner:'ryo',rarity:'Légendaire'}
 };
 function skinArt(cls='skin-default',battle=false){
-  return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="trail"></span><span class="trail2"></span><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span><span class="gem"></span><span class="trim"></span><span class="spark"></span></div>`;
+  return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span><span class="gem"></span><span class="trim"></span></div>`;
+}
+function skinArt(cls='skin-default',battle=false){
+  return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span></div>`;
 }
 function openShop(){
-  const s=stats(),lvl=charLevel(),powers=save.characterPowers[save.selected]||{};const skins=Object.entries(skinPack);const next=lvl<MAX_CHARACTER_LEVEL?upgradeCost(lvl+1):0;
+  const s=stats(),lvl=charLevel(),powers=save.characterPowers[save.selected]||{};Object.entries(skinPack).filter(([,x])=>x.base).forEach(([id,x])=>{save.skins[id]=true;save.characterSkins[x.owner]=save.characterSkins[x.owner]||id});const skins=Object.entries(skinPack);const next=lvl<MAX_CHARACTER_LEVEL?upgradeCost(lvl+1):0;
   const specialHtml=Object.entries(specialPowerData).map(([level,x])=>{const n=Number(level),unlocked=lvl>=n,owned=!!powers[n];let action=owned?'<button class="green" disabled>ACHETÉ</button>':!unlocked?`<button disabled>🔒 NIVEAU ${n}</button>`:`<button class="gold" onclick="buySpecialPower(${n})">💰 ${x.cost}<br>ACHETER</button>`;return `<div class="shopItem specialPower"><div class="spInfo"><b>${x.icon} ${x.name}</b><br><span class="tiny">Niveau ${n} • ${x.desc} • ${chars[save.selected].name}</span></div><div>${action}</div></div>`}).join('');
-  const skinHtml=skins.map(([id,x])=>{const owned=!!save.skins[id],equipped=owned&&equippedSkinFor(x.owner)===id,owner=chars[x.owner],ownerName=owner?.name||x.owner,ownerUnlocked=isCharUnlocked(x.owner);let button;if(equipped)button='<button class="gold" type="button" disabled>ÉQUIPÉ</button>';else if(owned)button=`<button class="purple" type="button" onclick="equipSkin('${id}')">ÉQUIPER</button>`;else if(!ownerUnlocked)button=`<button type="button" disabled>🔒 ${ownerName} à débloquer</button>`;else button=`<button class="purple skinBuyBtn" type="button" onclick="buySkin('${id}')">💰 ${x.price.toLocaleString('fr-FR')} • ACHETER</button>`;return `<div class="card skin ${owned?'':'locked'}">${skinArt(x.cls)}<div class="skinInfo"><b>${x.name}</b><br><span class="skinOwner">👤 ${ownerName}</span> • <span class="skinLegend">${x.rarity}</span><br>${owned?'<span class="onlineBadge">Possédé</span>':`<span class="price">💰 ${x.price.toLocaleString('fr-FR')}</span>`}</div>${button}</div>`}).join('');
+  const skinHtml=skins.map(([id,x])=>{const owned=!!save.skins[id],equipped=owned&&equippedSkinFor(x.owner)===id,ownerName=chars[x.owner]?.name||x.owner;const button=equipped?'<button class="gold" disabled>ÉQUIPÉ</button>':owned?`<button class="purple" onclick="equipSkin('${id}')">ÉQUIPER</button>`:`<button class="purple" onclick="buySkin('${id}',${x.price})">💰 ${x.price.toLocaleString('fr-FR')} • ACHETER</button>`;return `<div class="card skin ${owned?'':'locked'}">${skinArt(x.cls)}<div class="skinInfo"><b>${x.name}</b><br><span class="skinOwner">👤 ${ownerName}</span> • <span class="skinLegend">${x.rarity}</span><br>${owned?'<span class="onlineBadge">Possédé</span>':`<span class="price">💰 ${x.price.toLocaleString('fr-FR')}</span>`}</div>${button}</div>`}).join('');
   const html=`<div class="shopCoins">💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces disponibles</div>
     <div class="notice">🎮 Personnage actif : <b>${chars[save.selected].name}</b> • ⚡ Niveau <b>${lvl}/${MAX_CHARACTER_LEVEL}</b><br>❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts<br><span class="muted">Les améliorations se font maintenant dans l’écran Personnages et ne renforcent que le personnage choisi.</span></div>
     <div class="shopItem shopPotion"><div><b>🧪 Potion de soin</b><br><span class="muted">Restaure 30% des PV pendant un combat.</span><br>Stock actuel : <b>${save.potions}</b></div><div class="row"><button class="green" onclick="buyPotion(1)">💰 150 • +1</button><button class="green" onclick="buyPotion(5)">💰 700 • +5</button></div></div>
     <h3>✨ Pouvoirs spéciaux de ${chars[save.selected].name}</h3>${specialHtml}
-    <h3>🎨 Skins</h3><div class="notice tiny">Chaque skin a son propre thème, silhouette, détails, aura et traînée visuelle. Les effets restent cosmétiques : ils ne changent pas les statistiques du personnage. Les inspirations viennent des principes de skins de jeux de collection, mais les designs de Shadow Legacy sont originaux.</div><div class="skinGrid">${skinHtml}</div>`;
+    <h3>🎨 Skins premium</h3><div class="notice tiny">Tous les skins utilisent maintenant le même style premium détaillé : armure, cape, ornements, aura, gemme et arme, avec une identité visuelle différente pour chaque personnage. Le skin équipé est utilisé par le personnage sélectionné.</div><div class="skinGrid">${skinHtml}</div>`;
   openModal('🛒 Boutique',html);
 }
 function buyPotion(amount){const cost=amount===5?700:150;if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.potions+=amount;persist();openShop();showToast(`🧪 +${amount} potion${amount>1?'s':''}.`)}
@@ -443,7 +412,7 @@ function equipSkin(id){
   if(x.owner!==save.selected){showToast(`Ce skin appartient à ${chars[x.owner]?.name||'un autre personnage'}.`);return}
   save.characterSkins=save.characterSkins||{};save.characterSkins[save.selected]=id;save.skin=id;persist();openShop();
 }
-function buySkin(id){const x=skinPack[id];if(!x)return;const owner=chars[x.owner];if(!owner||!isCharUnlocked(x.owner)){showToast(`🔒 Débloque ${owner?.name||'ce personnage'} avant d’acheter ce skin.`);return}if(save.skins[id]){showToast('Skin déjà acheté.');return}const cost=Number(x.price)||0;if(save.gold<cost){showToast(`Il faut ${cost.toLocaleString('fr-FR')} pièces.`);return}save.gold-=cost;save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();showToast(`✨ ${x.name} acheté !`)}
+function buySkin(id,cost){const x=skinPack[id];if(!x)return;if(x.base){save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();return}if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.skins[id]=true;save.characterSkins=save.characterSkins||{};save.characterSkins[x.owner]=id;if(x.owner===save.selected)save.skin=id;persist();openShop();showToast(`${x.name} acheté !`)}
 function openScores(){const rows=[['1','ShadowMaster','98 420'],['2','Kaien_77','82 100'],['3','AikoMoon','75 630'],['4','RenGuard','69 440'],['5','MiaFire','61 200']];openModal('🏆 Classement',`<div class="notice"><span class="offlineBadge">MODE LOCAL</span> Ce classement est préparé pour être relié à un serveur. GitHub Pages seul ne peut pas stocker un classement mondial partagé entre tous les joueurs.</div><table class="miniTable"><tr><th>#</th><th>Joueur</th><th>Score</th></tr>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</table><p class="muted">Ton meilleur score local : <b>${save.bestScore}</b></p>`)}
 function openSocial(){openModal('👥 Amis & duel',`<div class="notice">👤 Amis</div><div class="grid">${save.friends.map(f=>`<div class="card"><b>🟢 ${f}</b><br><span class="muted">Ami</span><br><button onclick="showToast('Invitation envoyée à ${f}')">Inviter en duel</button></div>`).join('')}</div><div class="notice">⚔️ <b>Duels joueurs</b><br><span class="muted">L'interface est prête, mais un vrai duel entre deux iPhone nécessite un serveur temps réel. Cette version GitHub Pages garde le jeu solo fonctionnel sans faux multijoueur.</span></div><button onclick="showToast('Mode duel en attente du serveur')">Créer une partie</button>`)}
 function openSettings(){openModal('⚙ Réglages',`<div class="shopItem"><div>🎵 Musique</div><button onclick="toggleSetting('music')">${save.settings.music?'ON':'OFF'}</button></div><div class="shopItem"><div>🔊 Sons</div><button onclick="toggleSetting('sfx')">${save.settings.sfx?'ON':'OFF'}</button></div><div class="shopItem"><div>📳 Vibration</div><button onclick="toggleSetting('vibration')">${save.settings.vibration?'ON':'OFF'}</button></div><div class="shopItem"><div>💾 Sauvegarde</div><button class="red" onclick="resetSave()">RÉINITIALISER</button></div>`)}
