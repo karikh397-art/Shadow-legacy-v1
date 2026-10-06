@@ -180,29 +180,74 @@
 const $=id=>document.getElementById(id);
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const chars={
- kaien:{name:'Kaien',icon:'⚔️',baseHP:110,baseAtk:10,hpStep:8,atkStep:1.8,desc:'Départ • équilibré et fiable',power:'Lame spectrale',unlock:0,role:'Équilibré',crit:0.08,reduction:0,control:0,healBonus:0},
- aiko:{name:'Aiko',icon:'🗡️',baseHP:88,baseAtk:15,hpStep:6,atkStep:2.4,desc:'Très offensive • fragile mais précise',power:'Danse des ombres',unlock:0,role:'Assassin',crit:0.24,reduction:0,control:0,healBonus:0},
- ren:{name:'Ren',icon:'🛡️',baseHP:165,baseAtk:8,hpStep:12,atkStep:1.35,desc:'Très résistant • dégâts plus faibles',power:'Mur du gardien',unlock:0,role:'Tank',crit:0.03,reduction:0.20,control:0,healBonus:0},
- mia:{name:'Mia',icon:'🔮',baseHP:98,baseAtk:11,hpStep:7,atkStep:1.9,desc:'Contrôle • ralentit les assauts ennemis',power:'Sceau astral',unlock:600,role:'Contrôle',crit:0.08,reduction:0,control:0.28,healBonus:0},
- sora:{name:'Sora',icon:'🏹',baseHP:105,baseAtk:17, hpStep:7,atkStep:2.6,desc:'Tireur • gros dégâts réguliers',power:'Pluie céleste',unlock:1200,role:'Dégâts',crit:0.16,reduction:0,control:0,healBonus:0},
- yuna:{name:'Yuna',icon:'❄️',baseHP:135,baseAtk:12,hpStep:10,atkStep:1.8,desc:'Givre • solide et soutien',power:'Prison de givre',unlock:2200,role:'Soutien',crit:0.06,reduction:0.06,control:0.18,healBonus:0.18},
- ryo:{name:'Ryo',icon:'🐉',baseHP:125,baseAtk:20,hpStep:9,atkStep:2.9,desc:'Berserker • attaque extrêmement forte',power:'Rage draconique',unlock:4000,role:'Berserker',crit:0.18,reduction:0,control:0,healBonus:0},
- kuro:{name:'Kuro',icon:'🌑',baseHP:100,baseAtk:23,hpStep:7,atkStep:3.1,desc:'Néant • dégâts énormes, très peu de PV',power:'Néant absolu',unlock:6500,role:'Glass cannon',crit:0.22,reduction:0,control:0,healBonus:0},
- elara:{name:'Elara',icon:'🌿',baseHP:150,baseAtk:10,hpStep:11,atkStep:1.6,desc:'Gardienne • endurance et soins renforcés',power:'Racines anciennes',unlock:9000,role:'Gardienne',crit:0.04,reduction:0.10,control:0.12,healBonus:0.35},
- vex:{name:'Vex',icon:'🌀',baseHP:92,baseAtk:13,hpStep:6,atkStep:2.2,desc:'Trickster • esquive et contrôle',power:'Faille temporelle',unlock:11500,role:'Trickster',crit:0.14,reduction:0.08,control:0.35,healBonus:0},
- orion:{name:'Orion',icon:'☀️',baseHP:142,baseAtk:16,hpStep:10,atkStep:2.15,desc:'Paladin • polyvalent et robuste',power:'Lance solaire',unlock:13000,role:'Paladin',crit:0.10,reduction:0.12,control:0,healBonus:0.10},
- nyx:{name:'Nyx',icon:'🌌',baseHP:82,baseAtk:19,hpStep:5,atkStep:2.8,desc:'Spectre • rapide, offensif et risqué',power:'Éclipse noire',unlock:16000,role:'Spectre',crit:0.28,reduction:0,control:0.22,healBonus:0}
+ kaien:{name:'Kaien',icon:'⚔️',baseHP:110,baseAtk:10,hpStep:8,atkStep:1.8,desc:'Départ • équilibré et fiable',power:'Lame spectrale',attack1:'Frappe de l’ombre',attack7:'Éveil spectral',attack9:'Lame du crépuscule',attack11:'Ragnarök des ombres',unlock:0,role:'Équilibré',crit:0.08,reduction:0,control:0,healBonus:0},
+ aiko:{name:'Aiko',icon:'🗡️',baseHP:88,baseAtk:15,hpStep:6,atkStep:2.4,desc:'Très offensive • fragile mais précise',power:'Danse des ombres',attack1:'Entaille lunaire',attack7:'Valse fantôme',attack9:'Pluie de lames',attack11:'Nuit sanglante',unlock:0,role:'Assassin',crit:0.24,reduction:0,control:0,healBonus:0},
+ ren:{name:'Ren',icon:'🛡️',baseHP:165,baseAtk:8,hpStep:12,atkStep:1.35,desc:'Très résistant • dégâts plus faibles',power:'Mur du gardien',attack1:'Coup du bastion',attack7:'Forteresse sacrée',attack9:'Impact du gardien',attack11:'Rempart éternel',unlock:0,role:'Tank',crit:0.03,reduction:0.20,control:0,healBonus:0},
+ mia:{name:'Mia',icon:'🔮',baseHP:98,baseAtk:11,hpStep:7,atkStep:1.9,desc:'Contrôle • ralentit les assauts ennemis',power:'Sceau astral',attack1:'Éclat astral',attack7:'Prison stellaire',attack9:'Constellation brisée',attack11:'Nova mystique',unlock:600,role:'Contrôle',crit:0.08,reduction:0,control:0.28,healBonus:0},
+ sora:{name:'Sora',icon:'🏹',baseHP:105,baseAtk:17, hpStep:7,atkStep:2.6,desc:'Tireur • gros dégâts réguliers',power:'Pluie céleste',attack1:'Flèche céleste',attack7:'Salve des étoiles',attack9:'Pluie solaire',attack11:'Comète suprême',unlock:1200,role:'Dégâts',crit:0.16,reduction:0,control:0,healBonus:0},
+ yuna:{name:'Yuna',icon:'❄️',baseHP:135,baseAtk:12,hpStep:10,atkStep:1.8,desc:'Givre • solide et soutien',power:'Prison de givre',attack1:'Éclat givré',attack7:'Blizzard royal',attack9:'Lance de glace',attack11:'Hiver éternel',unlock:2200,role:'Soutien',crit:0.06,reduction:0.06,control:0.18,healBonus:0.18},
+ ryo:{name:'Ryo',icon:'🐉',baseHP:125,baseAtk:20,hpStep:9,atkStep:2.9,desc:'Berserker • attaque extrêmement forte',power:'Rage draconique',attack1:'Griffe du dragon',attack7:'Souffle draconique',attack9:'Furie écailleuse',attack11:'Apocalypse draconique',unlock:4000,role:'Berserker',crit:0.18,reduction:0,control:0,healBonus:0},
+ kuro:{name:'Kuro',icon:'🌑',baseHP:100,baseAtk:23,hpStep:7,atkStep:3.1,desc:'Néant • dégâts énormes, très peu de PV',power:'Néant absolu',attack1:'Entaille du vide',attack7:'Trou noir',attack9:'Rupture abyssale',attack11:'Néant absolu',unlock:6500,role:'Glass cannon',crit:0.22,reduction:0,control:0,healBonus:0},
+ elara:{name:'Elara',icon:'🌿',baseHP:150,baseAtk:10,hpStep:11,atkStep:1.6,desc:'Gardienne • endurance et soins renforcés',power:'Racines anciennes',attack1:'Liane tranchante',attack7:'Étreinte sylvestre',attack9:'Floraison astrale',attack11:'Forêt éternelle',unlock:9000,role:'Gardienne',crit:0.04,reduction:0.10,control:0.12,healBonus:0.35},
+ vex:{name:'Vex',icon:'🌀',baseHP:92,baseAtk:13,hpStep:6,atkStep:2.2,desc:'Trickster • esquive et contrôle',power:'Faille temporelle',attack1:'Coup déphasé',attack7:'Saut temporel',attack9:'Fissure du temps',attack11:'Paradoxe ultime',unlock:11500,role:'Trickster',crit:0.14,reduction:0.08,control:0.35,healBonus:0},
+ orion:{name:'Orion',icon:'☀️',baseHP:142,baseAtk:16,hpStep:10,atkStep:2.15,desc:'Paladin • polyvalent et robuste',power:'Lance solaire',attack1:'Coup solaire',attack7:'Rayon sacré',attack9:'Lance de l’aube',attack11:'Jugement solaire',unlock:13000,role:'Paladin',crit:0.10,reduction:0.12,control:0,healBonus:0.10},
+ nyx:{name:'Nyx',icon:'🌌',baseHP:82,baseAtk:19,hpStep:5,atkStep:2.8,desc:'Spectre • rapide, offensif et risqué',power:'Éclipse noire',attack1:'Griffe nocturne',attack7:'Croissant obscur',attack9:'Éclipse totale',attack11:'Nuit sans fin',unlock:16000,role:'Spectre',crit:0.28,reduction:0,control:0.22,healBonus:0}
 };
-const chapters=[
- {world:'Monde I — Les Terres de l’Ombre',name:'Chapitre I — Le Sanctuaire',introIcon:'🌑',intro:'Une ancienne force se réveille dans les ruines. Traverse le sanctuaire et vaincs son gardien.',enemies:[['Éclaireur de l’ombre','👤',85,9],['Guerrier noir','🗿',120,11],['Chasseur spectral','👺',145,13]],boss:['Gardien du Sanctuaire','👹',320,20]},
- {world:'Monde I — Les Terres de l’Ombre',name:'Chapitre II — La Cité Brisée',introIcon:'🏯',intro:'La cité est sous le contrôle d’une armée inconnue. Les ennemis sont plus nombreux et plus résistants.',enemies:[['Assassin nocturne','🥷',145,14],['Samouraï corrompu','⚔️',175,16],['Mage de l’ombre','🧙',160,18],['Briseur noir','🪨',210,19]],boss:['Seigneur de la Cité','👺',470,26]},
- {world:'Monde II — Les Pics Maudits',name:'Chapitre III — La Montagne Rouge',introIcon:'⛰️',intro:'La route grimpe vers des terres maudites. Les ennemis frappent fort et ne te laisseront aucun répit.',enemies:[['Loup maudit','🐺',210,21],['Guerrier de lave','🔥',250,23],['Golem rouge','🗿',300,25],['Chasseur infernal','😈',270,27],['Prêtre corrompu','🧙‍♂️',235,29]],boss:['Duc des Flammes','👹',650,35]},
- {world:'Monde II — Les Pics Maudits',name:'Chapitre IV — Le Temple Gelé',introIcon:'❄️',intro:'Le temple est gelé par une puissance ancienne. Les combats deviennent longs et chaque erreur coûte cher.',enemies:[['Spectre glacé','👻',270,25],['Chevalier de glace','🛡️',330,27],['Mage polaire','🧙',290,31],['Bête du givre','🐻',380,30],['Sentinelle gelée','🤖',350,33],['Exécuteur blanc','💀',410,35]],boss:['Reine du Givre','👑',820,42]},
- {world:'Monde III — Le Royaume du Néant',name:'Chapitre V — Les Portes du Néant',introIcon:'🌌',intro:'Tu pénètres dans le Néant. Les créatures ici ont été renforcées par une énergie inconnue.',enemies:[['Démon du Néant','👿',380,31],['Chevalier spectral','💀',430,34],['Titan obscur','🦹',500,37],['Assassin abyssal','🥷',420,40],['Mage abyssal','🧙‍♂️',460,42],['Garde du Néant','👹',540,44],['Colosse noir','🗿',620,46]],boss:['Seigneur Abyssal','😈',1050,55]},
- {world:'Monde III — Le Royaume du Néant',name:'Chapitre VI — La Forteresse Noire',introIcon:'🏰',intro:'La forteresse protège le cœur du royaume. Prépare-toi à une longue série de combats.',enemies:[['Garde de la forteresse','🛡️',460,37],['Lame noire','⚔️',510,40],['Mage du chaos','🧙',500,44],['Démon blindé','👹',620,46],['Traqueur du Néant','👺',560,49],['Titan abyssal','🦹',720,52],['Chevalier du chaos','💀',680,55],['Exécuteur noir','☠️',760,58]],boss:['Général du Néant','👺',1350,68]},
- {world:'Monde IV — L’Abîme Final',name:'Chapitre VII — La Faille',introIcon:'🌀',intro:'La réalité se fissure. Les derniers ennemis sont conçus pour pousser tes pouvoirs jusqu’à leur limite.',enemies:[['Horreur de la faille','👁️',620,48],['Démon ancien','👿',700,52],['Gardien astral','🛡️',760,56],['Bête de l’abîme','🐉',850,60],['Chevalier du vide','💀',800,64],['Mage du vide','🧙‍♂️',740,67],['Titan de la faille','🦹',980,70],['Destructeur','😈',1050,74]],boss:['Gardien de la Faille','👹',1750,84]},
- {world:'Monde IV — L’Abîme Final',name:'Chapitre VIII — Le Trône des Ombres',introIcon:'👑',intro:'Tu arrives au trône. Chaque ennemi est une dernière épreuve avant le véritable Roi du Néant.',enemies:[['Élite des Ombres','🥷',800,58],['Seigneur spectral','💀',900,63],['Démon royal','👿',1000,68],['Chevalier du trône','🛡️',1100,72],['Mage royal','🧙',950,77],['Titan royal','🦹',1250,82],['Héraut du Roi','👺',1350,88],['Exécuteur du trône','☠️',1450,94],['Avatar du Néant','🌑',1600,100]],boss:['Roi du Néant','👑',2400,115]}
+const worldNames=[
+ {name:'Monde I — Les Terres de l’Ombre',desc:'Les ruines où tout a commencé.'},
+ {name:'Monde II — Les Pics Maudits',desc:'Des sommets hostiles où la menace grandit doucement.'},
+ {name:'Monde III — La Forêt Astrale',desc:'Une forêt ancienne remplie de créatures mystérieuses.'},
+ {name:'Monde IV — Les Ruines de Cristal',desc:'Des cités de cristal gardées par des sentinelles.'},
+ {name:'Monde V — Le Désert des Cendres',desc:'Une étendue brûlante où chaque pas compte.'},
+ {name:'Monde VI — Les Îles du Vide',desc:'Des îles flottantes au-dessus d’un abîme sans fond.'},
+ {name:'Monde VII — La Citadelle des Brumes',desc:'Une forteresse cachée dans une brume éternelle.'},
+ {name:'Monde VIII — Le Royaume Lunaire',desc:'Un royaume nocturne où les ombres prennent vie.'},
+ {name:'Monde IX — Les Portes du Néant',desc:'Les dernières défenses avant le cœur du Néant.'},
+ {name:'Monde X — Le Trône des Ombres',desc:'Le dernier voyage face aux forces les plus puissantes.'}
 ];
+const chapterNames=[
+ ['Le Sanctuaire','La Cité Brisée','La Montagne Rouge','Le Temple Gelé','La Porte Oubliée'],
+ ['La Vallée Maudite','Le Col des Loups','Les Cavernes de Givre','La Tour Polaire','Le Sommet Maudit'],
+ ['Le Sentier Astral','La Forêt Lumineuse','Le Lac des Esprits','Le Bosquet Ancien','Le Cœur de la Forêt'],
+ ['Les Portes de Cristal','La Ville Scintillante','Les Mines Bleues','Le Palais de Verre','Le Gardien Cristallin'],
+ ['Les Dunes Ardentes','Le Canyon des Cendres','La Forge Perdue','Le Temple du Feu','Le Désert Écarlate'],
+ ['Les Îles Suspendues','Le Pont du Vide','La Mer Noire','La Tour Flottante','Le Cœur du Vide'],
+ ['La Brume Éternelle','Le Village Fantôme','La Muraille Grise','La Citadelle','La Salle des Brumes'],
+ ['Le Clair de Lune','La Vallée Nocturne','Le Jardin Lunaire','Le Palais d’Argent','La Couronne Lunaire'],
+ ['La Première Porte','La Porte Abyssale','Le Couloir du Néant','La Forteresse du Vide','Le Seuil du Roi'],
+ ['Les Marches du Trône','La Salle des Hérauts','Le Hall des Ombres','La Chambre du Roi','Le Trône des Ombres']
+];
+const chapterIcons=['🌑','🏯','⛰️','❄️','🚪','🐺','🏔️','🧊','🗼','👑','🌲','✨','🌌','🌿','🌳','💎','🏙️','🔷','🏛️','🪞','🏜️','🔥','⚒️','🌋','🌅','🪐','🌉','🌊','🗼','🌀','🌫️','👻','🏰','🌁','🕯️','🌙','🌌','🌿','🏯','👑','🚪','🌑','🕳️','🏰','⚫','👑','🏛️','🛡️','🌑','👑'];
+const enemyTemplates=[
+ ['Éclaireur de l’ombre','👤',82,8],['Guerrier noir','🗿',112,10],['Chasseur spectral','👺',132,11],['Assassin nocturne','🥷',140,12],['Golem maudit','🗿',165,13],['Mage obscur','🧙',150,14],['Loup maudit','🐺',155,15],['Chevalier gelé','🛡️',175,16],['Bête du givre','🐻',205,17],['Sentinelle','🤖',220,18],['Spectre astral','👻',190,17],['Gardien sylvestre','🌿',235,18],['Esprit ancien','👻',210,19],['Cristallin','💎',245,20],['Sentinelle de cristal','🔷',270,21],['Pillard des cendres','😈',250,21],['Golem de braise','🔥',290,22],['Guerrier volcanique','🗿',315,23],['Démon de lave','👿',330,24],['Titan de cendre','🦹',365,25],['Corsaire du vide','🏴‍☠️',300,24],['Spectre du vide','🌑',325,25],['Titan flottant','🦹',380,26],['Mage abyssal','🧙‍♂️',350,27],['Gardien du vide','👹',405,28],['Guerrier brumeux','🥷',350,27],['Fantôme royal','👻',370,28],['Chevalier des brumes','💀',420,29],['Golem gris','🗿',450,30],['Seigneur brumeux','👺',480,31],['Loup lunaire','🐺',410,30],['Archer lunaire','🏹',390,31],['Chevalier d’argent','🛡️',450,32],['Mage lunaire','🧙',430,33],['Bête de lune','🐉',500,34],['Démon du Néant','👿',470,34],['Chevalier spectral','💀',500,35],['Titan obscur','🦹',560,36],['Assassin abyssal','🥷',520,37],['Garde du Néant','👹',600,38],['Héraut de l’ombre','👺',570,38],['Chevalier royal','🛡️',630,40],['Mage royal','🧙',590,41],['Titan royal','🦹',700,43],['Avatar du Néant','🌑',760,45],['Exécuteur du trône','☠️',800,47],['Seigneur des ombres','👑',850,49],['Héraut du Roi','👺',900,51],['Champion du Trône','⚔️',960,53]
+];
+const bossTemplates=[
+ ['Gardien du Sanctuaire','👹',330,20],['Seigneur de la Cité','👺',390,22],['Duc des Pics','👑',455,25],['Reine du Givre','❄️',520,28],['Gardien Astral','🌌',590,31],['Roi Cristallin','💎',660,34],['Seigneur des Cendres','🔥',740,37],['Maître du Vide','🌀',820,40],['Général du Néant','😈',910,44],['Roi du Néant','👑',1050,49]
+];
+const chapters=[];
+for(let w=0;w<10;w++){
+  for(let c=0;c<5;c++){
+    const i=w*5+c;
+    // Progression volontairement douce : même le dernier chapitre n'est qu'environ 2x le premier avant le niveau du héros.
+    const diff=1+(i*0.018)+(c*0.006);
+    const count=3+Math.min(3,Math.floor((w+c)/3));
+    const enemies=[];
+    for(let j=0;j<count;j++){
+      const t=enemyTemplates[(i*3+j)%enemyTemplates.length];
+      enemies.push([t[0],t[1],Math.round(t[2]*diff),Math.round(t[3]*diff)]);
+    }
+    const b=bossTemplates[w];
+    const boss=[''+b[0],b[1],Math.round(b[2]*diff),Math.round(b[3]*diff)];
+    chapters.push({
+      world:worldNames[w].name,
+      name:`Chapitre ${c+1} — ${chapterNames[w][c]}`,
+      introIcon:chapterIcons[i],
+      intro:`${worldNames[w].desc} Avance étape par étape : les ennemis deviennent seulement un peu plus forts, mais certains combats demandent d’utiliser tes pouvoirs, tes talents et tes potions au bon moment.`,
+      enemies,boss,difficulty:diff
+    });
+  }
+}
+
 let save=loadSave();
 if(save.v14SkinsReset)localStorage.setItem('shadowLegacyV10',JSON.stringify(save));
 let state={chapter:0,enemyIndex:0,enemy:null,selected:'kaien',storyStep:0,cutsceneStep:0,mode:'intro',busy:false,finished:false,lastFrame:0,cd:{1:0,7:0,9:0,11:0,heal:0},enemyTimer:null,attackReadyAt:0,score:0};
@@ -237,7 +282,7 @@ function baseSkinFor(id){const key=id==='kaien'?'default':id+'Base';return skinP
 function equippedSkinFor(id=save.selected){const map=save.characterSkins||{};return map[id]||baseSkinFor(id)}
 function stats(key=save.selected){const c=chars[key]||chars.kaien;const p=charLevel(key);const t=save.characterTalents?.[key]||{};let maxHP=Math.round(c.baseHP+(p-1)*c.hpStep),atk=Math.round((c.baseAtk+(p-1)*c.atkStep)*10)/10,reduction=c.reduction||0,control=c.control||0,healBonus=c.healBonus||0;if(t[8]==='shield')maxHP+=14;if(t[8]==='resistance')reduction+=.08;if(t[8]==='heal')healBonus+=.12;if(t[10]==='shield')maxHP+=18;if(t[10]==='resistance')reduction+=.10;if(t[10]==='heal')healBonus+=.15;return {maxHP,atk,crit:c.crit||0,reduction:Math.min(.65,reduction),control,healBonus}}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');if(id==='menu')updateMenu();if(id==='characters')renderCharacters()}
-function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Niveau <b>${charLevel()}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🧪 ${save.potions} • 🗺️ ${done}/8 chapitres`}
+function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Niveau <b>${charLevel()}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🧪 ${save.potions} • 🗺️ ${done}/50 chapitres`}
 function renderChars(){renderCharacters()}
 function talentButton(id,level){const t=save.characterTalents?.[id]||{8:null,10:null};const choice=t[level];if(charLevel(id)<level)return `<div class="talentLock">🔒 Talent du niveau ${level}</div>`;if(choice)return `<div class="talentChosen">${choice==='shield'?'🛡️ Bouclier':choice==='resistance'?'🧱 Résistance':'🧪 Soins améliorés'} • choisi</div>`;return `<div class="talentChoices"><b>Talent ${level}</b><div class="row"><button class="purple" onclick="chooseTalent('${id}',${level},'shield')">🛡️ Bouclier</button><button class="purple" onclick="chooseTalent('${id}',${level},'resistance')">🧱 Résistance</button><button class="green" onclick="chooseTalent('${id}',${level},'heal')">🧪 Soins</button></div></div>`}
 function specialPowerButtons(id,lvl){const powers=save.characterPowers?.[id]||{7:false,9:false,11:false};return [7,9,11].map(n=>{const x=specialPowerData[n];if(lvl<n)return `<div class="powerMini">🔒 ${x.name} — niveau ${n}</div>`;if(powers[n])return `<div class="powerMini owned">✓ ${x.name}</div>`;return `<button class="powerMiniBtn" onclick="buySpecialPowerFor('${id}',${n})">⚡ ${x.name} • 💰 ${x.cost}</button>`}).join('')}
@@ -252,14 +297,8 @@ function buySpecialPowerFor(id,level){const x=specialPowerData[level];if(!x||!is
 function chooseTalent(id,level,choice){if(!isCharUnlocked(id)||charLevel(id)<level)return;save.characterTalents=save.characterTalents||freshCharacterTalents();if(save.characterTalents[id]?.[level])return;save.characterTalents[id]=save.characterTalents[id]||{8:null,10:null};save.characterTalents[id][level]=choice;persist();renderCharacters();showToast(`✨ Talent choisi pour ${chars[id].name} : ${choice==='shield'?'Bouclier':choice==='resistance'?'Résistance':'Soins améliorés'}.`)}
 function startGame(){state.selected=save.selected;state.enemyIndex=0;state.score=0;state.finished=false;state.storyStep=0;state.cd={1:0,7:0,9:0,11:0,heal:0};state.attackReadyAt=0;openWorldMap()}
 
-const worldNames=[
-  {name:'Monde I — Les Terres de l’Ombre',desc:'Les ruines où tout a commencé.'},
-  {name:'Monde II — Les Pics Maudits',desc:'Des montagnes hostiles et un temple gelé.'},
-  {name:'Monde III — Le Royaume du Néant',desc:'Le royaume où les ombres deviennent plus fortes.'},
-  {name:'Monde IV — L’Abîme Final',desc:'La route vers le Trône des Ombres.'}
-];
-function worldOfChapter(i){return Math.floor(i/2)}
-function worldUnlocked(w){if(w===0)return true;return chapters.slice((w-1)*2,w*2).every((_,j)=>save.completedChapters.includes((w-1)*2+j))}
+function worldOfChapter(i){return Math.floor(i/5)}
+function worldUnlocked(w){if(w===0)return true;return chapters.slice((w-1)*5,w*5).every((_,j)=>save.completedChapters.includes((w-1)*5+j))}
 function chapterUnlocked(i){return i===0||save.completedChapters.includes(i-1)}
 function openWorldMap(){
   renderWorldMap();
@@ -270,16 +309,16 @@ function renderWorldMap(){
   const body=$('worldMapBody');
   body.innerHTML=worldNames.map((w,wi)=>{
     const unlocked=worldUnlocked(wi);
-    const doneCount=[0,1].filter(k=>save.completedChapters.includes(wi*2+k)).length;
-    const nodes=[0,1].map(k=>{
-      const idx=wi*2+k,ch=chapters[idx],done=save.completedChapters.includes(idx),can=chapterUnlocked(idx);
+    const doneCount=[0,1,2,3,4].filter(k=>save.completedChapters.includes(wi*5+k)).length;
+    const nodes=[0,1,2,3,4].map(k=>{
+      const idx=wi*5+k,ch=chapters[idx],done=save.completedChapters.includes(idx),can=chapterUnlocked(idx);
       return `<div class="chapterNode ${done?'done':''} ${can?'':'locked'}">
         <b>${done?'✓ ':''}${ch.name}</b><div class="tiny">${done?'Terminé':can?'Prêt à jouer':'🔒 À débloquer'}</div>
         <button class="${can?'gold':''}" ${can?'onclick="playChapter('+idx+')"':'disabled'}>${done?'REJOUER':'JOUER'}</button>
       </div>`;
     }).join('');
     return `<div class="worldCard ${unlocked?'unlocked':'locked'}">
-      <div class="worldHead"><div class="worldOrb"></div><div><h3 style="margin:0">${w.name}</h3><div class="muted">${w.desc}</div><div class="tiny">${doneCount}/2 chapitres terminés</div></div></div>
+      <div class="worldHead"><div class="worldOrb"></div><div><h3 style="margin:0">${w.name}</h3><div class="muted">${w.desc}</div><div class="tiny">${doneCount}/5 chapitres terminés</div></div></div>
       <div class="chapterNodes">${nodes}</div>
     </div>`;
   }).join('');
@@ -295,9 +334,9 @@ function confirmCharacter(){startChapterIntro()}
 function startChapterIntro(){state.enemyIndex=0;state.mode='intro';state.cutsceneStep=0;show('gameplay');showCutscene(chapters[state.chapter].name,chapters[state.chapter].intro,chapters[state.chapter].introIcon)}
 function showCutscene(title,text,icon){$('csTitle').textContent=title;$('csText').textContent=text;$('csIcon').textContent=icon;$('cinProgress').style.width='0%';$('cutscene').classList.add('show');state.mode='cutscene';let t=0;clearInterval(state.cinTimer);state.cinTimer=setInterval(()=>{t+=5;$('cinProgress').style.width=t+'%';if(t>=100)clearInterval(state.cinTimer)},100)}
 function advanceCutscene(){ $('cutscene').classList.remove('show'); clearInterval(state.cinTimer); if(state.mode==='cutscene'){startEnemy()} }
-function makeEnemy(){const ch=chapters[state.chapter];const isBoss=state.enemyIndex>=ch.enemies.length;const e=isBoss?ch.boss:ch.enemies[state.enemyIndex];const scale=1+(charLevel()-1)*.035 + state.chapter*.035;return {name:e[0],icon:e[1],maxHP:Math.round(e[2]*scale),hp:Math.round(e[2]*scale),atk:Math.round(e[3]*scale),boss:isBoss,skin:enemySkinFor(e[0],isBoss)}}
+function makeEnemy(){const ch=chapters[state.chapter];const isBoss=state.enemyIndex>=ch.enemies.length;const e=isBoss?ch.boss:ch.enemies[state.enemyIndex];const scale=1+(charLevel()-1)*.035;return {name:e[0],icon:e[1],maxHP:Math.round(e[2]*scale),hp:Math.round(e[2]*scale),atk:Math.round(e[3]*scale),boss:isBoss,skin:enemySkinFor(e[0],isBoss)}}
 function startEnemy(){state.enemy=makeEnemy();state.busy=true;$('enemy').classList.remove('dead','approach');void $('enemy').offsetWidth;$('enemySprite').innerHTML=enemySkinArt(state.enemy.skin,state.enemy.icon);$('enemyName').innerHTML=state.enemy.name+(state.enemy.boss?' <span class="bossTitle">• BOSS</span>':'');$('chapterTag').textContent=chapters[state.chapter].world+' • '+chapters[state.chapter].name+' • '+(state.enemy.boss?'BOSS':`Ennemi ${state.enemyIndex+1}/${chapters[state.chapter].enemies.length}`);$('chest').classList.remove('show');renderBattle();$('enemy').classList.add('approach');clearInterval(state.enemyTimer);setTimeout(()=>{if(!state.finished&&state.enemy&&state.enemy.hp>0){$('enemy').classList.remove('approach');state.busy=false;state.enemyTimer=setInterval(enemyAutoAttack,Math.round(3200*(1+(stats().control||0))))}},740);showToast(state.enemy.boss?'Le boss entre dans l’arène !':'Un ennemi approche !')}
-function renderBattle(){const s=stats();$('heroSprite').innerHTML=skinArt(skinPack[equippedSkinFor(save.selected)]?.cls||'skin-default',true);$('heroName').textContent=chars[save.selected].name;$('heroHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('hudHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('heroHPText').textContent=`${Math.max(0,Math.ceil(game.hp))}/${s.maxHP} PV`;$('enemyHP').style.width=clamp((state.enemy.hp/state.enemy.maxHP)*100,0,100)+'%';$('enemyHPText').textContent=`${Math.max(0,Math.ceil(state.enemy.hp))}/${state.enemy.maxHP} PV`;$('hudHero').textContent=chars[save.selected].name;$('hudPower').textContent=charLevel();$('hudGold').textContent=save.gold;$('hudEnemy').textContent=state.enemy.name;$('hudPotions').textContent=save.potions;updatePowerButtons()}
+function renderBattle(){const s=stats();$('heroSprite').innerHTML=skinArt(skinPack[equippedSkinFor(save.selected)]?.cls||'skin-default',true);$('heroName').textContent=chars[save.selected].name;$('heroHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('hudHP').style.width=clamp((game.hp/s.maxHP)*100,0,100)+'%';$('heroHPText').textContent=`${Math.max(0,Math.ceil(game.hp))}/${s.maxHP} PV`;$('enemyHP').style.width=clamp((state.enemy.hp/state.enemy.maxHP)*100,0,100)+'%';$('enemyHPText').textContent=`${Math.max(0,Math.ceil(state.enemy.hp))}/${state.enemy.maxHP} PV`;$('hudHero').textContent=chars[save.selected].name;$('hudPower').textContent=charLevel();const ac=chars[save.selected];$('p1Btn').childNodes[0].nodeValue='⚡ '+ac.attack1+' ';$('p7Btn').childNodes[0].nodeValue='⚡ '+ac.attack7+' ';$('p9Btn').childNodes[0].nodeValue='🔥 '+ac.attack9+' ';$('p11Btn').childNodes[0].nodeValue='👑 '+ac.attack11+' ';$('hudGold').textContent=save.gold;$('hudEnemy').textContent=state.enemy.name;$('hudPotions').textContent=save.potions;updatePowerButtons()}
 let game={hp:0};
 function resetPlayerHP(full=true){const s=stats();if(full||!game.hp)game.hp=s.maxHP;else game.hp=clamp(game.hp,0,s.maxHP)}
 function beginBattle(){if(!game.hp)resetPlayerHP(true);startEnemy()}
