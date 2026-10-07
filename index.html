@@ -164,13 +164,245 @@
 
 /* Journal de progression + succès */
 .activityList{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow:auto;margin-top:10px}.activityItem{padding:10px 12px;border:1px solid #353b52;border-radius:12px;background:#0d1220}.activityItem .time{font-size:11px;color:#858ca0}.achievementGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.achievement{padding:11px;border:1px solid #3b4057;border-radius:13px;background:#0d1220}.achievement.done{border-color:#4fa873;box-shadow:0 0 14px #4fa87322}.achievement.locked{opacity:.62}.achievement b{display:block;margin-bottom:4px}.commandBox{display:flex;gap:8px;margin-top:10px}.commandBox input{flex:1;min-width:0}.chatHint{font-size:12px;color:#8e95aa;margin-top:7px}.adminActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.adminActions button{padding:10px;border-radius:10px;border:1px solid #7356a2;background:#19142a;color:#fff;font-weight:700}.dailyGrid{display:grid;gap:7px;margin:10px 0}.dailyGrid .shopItem{margin:0}.dailyCurrent{border-color:#d6b75b!important;box-shadow:0 0 14px #d6b75b22}@media(max-width:700px){.achievementGrid{grid-template-columns:1fr}}
+
+/* V19 — TRUE UNIQUE PREMIUM SKINS
+   Each premium skin gets its own silhouette language, armor geometry,
+   head shape, cape cut, energy core and weapon/ornament treatment.
+   The character remains recognizable, but is no longer a simple recolor. */
+.skinPreview,.battleSkin{overflow:visible}
+.skinPreview .cape,.battleSkin .cape{transition:.18s}
+.skinPreview .head,.battleSkin .head{transition:.18s}
+.skinPreview .body,.battleSkin .body{transition:.18s}
+.skinPreview .armor,.battleSkin .armor{transition:.18s}
+.skinPreview .horn,.battleSkin .horn{transition:.18s}
+.skinPreview .trim,.battleSkin .trim{transition:.18s}
+
+/* 1 — Kaien / Crimson Ronin: split cape + shoulder crest */
+.skin-crimson .cape,.battleSkin.skin-crimson .cape{clip-path:polygon(10% 0,90% 0,100% 65%,72% 100%,50% 78%,28% 100%,0 65%)}
+.skin-crimson .body,.battleSkin.skin-crimson .body{clip-path:polygon(18% 0,82% 0,92% 25%,82% 100%,18% 100%,8% 25%)}
+.skin-crimson .head,.battleSkin.skin-crimson .head{clip-path:polygon(15% 0,85% 0,100% 35%,80% 100%,20% 100%,0 35%)}
+.skin-crimson .shoulder,.battleSkin.skin-crimson .shoulder{height:30px;top:47px;clip-path:polygon(0 35%,20% 0,50% 28%,80% 0,100% 35%,90% 100%,10% 100%)}
+.skin-crimson .blade,.battleSkin.skin-crimson .blade{width:11px;height:74px;transform:rotate(18deg);background:linear-gradient(#fff2df,#ff715e 48%,#42101a)}
+
+/* 2 — Aiko / Azure Storm: hood + lightning fins */
+.skin-azure .cape,.battleSkin.skin-azure .cape{clip-path:polygon(20% 0,80% 0,100% 44%,80% 100%,62% 72%,50% 100%,38% 72%,20% 100%,0 44%)}
+.skin-azure .head,.battleSkin.skin-azure .head{width:48px;height:48px;left:22px;top:5px;border-radius:38% 38% 48% 48%;clip-path:polygon(0 18%,22% 0,50% 12%,78% 0,100% 18%,88% 100%,12% 100%)}
+.skin-azure .horn,.battleSkin.skin-azure .horn{opacity:1;width:54px;height:18px;left:19px;top:5px;clip-path:polygon(0 100%,18% 0,43% 70%,50% 20%,57% 70%,82% 0,100% 100%)}
+.skin-azure .blade,.battleSkin.skin-azure .blade{height:60px;transform:rotate(42deg);border-radius:2px 12px 2px 12px}
+
+/* 3 — Ren / Royal Guard: giant shoulder armor + crown */
+.skin-royal .cape,.battleSkin.skin-royal .cape{clip-path:polygon(3% 0,97% 0,84% 100%,64% 78%,50% 100%,36% 78%,16% 100%)}
+.skin-royal .body,.battleSkin.skin-royal .body{clip-path:polygon(8% 0,92% 0,100% 24%,90% 100%,10% 100%,0 24%);border-radius:12px}
+.skin-royal .horn,.battleSkin.skin-royal .horn{opacity:1;width:50px;height:22px;left:21px;top:1px;clip-path:polygon(0 100%,12% 20%,30% 70%,50% 0,70% 70%,88% 20%,100% 100%)}
+.skin-royal .shoulder,.battleSkin.skin-royal .shoulder{height:31px;top:46px;left:1px;width:90px;border-radius:9px;clip-path:polygon(0 25%,15% 0,35% 18%,50% 0,65% 18%,85% 0,100% 25%,92% 100%,8% 100%)}
+
+/* 4 — Kuro / Void Herald: asymmetrical void cloak + mask */
+.skin-void .cape,.battleSkin.skin-void .cape{clip-path:polygon(5% 0,78% 0,100% 30%,72% 56%,94% 100%,52% 78%,18% 100%,0 55%,25% 28%)}
+.skin-void .head,.battleSkin.skin-void .head{border-radius:18px 18px 38px 38px;clip-path:polygon(50% 0,90% 18%,100% 68%,78% 100%,22% 100%,0 68%,10% 18%)}
+.skin-void .horn,.battleSkin.skin-void .horn{opacity:1;width:54px;height:26px;left:19px;top:2px;clip-path:polygon(0 100%,12% 0,43% 65%,57% 65%,88% 0,100% 100%,66% 78%,34% 78%)}
+.skin-void .blade,.battleSkin.skin-void .blade{width:13px;height:78px;transform:rotate(33deg);background:linear-gradient(#e5c7ff,#8d45d5 55%,#14061e);box-shadow:0 0 18px #a75cff}
+
+/* 5 — Elara / Emerald Warden: leaf cape + antler silhouette */
+.skin-emerald .cape,.battleSkin.skin-emerald .cape{clip-path:polygon(50% 0,88% 18%,100% 55%,78% 100%,50% 78%,22% 100%,0 55%,12% 18%)}
+.skin-emerald .body,.battleSkin.skin-emerald .body{clip-path:polygon(50% 0,88% 18%,100% 100%,0 100%,12% 18%)}
+.skin-emerald .horn,.battleSkin.skin-emerald .horn{opacity:1;width:58px;height:34px;left:17px;top:-3px;clip-path:polygon(0 100%,12% 38%,25% 62%,30% 0,42% 54%,50% 24%,58% 54%,70% 0,75% 62%,88% 38%,100% 100%,72% 76%,50% 100%,28% 76%)}
+.skin-emerald .gem,.battleSkin.skin-emerald .gem{width:22px;height:22px;left:35px;top:75px;clip-path:polygon(50% 0,100% 35%,78% 100%,22% 100%,0 35%)}
+
+/* 6 — Vex / Obsidian Corsair: long coat + pirate hat */
+.skin-obsidian .cape,.battleSkin.skin-obsidian .cape{clip-path:polygon(16% 0,84% 0,100% 100%,62% 82%,50% 100%,38% 82%,0 100%)}
+.skin-obsidian .head,.battleSkin.skin-obsidian .head{border-radius:44% 44% 25% 25%;clip-path:polygon(8% 22%,24% 0,76% 0,92% 22%,100% 100%,0 100%)}
+.skin-obsidian .horn,.battleSkin.skin-obsidian .horn{opacity:1;width:60px;height:16px;left:16px;top:2px;background:#c8d2ea;clip-path:polygon(0 35%,25% 0,50% 30%,75% 0,100% 35%,92% 100%,8% 100%)}
+.skin-obsidian .blade,.battleSkin.skin-obsidian .blade{width:15px;height:58px;transform:rotate(52deg);border-radius:50% 50% 4px 4px}
+
+/* 7 — Orion / Solar Emperor: winged mantle + halo */
+.skin-solar .cape,.battleSkin.skin-solar .cape{clip-path:polygon(50% 0,100% 24%,88% 54%,100% 100%,62% 76%,50% 100%,38% 76%,0 100%,12% 54%,0 24%)}
+.skin-solar .head,.battleSkin.skin-solar .head{clip-path:polygon(50% 0,86% 18%,100% 50%,82% 100%,18% 100%,0 50%,14% 18%)}
+.skin-solar .horn,.battleSkin.skin-solar .horn{opacity:1;width:62px;height:62px;left:15px;top:-12px;border:4px solid #ffe08a;border-radius:50%;background:transparent;box-shadow:0 0 20px #ffd34e}
+.skin-solar .gem,.battleSkin.skin-solar .gem{width:20px;height:20px;left:36px;top:75px;background:#fff3a0;box-shadow:0 0 22px #ffd34e}
+
+/* 8 — Sora / Celestial Valkyrie: wing cape + feather crest */
+.skin-celestial .cape,.battleSkin.skin-celestial .cape{clip-path:polygon(50% 0,100% 18%,82% 40%,100% 64%,72% 64%,88% 100%,58% 78%,50% 100%,42% 78%,12% 100%,28% 64%,0 64%,18% 40%,0 18%)}
+.skin-celestial .horn,.battleSkin.skin-celestial .horn{opacity:1;width:56px;height:32px;left:18px;top:0;clip-path:polygon(0 100%,12% 0,38% 60%,50% 12%,62% 60%,88% 0,100% 100%)}
+.skin-celestial .blade,.battleSkin.skin-celestial .blade{width:9px;height:82px;transform:rotate(12deg);background:linear-gradient(#fff,#b7c8ff 55%,#7d6ee8)}
+
+/* 9 — Nyx / Bloodmoon Queen: crescent cloak + crown */
+.skin-bloodmoon .cape,.battleSkin.skin-bloodmoon .cape{clip-path:polygon(50% 0,88% 12%,100% 50%,78% 100%,50% 74%,22% 100%,0 50%,12% 12%)}
+.skin-bloodmoon .horn,.battleSkin.skin-bloodmoon .horn{opacity:1;width:58px;height:30px;left:17px;top:-1px;clip-path:polygon(0 100%,15% 20%,35% 72%,50% 0,65% 72%,85% 20%,100% 100%)}
+.skin-bloodmoon .head,.battleSkin.skin-bloodmoon .head{border-radius:50% 50% 28% 28%;box-shadow:inset 0 -10px 0 #3b1025}
+.skin-bloodmoon .gem,.battleSkin.skin-bloodmoon .gem{width:24px;height:24px;left:34px;top:73px;border-radius:50% 0 50% 0;transform:rotate(45deg)}
+
+/* 10 — Ryo / Obsidian Dragon: dragon head + tail-like cape */
+.skin-dragon .cape,.battleSkin.skin-dragon .cape{clip-path:polygon(18% 0,82% 0,100% 38%,82% 58%,100% 100%,68% 80%,50% 100%,32% 80%,0 100%,18% 58%,0 38%)}
+.skin-dragon .head,.battleSkin.skin-dragon .head{border-radius:25% 25% 45% 45%;clip-path:polygon(0 25%,22% 0,40% 15%,60% 15%,78% 0,100% 25%,88% 100%,12% 100%)}
+.skin-dragon .horn,.battleSkin.skin-dragon .horn{opacity:1;width:64px;height:34px;left:14px;top:-4px;clip-path:polygon(0 100%,18% 0,42% 72%,50% 20%,58% 72%,82% 0,100% 100%)}
+.skin-dragon .blade,.battleSkin.skin-dragon .blade{width:14px;height:74px;transform:rotate(30deg);border-radius:4px 12px 12px 4px}
+
+/* 11 — Moon Ronin */
+.skin-moonronin .cape,.battleSkin.skin-moonronin .cape{clip-path:polygon(8% 0,92% 0,100% 100%,70% 72%,50% 100%,30% 72%,0 100%)}
+.skin-moonronin .head,.battleSkin.skin-moonronin .head{border-radius:50% 50% 18% 18%;clip-path:polygon(50% 0,100% 35%,86% 100%,14% 100%,0 35%)}
+.skin-moonronin .visor,.battleSkin.skin-moonronin .visor{width:36px;height:5px;left:28px;top:28px;background:#d7f0ff}
+.skin-moonronin .gem,.battleSkin.skin-moonronin .gem{width:18px;height:18px;border-radius:50%;left:37px;top:76px}
+
+/* 12 — Aiko Fire Dancer */
+.skin-aikofire .cape,.battleSkin.skin-aikofire .cape{clip-path:polygon(50% 0,100% 35%,74% 50%,100% 100%,50% 76%,0 100%,26% 50%,0 35%)}
+.skin-aikofire .body,.battleSkin.skin-aikofire .body{border-radius:30px 10px 28px 10px;transform:skewX(-5deg)}
+.skin-aikofire .horn,.battleSkin.skin-aikofire .horn{opacity:1;width:54px;height:28px;left:19px;top:-3px;clip-path:polygon(0 100%,20% 0,48% 65%,52% 65%,80% 0,100% 100%)}
+.skin-aikofire .blade,.battleSkin.skin-aikofire .blade{height:76px;transform:rotate(36deg);background:linear-gradient(#fff0b0,#ff7a35,#6b160b)}
+
+/* 13 — Ren Titan */
+.skin-rentitan .cape,.battleSkin.skin-rentitan .cape{width:86px;left:3px;clip-path:polygon(0 0,100% 0,88% 100%,65% 80%,50% 100%,35% 80%,12% 100%)}
+.skin-rentitan .body,.battleSkin.skin-rentitan .body{width:72px;left:10px;border-radius:14px;clip-path:polygon(0 18%,16% 0,84% 0,100% 18%,90% 100%,10% 100%)}
+.skin-rentitan .shoulder,.battleSkin.skin-rentitan .shoulder{width:94px;left:-1px;height:34px;top:45px;border-radius:10px}
+.skin-rentitan .head,.battleSkin.skin-rentitan .head{width:46px;height:38px;left:23px;top:10px;border-radius:12px}
+
+/* 14 — Mia Prism */
+.skin-miaprism .cape,.battleSkin.skin-miaprism .cape{clip-path:polygon(50% 0,92% 20%,100% 100%,68% 76%,50% 100%,32% 76%,0 100%,8% 20%)}
+.skin-miaprism .body,.battleSkin.skin-miaprism .body{clip-path:polygon(50% 0,100% 35%,80% 100%,20% 100%,0 35%)}
+.skin-miaprism .gem,.battleSkin.skin-miaprism .gem{width:25px;height:25px;left:33px;top:72px;clip-path:polygon(50% 0,100% 25%,82% 100%,18% 100%,0 25%)}
+.skin-miaprism .trim,.battleSkin.skin-miaprism .trim{position:absolute;z-index:5;left:20px;top:57px;width:52px;height:5px;background:#fff;box-shadow:0 0 14px #ff8df2;transform:rotate(25deg)}
+
+/* 15 — Sora Star Hunter */
+.skin-sorastar .cape,.battleSkin.skin-sorastar .cape{clip-path:polygon(15% 0,85% 0,100% 100%,72% 82%,50% 100%,28% 82%,0 100%)}
+.skin-sorastar .head,.battleSkin.skin-sorastar .head{clip-path:polygon(50% 0,90% 30%,78% 100%,22% 100%,10% 30%)}
+.skin-sorastar .gem,.battleSkin.skin-sorastar .gem{width:20px;height:20px;left:36px;top:76px;clip-path:polygon(50% 0,61% 36%,100% 38%,70% 60%,80% 100%,50% 76%,20% 100%,30% 60%,0 38%,39% 36%)}
+.skin-sorastar .blade,.battleSkin.skin-sorastar .blade{height:70px;transform:rotate(9deg);background:linear-gradient(#fff,#7ed8ff 55%,#4967e8)}
+
+/* 16 — Yuna Nova */
+.skin-yunanova .cape,.battleSkin.skin-yunanova .cape{clip-path:polygon(50% 0,100% 18%,84% 50%,100% 82%,64% 74%,50% 100%,36% 74%,0 82%,16% 50%,0 18%)}
+.skin-yunanova .head,.battleSkin.skin-yunanova .head{border-radius:50%;box-shadow:0 0 18px #7deaff55}
+.skin-yunanova .horn,.battleSkin.skin-yunanova .horn{opacity:1;width:60px;height:24px;left:16px;top:0;clip-path:polygon(0 100%,16% 10%,45% 70%,50% 0,55% 70%,84% 10%,100% 100%)}
+.skin-yunanova .gem,.battleSkin.skin-yunanova .gem{width:23px;height:23px;left:34px;top:73px;border-radius:50%;background:#dfffff;box-shadow:0 0 24px #73eaff}
+
+/* 17 — Ryo Ember */
+.skin-ryoember .cape,.battleSkin.skin-ryoember .cape{clip-path:polygon(12% 0,88% 0,100% 100%,75% 72%,50% 100%,25% 72%,0 100%)}
+.skin-ryoember .body,.battleSkin.skin-ryoember .body{clip-path:polygon(50% 0,88% 20%,100% 100%,0 100%,12% 20%)}
+.skin-ryoember .horn,.battleSkin.skin-ryoember .horn{opacity:1;width:60px;height:32px;left:16px;top:-5px;clip-path:polygon(0 100%,12% 0,35% 70%,50% 10%,65% 70%,88% 0,100% 100%)}
+.skin-ryoember .gem,.battleSkin.skin-ryoember .gem{width:20px;height:20px;left:36px;top:76px;background:#ff9d3b;box-shadow:0 0 22px #ff4b18}
+
+/* 18 — Kuro Abyss */
+.skin-kuroabyss .cape,.battleSkin.skin-kuroabyss .cape{clip-path:polygon(50% 0,100% 35%,74% 48%,100% 100%,60% 78%,50% 100%,40% 78%,0 100%,26% 48%,0 35%)}
+.skin-kuroabyss .head,.battleSkin.skin-kuroabyss .head{border-radius:12px;clip-path:polygon(18% 0,82% 0,100% 28%,84% 100%,16% 100%,0 28%)}
+.skin-kuroabyss .horn,.battleSkin.skin-kuroabyss .horn{opacity:1;width:58px;height:30px;left:17px;top:-2px;clip-path:polygon(0 100%,22% 0,45% 68%,55% 68%,78% 0,100% 100%)}
+.skin-kuroabyss .blade,.battleSkin.skin-kuroabyss .blade{height:84px;transform:rotate(48deg);background:linear-gradient(#e8d7ff,#5f2a9c,#090313);box-shadow:0 0 20px #8c3dff}
+
+/* 19 — Elara Bloom Queen */
+.skin-elarabloom .cape,.battleSkin.skin-elarabloom .cape{clip-path:polygon(50% 0,82% 18%,100% 55%,72% 100%,50% 78%,28% 100%,0 55%,18% 18%)}
+.skin-elarabloom .head,.battleSkin.skin-elarabloom .head{border-radius:45% 45% 20% 20%;box-shadow:inset 0 -7px 0 #5b204b}
+.skin-elarabloom .horn,.battleSkin.skin-elarabloom .horn{opacity:1;width:66px;height:34px;left:13px;top:-4px;clip-path:polygon(0 100%,10% 40%,25% 55%,30% 0,45% 55%,50% 22%,55% 55%,70% 0,75% 55%,90% 40%,100% 100%,70% 76%,50% 100%,30% 76%)}
+.skin-elarabloom .gem,.battleSkin.skin-elarabloom .gem{width:22px;height:22px;left:35px;top:74px;clip-path:polygon(50% 0,100% 45%,50% 100%,0 45%)}
+
+/* 20 — Nyx Eclipse */
+.skin-nyxeclipse .cape,.battleSkin.skin-nyxeclipse .cape{clip-path:polygon(50% 0,100% 25%,82% 50%,100% 100%,58% 78%,50% 100%,42% 78%,0 100%,18% 50%,0 25%)}
+.skin-nyxeclipse .head,.battleSkin.skin-nyxeclipse .head{border-radius:50%;box-shadow:0 0 20px #a75cff55}
+.skin-nyxeclipse .horn,.battleSkin.skin-nyxeclipse .horn{opacity:1;width:64px;height:30px;left:14px;top:-3px;border-radius:50%;border:4px solid #bda0ff;background:transparent;clip-path:none}
+.skin-nyxeclipse .gem,.battleSkin.skin-nyxeclipse .gem{width:28px;height:28px;left:31px;top:71px;border-radius:50%;background:#08030f;border:4px solid #d8b8ff;box-shadow:0 0 24px #a75cff}
+
+/* 21–34 — the latest V18 additions, each with its own geometry */
+.skin-ember .cape,.battleSkin.skin-ember .cape{clip-path:polygon(0 0,100% 0,80% 40%,100% 100%,58% 78%,42% 100%,0 70%,18% 38%)}
+.skin-ember .head,.battleSkin.skin-ember .head{clip-path:polygon(50% 0,95% 25%,80% 100%,20% 100%,5% 25%)}
+.skin-ember .body,.battleSkin.skin-ember .body{clip-path:polygon(50% 0,100% 30%,85% 100%,15% 100%,0 30%)}
+.skin-ember .horn,.battleSkin.skin-ember .horn{opacity:1;width:48px;height:20px;left:22px;top:2px;clip-path:polygon(0 100%,25% 0,50% 80%,75% 0,100% 100%)}
+
+.skin-frost .cape,.battleSkin.skin-frost .cape{clip-path:polygon(50% 0,90% 18%,100% 70%,78% 100%,50% 72%,22% 100%,0 70%,10% 18%)}
+.skin-frost .head,.battleSkin.skin-frost .head{border-radius:50% 50% 30% 30%;box-shadow:inset 0 -7px 0 #bcecff}
+.skin-frost .horn,.battleSkin.skin-frost .horn{opacity:1;width:62px;height:24px;left:15px;top:0;clip-path:polygon(0 100%,15% 0,40% 65%,50% 15%,60% 65%,85% 0,100% 100%)}
+.skin-frost .blade,.battleSkin.skin-frost .blade{height:78px;transform:rotate(20deg);background:linear-gradient(#fff,#bdf8ff,#568ac7)}
+
+.skin-violet .cape,.battleSkin.skin-violet .cape{clip-path:polygon(15% 0,85% 0,100% 55%,75% 100%,50% 82%,25% 100%,0 55%)}
+.skin-violet .body,.battleSkin.skin-violet .body{clip-path:polygon(18% 0,82% 0,100% 38%,78% 100%,22% 100%,0 38%)}
+.skin-violet .gem,.battleSkin.skin-violet .gem{width:24px;height:24px;left:34px;top:73px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+
+.skin-rose .cape,.battleSkin.skin-rose .cape{clip-path:polygon(50% 0,100% 28%,78% 52%,100% 100%,60% 80%,50% 100%,40% 80%,0 100%,22% 52%,0 28%)}
+.skin-rose .head,.battleSkin.skin-rose .head{border-radius:48% 48% 22% 22%;box-shadow:0 0 14px #ff76bb55}
+.skin-rose .horn,.battleSkin.skin-rose .horn{opacity:1;width:58px;height:25px;left:17px;top:0;clip-path:polygon(0 100%,20% 0,50% 75%,80% 0,100% 100%)}
+
+.skin-gold .cape,.battleSkin.skin-gold .cape{clip-path:polygon(50% 0,100% 20%,90% 100%,65% 76%,50% 100%,35% 76%,10% 100%,0 20%)}
+.skin-gold .body,.battleSkin.skin-gold .body{clip-path:polygon(10% 0,90% 0,100% 25%,86% 100%,14% 100%,0 25%)}
+.skin-gold .shoulder,.battleSkin.skin-gold .shoulder{height:28px;top:48px;clip-path:polygon(0 40%,18% 0,38% 30%,62% 30%,82% 0,100% 40%,92% 100%,8% 100%)}
+
+.skin-shadow .cape,.battleSkin.skin-shadow .cape{clip-path:polygon(20% 0,80% 0,100% 100%,70% 72%,50% 100%,30% 72%,0 100%)}
+.skin-shadow .body,.battleSkin.skin-shadow .body{clip-path:polygon(50% 0,95% 20%,85% 100%,15% 100%,5% 20%)}
+.skin-shadow .visor,.battleSkin.skin-shadow .visor{height:5px;top:29px;box-shadow:0 0 18px #b17cff}
+.skin-shadow .blade,.battleSkin.skin-shadow .blade{height:86px;transform:rotate(38deg);background:linear-gradient(#eee,#7450a8,#100718)}
+
+.skin-jade .cape,.battleSkin.skin-jade .cape{clip-path:polygon(50% 0,90% 20%,100% 65%,72% 100%,50% 78%,28% 100%,0 65%,10% 20%)}
+.skin-jade .body,.battleSkin.skin-jade .body{clip-path:polygon(50% 0,88% 22%,100% 100%,0 100%,12% 22%)}
+.skin-jade .horn,.battleSkin.skin-jade .horn{opacity:1;width:56px;height:30px;left:18px;top:-2px;clip-path:polygon(0 100%,20% 20%,35% 60%,50% 0,65% 60%,80% 20%,100% 100%)}
+
+.skin-solar2 .cape,.battleSkin.skin-solar2 .cape{clip-path:polygon(0 0,100% 0,88% 50%,100% 100%,60% 78%,50% 100%,40% 78%,0 100%,12% 50%)}
+.skin-solar2 .head,.battleSkin.skin-solar2 .head{border-radius:45% 45% 18% 18%;box-shadow:0 0 18px #ffd43b66}
+.skin-solar2 .gem,.battleSkin.skin-solar2 .gem{width:25px;height:25px;left:33px;top:73px;border-radius:50%;background:#fff1a2;box-shadow:0 0 25px #ffd43b}
+
+.skin-ocean .cape,.battleSkin.skin-ocean .cape{clip-path:polygon(50% 0,100% 30%,82% 55%,100% 100%,62% 78%,50% 100%,38% 78%,0 100%,18% 55%,0 30%)}
+.skin-ocean .body,.battleSkin.skin-ocean .body{border-radius:30px 8px 30px 8px;clip-path:polygon(8% 0,92% 0,100% 30%,88% 100%,12% 100%,0 30%)}
+.skin-ocean .visor,.battleSkin.skin-ocean .visor{width:38px;left:28px;box-shadow:0 0 18px #46dfff}
+
+.skin-lilac .cape,.battleSkin.skin-lilac .cape{clip-path:polygon(10% 0,90% 0,100% 75%,75% 100%,50% 78%,25% 100%,0 75%)}
+.skin-lilac .head,.battleSkin.skin-lilac .head{clip-path:polygon(50% 0,90% 22%,100% 70%,80% 100%,20% 100%,0 70%,10% 22%)}
+.skin-lilac .horn,.battleSkin.skin-lilac .horn{opacity:1;width:52px;height:30px;left:20px;top:-2px;clip-path:polygon(0 100%,18% 0,50% 65%,82% 0,100% 100%)}
+
+.skin-magma .cape,.battleSkin.skin-magma .cape{clip-path:polygon(50% 0,95% 15%,100% 100%,66% 78%,50% 100%,34% 78%,0 100%,5% 15%)}
+.skin-magma .body,.battleSkin.skin-magma .body{clip-path:polygon(50% 0,100% 32%,82% 100%,18% 100%,0 32%);box-shadow:inset 0 0 22px #ff5a20}
+.skin-magma .horn,.battleSkin.skin-magma .horn{opacity:1;width:64px;height:34px;left:14px;top:-5px;clip-path:polygon(0 100%,12% 0,35% 75%,50% 18%,65% 75%,88% 0,100% 100%)}
+
+.skin-moon .cape,.battleSkin.skin-moon .cape{clip-path:polygon(50% 0,88% 15%,100% 52%,76% 100%,50% 76%,24% 100%,0 52%,12% 15%)}
+.skin-moon .head,.battleSkin.skin-moon .head{border-radius:50%;box-shadow:0 0 20px #9ed7ff66}
+.skin-moon .gem,.battleSkin.skin-moon .gem{width:22px;height:22px;left:35px;top:74px;border-radius:50%;background:#d8f5ff;box-shadow:0 0 24px #83d8ff}
+
+.skin-forest .cape,.battleSkin.skin-forest .cape{clip-path:polygon(50% 0,90% 20%,100% 100%,70% 82%,50% 100%,30% 82%,0 100%,10% 20%)}
+.skin-forest .body,.battleSkin.skin-forest .body{clip-path:polygon(50% 0,88% 25%,100% 100%,0 100%,12% 25%)}
+.skin-forest .horn,.battleSkin.skin-forest .horn{opacity:1;width:66px;height:28px;left:13px;top:-2px;clip-path:polygon(0 100%,10% 40%,25% 55%,35% 0,50% 55%,65% 0,75% 55%,90% 40%,100% 100%,70% 78%,50% 100%,30% 78%)}
+
+.skin-aurora .cape,.battleSkin.skin-aurora .cape{clip-path:polygon(0 0,100% 0,85% 35%,100% 70%,72% 100%,50% 78%,28% 100%,0 70%,15% 35%)}
+.skin-aurora .head,.battleSkin.skin-aurora .head{clip-path:polygon(50% 0,90% 25%,100% 60%,80% 100%,20% 100%,0 60%,10% 25%)}
+.skin-aurora .gem,.battleSkin.skin-aurora .gem{width:24px;height:24px;left:34px;top:73px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:#9fffe9;box-shadow:0 0 24px #63e8c7}
+
+.skin-cobalt .cape,.battleSkin.skin-cobalt .cape{clip-path:polygon(50% 0,100% 25%,78% 50%,100% 100%,60% 78%,50% 100%,40% 78%,0 100%,22% 50%,0 25%)}
+.skin-cobalt .body,.battleSkin.skin-cobalt .body{clip-path:polygon(15% 0,85% 0,100% 25%,82% 100%,18% 100%,0 25%)}
+.skin-cobalt .horn,.battleSkin.skin-cobalt .horn{opacity:1;width:58px;height:24px;left:17px;top:0;clip-path:polygon(0 100%,22% 0,50% 70%,78% 0,100% 100%)}
+
+.skin-crystal .cape,.battleSkin.skin-crystal .cape{clip-path:polygon(50% 0,100% 18%,88% 100%,65% 72%,50% 100%,35% 72%,12% 100%,0 18%)}
+.skin-crystal .body,.battleSkin.skin-crystal .body{clip-path:polygon(50% 0,100% 35%,80% 100%,20% 100%,0 35%)}
+.skin-crystal .gem,.battleSkin.skin-crystal .gem{width:26px;height:26px;left:32px;top:71px;clip-path:polygon(50% 0,90% 28%,72% 100%,28% 100%,10% 28%);background:#d6ffff;box-shadow:0 0 24px #69eaff}
+
+.skin-royal2 .cape,.battleSkin.skin-royal2 .cape{clip-path:polygon(50% 0,95% 18%,100% 100%,65% 76%,50% 100%,35% 76%,0 100%,5% 18%)}
+.skin-royal2 .head,.battleSkin.skin-royal2 .head{border-radius:50% 50% 20% 20%}
+.skin-royal2 .horn,.battleSkin.skin-royal2 .horn{opacity:1;width:62px;height:28px;left:15px;top:-2px;clip-path:polygon(0 100%,12% 15%,35% 62%,50% 0,65% 62%,88% 15%,100% 100%)}
+
+.skin-toxic .cape,.battleSkin.skin-toxic .cape{clip-path:polygon(0 0,100% 0,84% 45%,100% 100%,65% 80%,50% 100%,35% 80%,0 100%,16% 45%)}
+.skin-toxic .body,.battleSkin.skin-toxic .body{clip-path:polygon(12% 0,88% 0,100% 30%,78% 100%,22% 100%,0 30%);box-shadow:inset 0 0 20px #65ff76}
+.skin-toxic .horn,.battleSkin.skin-toxic .horn{opacity:1;width:56px;height:28px;left:18px;top:-3px;clip-path:polygon(0 100%,20% 0,45% 65%,55% 65%,80% 0,100% 100%)}
+
+.skin-sapphire .cape,.battleSkin.skin-sapphire .cape{clip-path:polygon(50% 0,90% 15%,100% 55%,75% 100%,50% 80%,25% 100%,0 55%,10% 15%)}
+.skin-sapphire .head,.battleSkin.skin-sapphire .head{clip-path:polygon(50% 0,90% 28%,85% 100%,15% 100%,10% 28%)}
+.skin-sapphire .gem,.battleSkin.skin-sapphire .gem{width:23px;height:23px;left:34px;top:73px;clip-path:polygon(50% 0,100% 38%,75% 100%,25% 100%,0 38%);background:#80cfff;box-shadow:0 0 24px #2c9cff}
+
+.skin-amethyst .cape,.battleSkin.skin-amethyst .cape{clip-path:polygon(50% 0,100% 30%,82% 54%,100% 100%,58% 76%,50% 100%,42% 76%,0 100%,18% 54%,0 30%)}
+.skin-amethyst .head,.battleSkin.skin-amethyst .head{border-radius:15px 15px 45% 45%;box-shadow:0 0 18px #ad55ff55}
+.skin-amethyst .horn,.battleSkin.skin-amethyst .horn{opacity:1;width:60px;height:30px;left:16px;top:-3px;clip-path:polygon(0 100%,16% 0,42% 68%,58% 68%,84% 0,100% 100%)}
+
+.skin-scarlet .cape,.battleSkin.skin-scarlet .cape{clip-path:polygon(10% 0,90% 0,100% 100%,72% 80%,50% 100%,28% 80%,0 100%)}
+.skin-scarlet .body,.battleSkin.skin-scarlet .body{clip-path:polygon(50% 0,100% 28%,84% 100%,16% 100%,0 28%)}
+.skin-scarlet .visor,.battleSkin.skin-scarlet .visor{height:5px;top:29px;background:#ffb0a5;box-shadow:0 0 18px #ff4f3b}
+.skin-scarlet .blade,.battleSkin.skin-scarlet .blade{height:80px;transform:rotate(25deg);background:linear-gradient(#fff,#ff695a,#6d0b0b)}
+
+.skin-silver .cape,.battleSkin.skin-silver .cape{clip-path:polygon(50% 0,100% 22%,88% 100%,62% 76%,50% 100%,38% 76%,12% 100%,0 22%)}
+.skin-silver .body,.battleSkin.skin-silver .body{clip-path:polygon(18% 0,82% 0,100% 28%,82% 100%,18% 100%,0 28%)}
+.skin-silver .head,.battleSkin.skin-silver .head{border-radius:18px 18px 50% 50%;box-shadow:inset 0 -8px 0 #8997ad}
+.skin-silver .gem,.battleSkin.skin-silver .gem{width:20px;height:20px;left:36px;top:76px;border-radius:50%;background:#eaf4ff;box-shadow:0 0 18px #c5ddff}
+
+.skin-night .cape,.battleSkin.skin-night .cape{clip-path:polygon(0 0,100% 0,86% 38%,100% 100%,62% 76%,50% 100%,38% 76%,0 100%,14% 38%)}
+.skin-night .head,.battleSkin.skin-night .head{clip-path:polygon(50% 0,100% 30%,86% 100%,14% 100%,0 30%)}
+.skin-night .horn,.battleSkin.skin-night .horn{opacity:1;width:64px;height:30px;left:14px;top:-4px;clip-path:polygon(0 100%,15% 0,40% 70%,50% 20%,60% 70%,85% 0,100% 100%)}
+.skin-night .blade,.battleSkin.skin-night .blade{height:86px;transform:rotate(44deg);background:linear-gradient(#ddd,#5e4c7e,#09040e);box-shadow:0 0 18px #5f3e88}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V17 • économie exponentielle + récompenses journalières</div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V19 • économie exponentielle + récompenses journalières + skins entièrement redesignés</div></section>
 <section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
 <section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Après le lancement d’un chapitre, aucun écran de sélection obligatoire ne s’affiche.</p></div><div class="row"><button id="characterBackBtn" onclick="show('menu')">Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
@@ -458,7 +690,7 @@ const specialPowerData={
 const skinPack={
   default:{name:'Kaien — Ombre originelle',price:0,cls:'skin-default',owner:'kaien',rarity:'Base',base:true},
   aikoBase:{name:'Aiko — Lame lunaire',price:0,cls:'skin-aiko',owner:'aiko',rarity:'Base',base:true},renBase:{name:'Ren — Bastion runique',price:0,cls:'skin-ren',owner:'ren',rarity:'Base',base:true},miaBase:{name:'Mia — Oracle cristalline',price:0,cls:'skin-mia',owner:'mia',rarity:'Base',base:true},soraBase:{name:'Sora — Archer céleste',price:0,cls:'skin-sora',owner:'sora',rarity:'Base',base:true},yunaBase:{name:'Yuna — Gardienne du givre',price:0,cls:'skin-yuna',owner:'yuna',rarity:'Base',base:true},ryoBase:{name:'Ryo — Héritier draconique',price:0,cls:'skin-ryo',owner:'ryo',rarity:'Base',base:true},kuroBase:{name:'Kuro — Voyageur du Néant',price:0,cls:'skin-kuro',owner:'kuro',rarity:'Base',base:true},elaraBase:{name:'Elara — Druidesse astrale',price:0,cls:'skin-elara',owner:'elara',rarity:'Base',base:true},vexBase:{name:'Vex — Trickster spectral',price:0,cls:'skin-vex',owner:'vex',rarity:'Base',base:true},orionBase:{name:'Orion — Paladin solaire',price:0,cls:'skin-orion',owner:'orion',rarity:'Base',base:true},nyxBase:{name:'Nyx — Spectre de lune',price:0,cls:'skin-nyx',owner:'nyx',rarity:'Base',base:true},
-  crimson:{name:'Kaien — Ronin écarlate',price:700,cls:'skin-crimson',owner:'kaien',rarity:'Rare'},azure:{name:'Aiko — Tempête néon',price:1100,cls:'skin-azure',owner:'aiko',rarity:'Rare'},royal:{name:'Ren — Garde solaire',price:1800,cls:'skin-royal',owner:'ren',rarity:'Rare'},void:{name:'Kuro — Héraut du Néant',price:2600,cls:'skin-void',owner:'kuro',rarity:'Épique'},emerald:{name:'Elara — Druidesse astrale',price:3800,cls:'skin-emerald',owner:'elara',rarity:'Épique'},obsidian:{name:'Vex — Corsaire de l’ombre',price:5200,cls:'skin-obsidian',owner:'vex',rarity:'Épique'},solar:{name:'Orion — Paladin solaire',price:6800,cls:'skin-solar',owner:'orion',rarity:'Légendaire'},celestial:{name:'Sora — Archer céleste',price:8500,cls:'skin-celestial',owner:'sora',rarity:'Légendaire'},bloodmoon:{name:'Nyx — Reine de l’éclipse',price:10500,cls:'skin-bloodmoon',owner:'nyx',rarity:'Légendaire'},dragon:{name:'Ryo — Seigneur draconique',price:13000,cls:'skin-dragon',owner:'ryo',rarity:'Légendaire'},
+  crimson:{name:'Kaien — Ronin écarlate',price:700,cls:'skin-crimson',owner:'kaien',rarity:'Rare'},azure:{name:'Aiko — Tempête néon',price:1100,cls:'skin-azure',owner:'aiko',rarity:'Rare'},royal:{name:'Ren — Garde solaire',price:1800,cls:'skin-royal',owner:'ren',rarity:'Rare'},void:{name:'Kuro — Héraut du Néant',price:2600,cls:'skin-void',owner:'kuro',rarity:'Épique'},emerald:{name:'Elara — Gardienne émeraude',price:3800,cls:'skin-emerald',owner:'elara',rarity:'Épique'},obsidian:{name:'Vex — Corsaire de l’ombre',price:5200,cls:'skin-obsidian',owner:'vex',rarity:'Épique'},solar:{name:'Orion — Empereur solaire',price:6800,cls:'skin-solar',owner:'orion',rarity:'Légendaire'},celestial:{name:'Sora — Valkyrie céleste',price:8500,cls:'skin-celestial',owner:'sora',rarity:'Légendaire'},bloodmoon:{name:'Nyx — Reine de l’éclipse',price:10500,cls:'skin-bloodmoon',owner:'nyx',rarity:'Légendaire'},dragon:{name:'Ryo — Seigneur draconique',price:13000,cls:'skin-dragon',owner:'ryo',rarity:'Légendaire'},
   moonRonin:{name:'Kaien — Ronin lunaire',price:900,cls:'skin-moonronin',owner:'kaien',rarity:'Rare'},aikoFire:{name:'Aiko — Danseuse de braise',price:1500,cls:'skin-aikofire',owner:'aiko',rarity:'Rare'},renTitan:{name:'Ren — Forteresse d’acier',price:2200,cls:'skin-rentitan',owner:'ren',rarity:'Épique'},miaPrism:{name:'Mia — Oracle prismatique',price:3200,cls:'skin-miaprism',owner:'mia',rarity:'Épique'},soraStar:{name:'Sora — Chasseur d’étoiles',price:4500,cls:'skin-sorastar',owner:'sora',rarity:'Épique'},yunaNova:{name:'Yuna — Nova de givre',price:6000,cls:'skin-yunanova',owner:'yuna',rarity:'Légendaire'},ryoEmber:{name:'Ryo — Dragon d’obsidienne',price:8000,cls:'skin-ryoember',owner:'ryo',rarity:'Légendaire'},kuroAbyss:{name:'Kuro — Prince abyssal',price:10000,cls:'skin-kuroabyss',owner:'kuro',rarity:'Légendaire'},elaraBloom:{name:'Elara — Reine florale',price:12500,cls:'skin-elarabloom',owner:'elara',rarity:'Mythique'},nyxEclipse:{name:'Nyx — Éclipse éternelle',price:15000,cls:'skin-nyxeclipse',owner:'nyx',rarity:'Mythique'},
 
   kaienFlame:{name:'Kaien — Flamme nocturne',price:2400,cls:'skin-ember',owner:'kaien',rarity:'Épique'},kaienFrost:{name:'Kaien — Givre noir',price:5600,cls:'skin-frost',owner:'kaien',rarity:'Légendaire'},
