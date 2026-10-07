@@ -163,14 +163,14 @@
 .characterPowerBox{margin-top:10px;padding:10px;border:1px solid #3f4560;border-radius:14px;background:#0b0f19}.powerMini,.powerMiniBtn{width:100%;margin-top:6px;padding:8px;border-radius:10px;font-size:12px}.powerMini{color:#aeb5c8}.powerMini.owned{color:#7be0a2;border:1px solid #3f9b68}.powerMiniBtn{border:1px solid #7356a2;background:#19142a;color:#fff}.talentChoices{margin-top:9px;padding-top:8px;border-top:1px solid #34394b}.talentChoices .row{flex-wrap:wrap}.talentChoices button{flex:1;min-width:82px;font-size:11px;padding:7px}.talentLock{margin-top:7px;color:#858ca0;font-size:12px}.talentChosen{margin-top:7px;color:#7fe1a0;font-size:12px}
 
 /* Journal de progression + succès */
-.activityList{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow:auto;margin-top:10px}.activityItem{padding:10px 12px;border:1px solid #353b52;border-radius:12px;background:#0d1220}.activityItem .time{font-size:11px;color:#858ca0}.achievementGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.achievement{padding:11px;border:1px solid #3b4057;border-radius:13px;background:#0d1220}.achievement.done{border-color:#4fa873;box-shadow:0 0 14px #4fa87322}.achievement.locked{opacity:.62}.achievement b{display:block;margin-bottom:4px}.commandBox{display:flex;gap:8px;margin-top:10px}.commandBox input{flex:1;min-width:0}.chatHint{font-size:12px;color:#8e95aa;margin-top:7px}.adminActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.adminActions button{padding:10px;border-radius:10px;border:1px solid #7356a2;background:#19142a;color:#fff;font-weight:700}@media(max-width:700px){.achievementGrid{grid-template-columns:1fr}}
+.activityList{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow:auto;margin-top:10px}.activityItem{padding:10px 12px;border:1px solid #353b52;border-radius:12px;background:#0d1220}.activityItem .time{font-size:11px;color:#858ca0}.achievementGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:10px}.achievement{padding:11px;border:1px solid #3b4057;border-radius:13px;background:#0d1220}.achievement.done{border-color:#4fa873;box-shadow:0 0 14px #4fa87322}.achievement.locked{opacity:.62}.achievement b{display:block;margin-bottom:4px}.commandBox{display:flex;gap:8px;margin-top:10px}.commandBox input{flex:1;min-width:0}.chatHint{font-size:12px;color:#8e95aa;margin-top:7px}.adminActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.adminActions button{padding:10px;border-radius:10px;border:1px solid #7356a2;background:#19142a;color:#fff;font-weight:700}.dailyGrid{display:grid;gap:7px;margin:10px 0}.dailyGrid .shopItem{margin:0}.dailyCurrent{border-color:#d6b75b!important;box-shadow:0 0 14px #d6b75b22}@media(max-width:700px){.achievementGrid{grid-template-columns:1fr}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V15 • progression sauvegardée</div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V17 • économie exponentielle + récompenses journalières</div></section>
 <section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
 <section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Après le lancement d’un chapitre, aucun écran de sélection obligatoire ne s’affiche.</p></div><div class="row"><button id="characterBackBtn" onclick="show('menu')">Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
@@ -260,7 +260,7 @@ function freshCharacterLevels(){return Object.fromEntries(Object.keys(chars).map
 function freshCharacterUnlocks(){return Object.fromEntries(Object.keys(chars).map(id=>[id,['kaien','aiko','ren'].includes(id)]))}
 function freshCharacterPowers(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{7:false,9:false,11:false}]))}
 function freshCharacterTalents(){return Object.fromEntries(Object.keys(chars).map(id=>[id,{8:null,10:null}]))}
-function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],activityLog:[{text:'Bienvenue dans SHADOW LEGACY ! Ton journal de progression est prêt.',type:'system',time:Date.now()}],achievements:{world1:false,world2:false,world3:false,world4:false,world5:false,world6:false,world7:false,world8:false,world9:false,world10:false,chapters10:false,chapters25:false,chapters50:false,level12:false,firstSkin:false,tenSkins:false,gold10000:false},cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),v14SkinsReset:false}}
+function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],activityLog:[{text:'Bienvenue dans SHADOW LEGACY ! Ton journal de progression est prêt.',type:'system',time:Date.now()}],achievements:{world1:false,world2:false,world3:false,world4:false,world5:false,world6:false,world7:false,world8:false,world9:false,world10:false,chapters10:false,chapters25:false,chapters50:false,level12:false,firstSkin:false,tenSkins:false,gold10000:false},cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),v14SkinsReset:false,dailyClaimDate:'',dailyStreak:0}}
 function upgradeCost(nextLevel){return UPGRADE_COSTS[nextLevel]||5500}
 function charLevel(id=save.selected){return Math.max(1,Number(save.characterLevels?.[id]||1))}
 function isCharUnlocked(id){return !!save.characterUnlocked?.[id]}
@@ -278,7 +278,7 @@ function loadSave(){try{
   // Une seule fois : on efface les anciens achats de skins payants qui avaient été attribués par erreur.
   if(!x.v14SkinsReset){Object.keys(skins).forEach(id=>{if(id!=='default'&&!id.endsWith('Base'))skins[id]=false});Object.keys(d.characterSkins).forEach(id=>characterSkins[id]=d.characterSkins[id]);x.v14SkinsReset=true}
   Object.keys(d.skins).filter(id=>id==='default'||id.endsWith('Base')).forEach(id=>skins[id]=true);
-  return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins,characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers,characterTalents:talents,activityLog:Array.isArray(x.activityLog)?x.activityLog:d.activityLog,achievements:Object.assign(d.achievements,x.achievements||{}),v14SkinsReset:true});
+  return Object.assign(d,x,{settings:Object.assign(d.settings,x.settings||{}),skins,characterSkins,completedChapters:Array.isArray(x.completedChapters)?x.completedChapters:[],potions:Number.isFinite(x.potions)?Math.max(0,Math.floor(x.potions)):2,characterLevels:levels,characterUnlocked:unlocked,characterPowers:powers,characterTalents:talents,activityLog:Array.isArray(x.activityLog)?x.activityLog:d.activityLog,achievements:Object.assign(d.achievements,x.achievements||{}),dailyClaimDate:typeof x.dailyClaimDate==='string'?x.dailyClaimDate:'',dailyStreak:Number.isFinite(x.dailyStreak)?Math.max(0,Math.floor(x.dailyStreak)):0,v14SkinsReset:true});
 }catch(e){return defaultSave()}}
 function persist(){localStorage.setItem('shadowLegacyV10',JSON.stringify(save));localStorage.setItem('shadowLegacyV9',JSON.stringify(save));updateMenu();cloudAutosave()}
 function baseSkinFor(id){const key=id==='kaien'?'default':id+'Base';return skinPack?.[key]?key:'default'}
@@ -387,9 +387,19 @@ function updateCooldowns(){
   $('p11Btn').disabled=lvl<11||!powers[11]||state.cd[11]>now;
 }
 function updatePowerButtons(){updateCooldowns()}
+const CHAPTER_REWARD_BASE=505;
+const CHAPTER_REWARD_GROWTH=1.089613;
+const DAILY_REWARDS=[100,200,300,500,800,1200,2000];
+function chapterCompletionReward(index){return Math.round(CHAPTER_REWARD_BASE*Math.pow(CHAPTER_REWARD_GROWTH,index));}
+function dailyDateKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function dateDiffDays(a,b){const [ay,am,ad]=a.split('-').map(Number),[by,bm,bd]=b.split('-').map(Number);if(!ay||!by)return 999;return Math.round((Date.UTC(by,bm-1,bd)-Date.UTC(ay,am-1,ad))/86400000)}
+function dailyRewardInfo(){const today=dailyDateKey();let streak=Number(save.dailyStreak)||0;if(save.dailyClaimDate){const diff=dateDiffDays(save.dailyClaimDate,today);if(diff>1)streak=0}const day=streak%7;return {today,streak,day,reward:DAILY_REWARDS[day],claimed:save.dailyClaimDate===today}}
+function claimDailyReward(silent=false){const info=dailyRewardInfo();if(info.claimed){if(!silent)showToast('🎁 Récompense du jour déjà récupérée !');return false}save.dailyStreak=info.streak+1;save.dailyClaimDate=info.today;save.gold+=info.reward;addActivity(`🎁 Récompense journalière : +${info.reward.toLocaleString('fr-FR')} pièces.`,'achievement');persist();checkAchievements();if(!silent){showToast(`🎁 +${info.reward.toLocaleString('fr-FR')} pièces !`);openDailyRewards()}return true}
+function openDailyRewards(){const info=dailyRewardInfo();const rows=DAILY_REWARDS.map((g,i)=>`<div class="shopItem ${i===info.day?'dailyCurrent':''}"><div><b>Jour ${i+1}</b><br><span class="muted">${i===info.day?'⭐ Aujourd’hui':'Cycle hebdomadaire'}</span></div><b>💰 ${g.toLocaleString('fr-FR')}</b></div>`).join('');openModal('🎁 Récompenses journalières',`<div class="notice"><b>Connexion quotidienne</b><br><span class="muted">Une récompense chaque jour. Les récompenses repartent au début après un jour manqué.</span><br>🔥 Série actuelle : <b>${info.streak}</b> jour(s)</div><div class="dailyGrid">${rows}</div><button class="gold" ${info.claimed?'disabled':''} onclick="claimDailyReward()">${info.claimed?'✅ RÉCOMPENSE RÉCUPÉRÉE AUJOURD’HUI':'🎁 RÉCUPÉRER LA RÉCOMPENSE'}</button>`)}
+
 function winEnemy(){
   clearInterval(state.enemyTimer);state.enemy.hp=0;renderBattle();$('enemy').classList.add('dead');
-  const s=state.enemy.boss?300:80;state.score+=s;save.gold+=state.enemy.boss?180:45;
+  const s=state.enemy.boss?300:80;state.score+=s;save.gold+=state.enemy.boss?360:90;
   save.history.unshift(`${state.enemy.name} vaincu`);save.history=save.history.slice(0,10);checkAchievements();persist();
   if(state.enemy.boss){
     save.wins++;save.bestScore=Math.max(save.bestScore,state.score);persist();
@@ -405,9 +415,9 @@ function openGift(isBoss=false){
     if(!$('chest').classList.contains('show'))return;
     $('chest').classList.remove('show');
     const roll=Math.random();
-    if(roll<.55){const g=isBoss?220+Math.floor(Math.random()*181):70+Math.floor(Math.random()*91);save.gold+=g;showToast(`💰 Cadeau : +${g} pièces`)}
+    if(roll<.55){const g=isBoss?440+Math.floor(Math.random()*361):140+Math.floor(Math.random()*181);save.gold+=g;showToast(`💰 Cadeau : +${g} pièces`)}
     else if(roll<.82){save.potions++;showToast(`🧪 Cadeau : +1 potion • ${save.potions} au total`)}
-    else {const g=isBoss?400:180;save.gold+=g;showToast(`💎 Gros cadeau : +${g} pièces`)}
+    else {const g=isBoss?800:360;save.gold+=g;showToast(`💎 Gros cadeau : +${g} pièces`)}
     checkAchievements();persist();
     setTimeout(()=>isBoss?bossVictory():nextEnemy(),900);
   }
@@ -415,7 +425,7 @@ function openGift(isBoss=false){
 function nextEnemy(){state.enemyIndex++;startEnemy()}
 function bossVictory(){
   const wasDone=save.completedChapters.includes(state.chapter);
-  if(!wasDone)save.completedChapters.push(state.chapter);
+  if(!wasDone){save.completedChapters.push(state.chapter);const reward=chapterCompletionReward(state.chapter);save.gold+=reward;addActivity(`💰 Récompense du chapitre ${state.chapter+1} : +${reward.toLocaleString('fr-FR')} pièces.`,'achievement');showToast(`💰 Chapitre ${state.chapter+1} : +${reward.toLocaleString('fr-FR')} pièces !`)}
   save.completedChapters.sort((a,b)=>a-b);
   if(!wasDone){const nextWorld=Math.floor(state.chapter/5)+1;if(state.chapter%5===4 && nextWorld<10){addActivity(`🌍 Nouveau monde débloqué : ${worldNames[nextWorld].name}`,'achievement');}else if(state.chapter===49){addActivity('👑 Tu as terminé les 50 chapitres : le Trône des Ombres est vaincu !','achievement');}else{addActivity(`📖 Chapitre terminé : ${chapters[state.chapter].name}`,'system');}}
   checkAchievements();
@@ -557,11 +567,134 @@ async function openAdminPanel(){
   <div class="adminActions"><button onclick="adminFinishGame()">👑 Finir le jeu</button><button onclick="adminAddGold()">💰 +100 000 pièces</button></div>`);
 }
 function adminFinishGame(){
-  if(typeof finalVictory==='function'){closeModal();finalVictory();}
+  // Déverrouillage administrateur complet :
+  // tous les personnages niveau 12, tous leurs pouvoirs/talents,
+  // tous les skins, les 50 chapitres et tous les mondes.
+  const ids=Object.keys(chars);
+
+  // Tous les personnages débloqués et niveau maximum.
+  save.characterUnlocked=save.characterUnlocked||{};
+  save.characterLevels=save.characterLevels||{};
+  save.characterPowers=save.characterPowers||{};
+  save.characterTalents=save.characterTalents||{};
+  ids.forEach(id=>{
+    save.characterUnlocked[id]=true;
+    save.characterLevels[id]=MAX_CHARACTER_LEVEL;
+    save.characterPowers[id]={7:true,9:true,11:true};
+    save.characterTalents[id]={8:'shield',10:'resistance'};
+  });
+
+  // Tous les skins, y compris les skins de base.
+  save.skins=save.skins||{};
+  save.characterSkins=save.characterSkins||{};
+  Object.entries(skinPack).forEach(([id,x])=>{
+    save.skins[id]=true;
+    if(x.owner) save.characterSkins[x.owner]=id;
+  });
+
+  // Tous les chapitres terminés = tous les mondes débloqués.
+  save.completedChapters=Array.from({length:chapters.length},(_,i)=>i);
+
+  // Succès et progression finale.
+  save.achievements=save.achievements||{};
+  Object.keys(save.achievements).forEach(k=>save.achievements[k]=true);
+  save.gold=Math.max(Number(save.gold)||0,1000000000);
+  save.bestScore=Math.max(Number(save.bestScore)||0,1000000);
+  save.wins=Math.max(Number(save.wins)||0,50);
+
+  persist();
+  checkAchievements();
+  closeModal();
+  showToast('👑 ADMIN : tout est débloqué !');
+  setTimeout(()=>{
+    state.chapter=chapters.length-1;
+    state.finished=false;
+    openWorldMap();
+  },350);
 }
 function adminAddGold(){
   save.gold+=100000; persist(); checkAchievements(); showToast('💰 +100 000 pièces'); closeModal(); openJournal();
 }
+
+function adminUnlockEverything(){
+  // Commande secrète /unlock : débloque tout le contenu disponible.
+  save.characterUnlocked=save.characterUnlocked||{};
+  save.characterLevels=save.characterLevels||{};
+  save.characterPowers=save.characterPowers||{};
+  save.characterTalents=save.characterTalents||{};
+  Object.keys(chars).forEach(id=>{
+    save.characterUnlocked[id]=true;
+    save.characterLevels[id]=MAX_CHARACTER_LEVEL;
+    save.characterPowers[id]={7:true,9:true,11:true};
+    save.characterTalents[id]={8:'shield',10:'resistance'};
+  });
+  save.completedChapters=Array.from({length:chapters.length},(_,i)=>i);
+  save.skins=save.skins||{};
+  save.characterSkins=save.characterSkins||{};
+  Object.entries(skinPack).forEach(([id,x])=>{
+    save.skins[id]=true;
+    if(x.owner)save.characterSkins[x.owner]=id;
+  });
+  save.gold=Math.max(save.gold,1000000000);
+  save.dailyStreak=7;save.dailyClaimDate=dailyDateKey();
+  save.bestScore=Math.max(save.bestScore,1000000);
+  save.wins=Math.max(save.wins,50);
+  save.achievements=save.achievements||{};
+  ['world1','world2','world3','world4','world5','world6','world7','world8','world9','world10','chapters10','chapters25','chapters50','level12','firstSkin','tenSkins','gold10000'].forEach(k=>save.achievements[k]=true);
+  persist();checkAchievements();renderCharacters();closeModal();openWorldMap();showToast('🔓 UNLOCK : tout est débloqué !');
+}
+function adminUnlockWorlds(){
+  save.completedChapters=Array.from({length:chapters.length},(_,i)=>i);
+  save.achievements=save.achievements||{};
+  ['world1','world2','world3','world4','world5','world6','world7','world8','world9','world10','chapters10','chapters25','chapters50'].forEach(k=>save.achievements[k]=true);
+  persist();checkAchievements();closeModal();openWorldMap();showToast('🌍 Tous les mondes sont débloqués !');
+}
+function adminUnlockAllSkins(){
+  save.skins=save.skins||{};
+  save.characterSkins=save.characterSkins||{};
+  Object.entries(skinPack).forEach(([id,x])=>{
+    save.skins[id]=true;
+    if(x.owner) save.characterSkins[x.owner]=id;
+  });
+  save.achievements=save.achievements||{};
+  save.achievements.firstSkin=true;save.achievements.tenSkins=true;
+  persist();checkAchievements();closeModal();openShop();showToast('🎨 Tous les skins sont débloqués !');
+}
+function adminUnlockCharacter(id){
+  if(!chars[id]){showToast('Personnage inconnu : '+id);return;}
+  save.characterUnlocked=save.characterUnlocked||{};
+  save.characterLevels=save.characterLevels||{};
+  save.characterUnlocked[id]=true;
+  save.characterLevels[id]=Math.max(1,Number(save.characterLevels[id]||1));
+  persist();renderCharacters();showToast('🔓 '+chars[id].name+' est débloqué !');
+}
+function adminCharacterLevel(id,level){
+  if(!chars[id]){showToast('Personnage inconnu : '+id);return;}
+  save.characterUnlocked=save.characterUnlocked||{};
+  save.characterLevels=save.characterLevels||{};
+  save.characterPowers=save.characterPowers||{};
+  save.characterTalents=save.characterTalents||{};
+  save.characterUnlocked[id]=true;
+  save.characterLevels[id]=Math.min(MAX_CHARACTER_LEVEL,level);
+  save.characterPowers[id]={7:true,9:true,11:true};
+  save.characterTalents[id]={8:'shield',10:'resistance'};
+  persist();checkAchievements();renderCharacters();showToast('⚡ '+chars[id].name+' est niveau '+level+' !');
+}
+function adminCharacterPower(id,level){
+  if(!chars[id]){showToast('Personnage inconnu : '+id);return;}
+  if(!isCharUnlocked(id))adminUnlockCharacter(id);
+  save.characterPowers=save.characterPowers||{};
+  save.characterPowers[id]=save.characterPowers[id]||{7:false,9:false,11:false};
+  if(level>=12){
+    save.characterPowers[id][7]=true;
+    save.characterPowers[id][9]=true;
+    save.characterPowers[id][11]=true;
+  }
+  persist();renderCharacters();showToast('✨ Pouvoirs max de '+chars[id].name+' débloqués !');
+}
+
+function adminClaimDaily(){claimDailyReward(true);closeModal();openJournal();showToast('🎁 ADMIN : récompense journalière récupérée !')}
+function adminResetDaily(){save.dailyClaimDate='';save.dailyStreak=0;persist();closeModal();openDailyRewards();showToast('🔄 ADMIN : récompenses journalières réinitialisées.')}
 
 function openJournal(){
   const achievements=[
@@ -586,6 +719,25 @@ function runJournalCommand(){
   if(m){const amount=Number(m[1]);if(!Number.isSafeInteger(amount)||amount<1||amount>100000000){showToast('Montant invalide : 1 à 100 000 000.');return}save.gold+=amount;addActivity(`💰 Commande utilisée : +${amount.toLocaleString('fr-FR')} pièces.`,'command');persist();checkAchievements();openJournal();return;}
   if(/^\/fin$/i.test(raw)){adminFinishGame();return;}
   if(/^\/or$/i.test(raw)){adminAddGold();return;}
+  if(/^\/daily$/i.test(raw)){adminClaimDaily();return;}
+  if(/^\/dailyreset$/i.test(raw)){adminResetDaily();return;}
+  if(/^\/unlock$/i.test(raw)){adminUnlockEverything();return;}
+
+  // Commandes admin supplémentaires — aucune n'est affichée dans l'interface joueur.
+  if(/^\/mondes$/i.test(raw)){adminUnlockWorlds();return;}
+  if(/^\/skins$/i.test(raw)){adminUnlockAllSkins();return;}
+  if(/^\/perso\s+([a-z0-9_-]+)\s+12$/i.test(raw)){
+    const id=raw.match(/^\/perso\s+([a-z0-9_-]+)\s+12$/i)[1];
+    adminCharacterLevel(id,12);return;
+  }
+  if(/^\/perso\s+([a-z0-9_-]+)$/i.test(raw)){
+    const id=raw.match(/^\/perso\s+([a-z0-9_-]+)$/i)[1];
+    adminUnlockCharacter(id);return;
+  }
+  if(/^\/pouvoir\s+([a-z0-9_-]+)\s+12$/i.test(raw)){
+    const id=raw.match(/^\/pouvoir\s+([a-z0-9_-]+)\s+12$/i)[1];
+    adminCharacterPower(id,12);return;
+  }
   showToast('Commande inconnue.');
 }
 function openModal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').classList.add('open')}
