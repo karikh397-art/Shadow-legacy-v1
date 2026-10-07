@@ -396,6 +396,39 @@
 .skin-night .horn,.battleSkin.skin-night .horn{opacity:1;width:64px;height:30px;left:14px;top:-4px;clip-path:polygon(0 100%,15% 0,40% 70%,50% 20%,60% 70%,85% 0,100% 100%)}
 .skin-night .blade,.battleSkin.skin-night .blade{height:86px;transform:rotate(44deg);background:linear-gradient(#ddd,#5e4c7e,#09040e);box-shadow:0 0 18px #5f3e88}
 
+
+/* V20 — Grande variété de couleurs + armes/accessoires de skins */
+.skinPreview .weapon,.battleSkin .weapon,.skinPreview .weapon2,.battleSkin .weapon2{position:absolute;z-index:10;display:block;pointer-events:none}
+.skinPreview .weapon,.battleSkin .weapon{right:-2px;top:74px;width:72px;height:8px;border-radius:8px;transform:rotate(-38deg);background:linear-gradient(90deg,#eee,#fff,#aaa);box-shadow:0 0 9px currentColor}
+.skinPreview .weapon:before,.battleSkin .weapon:before{content:'';position:absolute;left:-9px;top:-4px;width:15px;height:16px;border-radius:3px;background:#6b4727;box-shadow:0 0 0 2px #24160d}
+.skinPreview .weapon:after,.battleSkin .weapon:after{content:'';position:absolute;right:-10px;top:-5px;width:15px;height:18px;background:currentColor;clip-path:polygon(0 50%,100% 0,100% 100%);filter:drop-shadow(0 0 5px currentColor)}
+.skinPreview .weapon2,.battleSkin .weapon2{left:-5px;top:82px;width:48px;height:48px;border:5px solid currentColor;border-left-color:transparent;border-radius:50%;opacity:.95}
+.skinPreview .weapon2:before,.battleSkin .weapon2:before{content:'';position:absolute;left:18px;top:18px;width:43px;height:3px;background:currentColor;transform:rotate(-45deg);box-shadow:0 0 6px currentColor}
+.skinPreview .weapon2:after,.battleSkin .weapon2:after{content:'';position:absolute;left:13px;top:24px;width:34px;height:3px;background:currentColor;transform:rotate(45deg)}
+/* Arme dédiées */
+.skin-sword .weapon,.skin-flameblade .weapon,.skin-ruby .weapon,.skin-royalred .weapon{color:#ff4545}
+.skin-sword .weapon2,.skin-flameblade .weapon2,.skin-ruby .weapon2,.skin-royalred .weapon2{display:none}
+.skin-bow .weapon,.skin-rainbow .weapon{display:none}
+.skin-bow .weapon2,.skin-rainbow .weapon2{color:#ffd34d}
+.skin-gun .weapon,.skin-neongun .weapon{width:42px;height:18px;right:2px;top:79px;border-radius:5px;background:linear-gradient(90deg,#222,#aaa,#fff);transform:rotate(-8deg);color:#64eaff}
+.skin-gun .weapon:before,.skin-neongun .weapon:before{left:26px;top:14px;width:10px;height:18px;background:#333;box-shadow:none}
+.skin-gun .weapon:after,.skin-neongun .weapon:after{right:-9px;top:6px;width:14px;height:6px;background:currentColor;clip-path:none}
+.skin-gun .weapon2,.skin-neongun .weapon2{display:none}
+/* Rouge, violet, orange, rose, jaune et cyan : palettes volontairement très différentes du bleu */
+.skin-flameblade .body,.battleSkin.skin-flameblade .body{background:linear-gradient(145deg,#ff5b22,#7d0810)}.skin-flameblade .cape,.battleSkin.skin-flameblade .cape{background:linear-gradient(145deg,#ffb21a,#4c0509)}.skin-flameblade .visor,.battleSkin.skin-flameblade .visor{background:#fff18a;box-shadow:0 0 22px #ff5a1f}.skin-flameblade .gem,.battleSkin.skin-flameblade .gem{background:#ff4d28;color:#ff4d28}.skin-flameblade .aura,.battleSkin.skin-flameblade .aura{background:radial-gradient(circle,#ff4b254c,transparent 65%)}
+.skin-ruby .body,.battleSkin.skin-ruby .body{background:linear-gradient(145deg,#d71945,#3a0618)}.skin-ruby .cape,.battleSkin.skin-ruby .cape{background:linear-gradient(145deg,#ff496e,#4b071d)}.skin-ruby .visor,.battleSkin.skin-ruby .visor{background:#ffd0dc;box-shadow:0 0 22px #ff2d62}.skin-ruby .gem,.battleSkin.skin-ruby .gem{background:#ff4770;color:#ff4770}.skin-ruby .aura,.battleSkin.skin-ruby .aura{background:radial-gradient(circle,#ff2d6245,transparent 65%)}
+.skin-royalred .body,.battleSkin.skin-royalred .body{background:linear-gradient(145deg,#ff2d2d,#6e0b0b)}.skin-royalred .cape,.battleSkin.skin-royalred .cape{background:linear-gradient(145deg,#a20f18,#260308)}.skin-royalred .visor,.battleSkin.skin-royalred .visor{background:#fff2d1;box-shadow:0 0 20px #ff3838}.skin-royalred .gem,.battleSkin.skin-royalred .gem{background:#ffd04a;color:#ffd04a}.skin-royalred .aura,.battleSkin.skin-royalred .aura{background:radial-gradient(circle,#ff252545,transparent 65%)}
+.skin-violet2 .body,.battleSkin.skin-violet2 .body{background:linear-gradient(145deg,#9a35ff,#270052)}.skin-violet2 .cape,.battleSkin.skin-violet2 .cape{background:linear-gradient(145deg,#e45cff,#31005c)}.skin-violet2 .visor,.battleSkin.skin-violet2 .visor{background:#ffd5ff;box-shadow:0 0 22px #bd45ff}.skin-violet2 .gem,.battleSkin.skin-violet2 .gem{background:#f05bff;color:#f05bff}.skin-violet2 .aura,.battleSkin.skin-violet2 .aura{background:radial-gradient(circle,#c238ff4d,transparent 65%)}
+.skin-orange .body,.battleSkin.skin-orange .body{background:linear-gradient(145deg,#ff9f1c,#7d2b00)}.skin-orange .cape,.battleSkin.skin-orange .cape{background:linear-gradient(145deg,#ffd166,#7c2d00)}.skin-orange .visor,.battleSkin.skin-orange .visor{background:#fff0bd;box-shadow:0 0 22px #ff8c00}.skin-orange .gem,.battleSkin.skin-orange .gem{background:#ffb52e;color:#ffb52e}.skin-orange .aura,.battleSkin.skin-orange .aura{background:radial-gradient(circle,#ff9a1f4a,transparent 65%)}
+.skin-rose2 .body,.battleSkin.skin-rose2 .body{background:linear-gradient(145deg,#ff4fb3,#6b0d4e)}.skin-rose2 .cape,.battleSkin.skin-rose2 .cape{background:linear-gradient(145deg,#ff93d1,#48052f)}.skin-rose2 .visor,.battleSkin.skin-rose2 .visor{background:#ffe4f5;box-shadow:0 0 22px #ff4fb3}.skin-rose2 .gem,.battleSkin.skin-rose2 .gem{background:#ff70c4;color:#ff70c4}.skin-rose2 .aura,.battleSkin.skin-rose2 .aura{background:radial-gradient(circle,#ff4fb344,transparent 65%)}
+.skin-gold2 .body,.battleSkin.skin-gold2 .body{background:linear-gradient(145deg,#ffe05a,#9b4d00)}.skin-gold2 .cape,.battleSkin.skin-gold2 .cape{background:linear-gradient(145deg,#fff1a3,#6d3100)}.skin-gold2 .visor,.battleSkin.skin-gold2 .visor{background:#fffbe2;box-shadow:0 0 24px #ffd43b}.skin-gold2 .gem,.battleSkin.skin-gold2 .gem{background:#fff06a;color:#fff06a}.skin-gold2 .aura,.battleSkin.skin-gold2 .aura{background:radial-gradient(circle,#ffd43b4d,transparent 65%)}
+.skin-neongun .body,.battleSkin.skin-neongun .body{background:linear-gradient(145deg,#16e0d0,#063d5c)}.skin-neongun .cape,.battleSkin.skin-neongun .cape{background:linear-gradient(145deg,#ff36d1,#24115e)}.skin-neongun .visor,.battleSkin.skin-neongun .visor{background:#baffff;box-shadow:0 0 25px #00ffe1}.skin-neongun .gem,.battleSkin.skin-neongun .gem{background:#ff36d1;color:#ff36d1}.skin-neongun .aura,.battleSkin.skin-neongun .aura{background:radial-gradient(circle,#00ffe14d,transparent 65%)}
+/* Skin ultime : dégradé arc-en-ciel animé, réservé à 50 000 pièces */
+.skin-rainbow .body,.battleSkin.skin-rainbow .body{background:linear-gradient(125deg,#ff2635,#ff8c20,#ffe44a,#42df6a,#26c9ff,#6d4aff,#d83cff,#ff2635);background-size:300% 300%;animation:rainbowShift 4s linear infinite}.skin-rainbow .cape,.battleSkin.skin-rainbow .cape{background:linear-gradient(155deg,#d83cff,#6d4aff,#26c9ff,#42df6a,#ffe44a,#ff8c20,#ff2635);background-size:300% 300%;animation:rainbowShift 4s linear infinite reverse}.skin-rainbow .shoulder,.battleSkin.skin-rainbow .shoulder{background:linear-gradient(90deg,#ff2635,#ffe44a,#42df6a,#26c9ff,#6d4aff,#d83cff);background-size:250% 100%;animation:rainbowShift 3s linear infinite}.skin-rainbow .armor,.battleSkin.skin-rainbow .armor{background:linear-gradient(145deg,#fff,#ffe44a,#26c9ff,#d83cff);box-shadow:0 0 15px #fff8}.skin-rainbow .visor,.battleSkin.skin-rainbow .visor{background:#fff;box-shadow:0 0 10px #fff,0 0 30px #26c9ff}.skin-rainbow .gem,.battleSkin.skin-rainbow .gem{background:#fff;color:#fff;box-shadow:0 0 10px #ff2635,0 0 20px #6d4aff,0 0 30px #26c9ff}.skin-rainbow .aura,.battleSkin.skin-rainbow .aura{background:conic-gradient(from 0deg,#ff263544,#ff8c2044,#ffe44a44,#42df6a44,#26c9ff44,#6d4aff44,#d83cff44,#ff263544);animation:rainbowSpin 4s linear infinite}.skin-rainbow .weapon2,.battleSkin.skin-rainbow .weapon2{color:#fff;filter:drop-shadow(0 0 6px #ff2635) drop-shadow(0 0 8px #26c9ff) drop-shadow(0 0 10px #d83cff)}.skin-rainbow .weapon2:before,.battleSkin.skin-rainbow .weapon2:before,.skin-rainbow .weapon2:after,.battleSkin.skin-rainbow .weapon2:after{background:linear-gradient(90deg,#ff2635,#ffe44a,#26c9ff,#d83cff)}
+.skin-rainbow .weapon,.battleSkin.skin-rainbow .weapon{right:-6px;top:70px;width:74px;height:9px;color:#fff;background:linear-gradient(90deg,#ff2635,#ffe44a,#42df6a,#26c9ff,#6d4aff,#d83cff);background-size:250% 100%;animation:rainbowShift 2s linear infinite;box-shadow:0 0 8px #fff,0 0 18px #26c9ff}.skin-rainbow .weapon:before,.battleSkin.skin-rainbow .weapon:before{background:#f5d56c}.skin-rainbow .weapon:after,.battleSkin.skin-rainbow .weapon:after{background:#fff}
+@keyframes rainbowShift{0%{background-position:0% 50%}100%{background-position:300% 50%}}@keyframes rainbowSpin{to{transform:rotate(360deg)}}
+.skinGrid .card.skin{overflow:visible}.skinGrid .skinPreview{transform:scale(.95)}
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -634,9 +667,9 @@ function updateCooldowns(){
   $('p11Btn').disabled=lvl<11||!powers[11]||state.cd[11]>now;
 }
 function updatePowerButtons(){updateCooldowns()}
-const CHAPTER_REWARD_BASE=505;
+const CHAPTER_REWARD_BASE=800;
 const CHAPTER_REWARD_GROWTH=1.089613;
-const DAILY_REWARDS=[100,200,300,500,800,1200,2000];
+const DAILY_REWARDS=[250,500,750,1200,2000,3200,5000];
 function chapterCompletionReward(index){return Math.round(CHAPTER_REWARD_BASE*Math.pow(CHAPTER_REWARD_GROWTH,index));}
 function dailyDateKey(d=new Date()){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
 function dateDiffDays(a,b){const [ay,am,ad]=a.split('-').map(Number),[by,bm,bd]=b.split('-').map(Number);if(!ay||!by)return 999;return Math.round((Date.UTC(by,bm-1,bd)-Date.UTC(ay,am-1,ad))/86400000)}
@@ -646,7 +679,7 @@ function openDailyRewards(){const info=dailyRewardInfo();const rows=DAILY_REWARD
 
 function winEnemy(){
   clearInterval(state.enemyTimer);state.enemy.hp=0;renderBattle();$('enemy').classList.add('dead');
-  const s=state.enemy.boss?300:80;state.score+=s;save.gold+=state.enemy.boss?360:90;
+  const s=state.enemy.boss?300:80;state.score+=s;save.gold+=state.enemy.boss?650:160;
   save.history.unshift(`${state.enemy.name} vaincu`);save.history=save.history.slice(0,10);checkAchievements();persist();
   if(state.enemy.boss){
     save.wins++;save.bestScore=Math.max(save.bestScore,state.score);persist();
@@ -662,7 +695,7 @@ function openGift(isBoss=false){
     if(!$('chest').classList.contains('show'))return;
     $('chest').classList.remove('show');
     const roll=Math.random();
-    if(roll<.55){const g=isBoss?440+Math.floor(Math.random()*361):140+Math.floor(Math.random()*181);save.gold+=g;showToast(`💰 Cadeau : +${g} pièces`)}
+    if(roll<.55){const g=isBoss?800+Math.floor(Math.random()*601):220+Math.floor(Math.random()*281);save.gold+=g;showToast(`💰 Cadeau : +${g} pièces`)}
     else if(roll<.82){save.potions++;showToast(`🧪 Cadeau : +1 potion • ${save.potions} au total`)}
     else {const g=isBoss?800:360;save.gold+=g;showToast(`💎 Gros cadeau : +${g} pièces`)}
     checkAchievements();persist();
@@ -704,9 +737,11 @@ const skinPack={
   elaraRoyal:{name:'Elara — Reine violette',price:3400,cls:'skin-royal2',owner:'elara',rarity:'Épique'},elaraToxic:{name:'Elara — Floraison toxique',price:7800,cls:'skin-toxic',owner:'elara',rarity:'Légendaire'},
   vexSapphire:{name:'Vex — Saphir spectral',price:3600,cls:'skin-sapphire',owner:'vex',rarity:'Épique'},vexAmethyst:{name:'Vex — Améthyste du chaos',price:8200,cls:'skin-amethyst',owner:'vex',rarity:'Légendaire'},
   orionScarlet:{name:'Orion — Étoile écarlate',price:3800,cls:'skin-scarlet',owner:'orion',rarity:'Épique'},orionSilver:{name:'Orion — Argent céleste',price:8500,cls:'skin-silver',owner:'orion',rarity:'Légendaire'},
-  nyxNight:{name:'Nyx — Nuit absolue',price:4000,cls:'skin-night',owner:'nyx',rarity:'Épique'},nyxAurora:{name:'Nyx — Aurore du Néant',price:9000,cls:'skin-aurora',owner:'nyx',rarity:'Légendaire'}
+  nyxNight:{name:'Nyx — Nuit absolue',price:4000,cls:'skin-night',owner:'nyx',rarity:'Épique'},nyxAurora:{name:'Nyx — Aurore du Néant',price:9000,cls:'skin-aurora',owner:'nyx',rarity:'Légendaire'},
+  kaienInferno:{name:'Kaien — Inferno rouge',price:12000,cls:'skin-flameblade',owner:'kaien',rarity:'Mythique'},aikoViolet2:{name:'Aiko — Reine violette',price:14000,cls:'skin-violet2',owner:'aiko',rarity:'Mythique'},renRuby:{name:'Ren — Rubis impérial',price:13000,cls:'skin-ruby',owner:'ren',rarity:'Mythique'},miaRose:{name:'Mia — Rose enchantée',price:15000,cls:'skin-rose2',owner:'mia',rarity:'Mythique'},soraGold:{name:'Sora — Archer doré',price:12500,cls:'skin-gold2 skin-bow',owner:'sora',rarity:'Mythique'},yunaOrange:{name:'Yuna — Flamme solaire',price:13500,cls:'skin-orange skin-sword',owner:'yuna',rarity:'Mythique'},ryoRoyalRed:{name:'Ryo — Dragon écarlate',price:14500,cls:'skin-royalred',owner:'ryo',rarity:'Mythique'},kuroNeon:{name:'Kuro — Pistolet néon',price:15500,cls:'skin-neongun skin-gun',owner:'kuro',rarity:'Mythique'},elaraViolet:{name:'Elara — Sorcière violette',price:15000,cls:'skin-violet2',owner:'elara',rarity:'Mythique'},vexOrange:{name:'Vex — Trickster orange',price:13500,cls:'skin-orange skin-gun',owner:'vex',rarity:'Mythique'},orionRuby:{name:'Orion — Chevalier rubis',price:16000,cls:'skin-ruby skin-sword',owner:'orion',rarity:'Mythique'},nyxViolet:{name:'Nyx — Reine violette',price:17000,cls:'skin-violet2 skin-sword',owner:'nyx',rarity:'Mythique'},
+  rainbowKaien:{name:'Kaien — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'kaien',rarity:'ULTIME'},rainbowAiko:{name:'Aiko — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'aiko',rarity:'ULTIME'},rainbowRen:{name:'Ren — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'ren',rarity:'ULTIME'},rainbowMia:{name:'Mia — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'mia',rarity:'ULTIME'},rainbowSora:{name:'Sora — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-bow',owner:'sora',rarity:'ULTIME'},rainbowYuna:{name:'Yuna — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'yuna',rarity:'ULTIME'},rainbowRyo:{name:'Ryo — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'ryo',rarity:'ULTIME'},rainbowKuro:{name:'Kuro — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-gun',owner:'kuro',rarity:'ULTIME'},rainbowElara:{name:'Elara — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'elara',rarity:'ULTIME'},rainbowVex:{name:'Vex — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-gun',owner:'vex',rarity:'ULTIME'},rainbowOrion:{name:'Orion — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'orion',rarity:'ULTIME'},rainbowNyx:{name:'Nyx — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'nyx',rarity:'ULTIME'}
 };
-function skinArt(cls='skin-default',battle=false){return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span><span class="gem"></span><span class="trim"></span></div>`}
+function skinArt(cls='skin-default',battle=false){return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span><span class="gem"></span><span class="trim"></span><span class="weapon"></span><span class="weapon2"></span></div>`}
 function enemySkinFor(name,boss){const n=name.toLowerCase();if(n.includes('loup'))return 'enemy-wolf';if(n.includes('lave')||n.includes('flamme')||n.includes('infernal'))return 'enemy-magma';if(n.includes('glace')||n.includes('givre')||n.includes('polaire')||n.includes('gelé'))return 'enemy-frost';if(n.includes('néant')||n.includes('abyss')||n.includes('abyssal'))return 'enemy-void';if(n.includes('mage')||n.includes('prêtre')||n.includes('oracle'))return 'enemy-crystal';if(n.includes('royal')||n.includes('roi')||n.includes('duc')||n.includes('seigneur'))return 'enemy-royal';if(n.includes('spectre')||n.includes('fantôme'))return 'enemy-spectral';if(n.includes('golem')||n.includes('colosse')||n.includes('titan'))return 'enemy-beast';if(n.includes('corrompu')||n.includes('plague')||n.includes('toxique'))return 'enemy-plague';return boss?'enemy-boss':'enemy-shadow'}
 function enemySkinArt(cls,icon){return `<div class="enemySkinArt ${cls}"><span class="eAura"></span><span class="eHead">${icon}</span><span class="eBody"></span><span class="eEyes"></span><span class="eCore"></span><span class="eWeapon"></span></div>`}
 function openShop(){
@@ -716,7 +751,7 @@ function openShop(){
   const html=`<div class="shopCoins">💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces disponibles</div>
     <div class="notice">🎮 Personnage actif : <b>${chars[save.selected].name}</b> • ⚡ Niveau <b>${lvl}/${MAX_CHARACTER_LEVEL}</b><br>❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts<br><span class="muted">Les améliorations se font maintenant dans l’écran Personnages et ne renforcent que le personnage choisi.</span></div>
     <div class="shopItem shopPotion"><div><b>🧪 Potion de soin</b><br><span class="muted">Restaure 30% des PV pendant un combat.</span><br>Stock actuel : <b>${save.potions}</b></div><div class="row"><button class="green" onclick="buyPotion(1)">💰 150 • +1</button><button class="green" onclick="buyPotion(5)">💰 700 • +5</button></div></div>
-    <h3>🎨 Skins premium</h3><div class="notice tiny">Les skins ont des prix progressifs jusqu’à 15 000 pièces. Les pouvoirs et talents se débloquent dans l’écran Personnages.</div><div class="skinGrid">${skinHtml}</div>`;
+    <h3>🎨 Skins premium</h3><div class="notice tiny">Les skins proposent maintenant plusieurs palettes et des armes/accessoires visuels. ⭐ Chaque personnage possède un skin ULTIME Arc-en-ciel à 50 000 pièces. Les pouvoirs et talents se débloquent dans l’écran Personnages.</div><div class="skinGrid">${skinHtml}</div>`;
   openModal('🛒 Boutique',html);
 }
 function buyPotion(amount){const cost=amount===5?700:150;if(save.gold<cost){showToast('Pas assez de pièces.');return}save.gold-=cost;save.potions+=amount;persist();openShop();showToast(`🧪 +${amount} potion${amount>1?'s':''}.`)}
@@ -966,6 +1001,13 @@ function adminEquipSkin(id){
   persist();renderCharacters();showToast(`🎨 ADMIN : ${x.name} équipé !`);
 }
 
+function adminUnlockRainbowSkins(equip=false){
+  save.skins=save.skins||{};save.characterSkins=save.characterSkins||{};
+  Object.entries(skinPack).forEach(([id,x])=>{if(x.rarity==='ULTIME'){save.skins[id]=true;if(equip&&x.owner){save.characterSkins[x.owner]=id;}}});
+  if(equip){const id=save.selected;const rainbow=Object.entries(skinPack).find(([,x])=>x.rarity==='ULTIME'&&x.owner===id);if(rainbow)save.skin=rainbow[0];}
+  persist();checkAchievements();closeModal();openShop();showToast(equip?'🌈 ADMIN : skins Arc-en-ciel équipés !':'🌈 ADMIN : tous les skins Arc-en-ciel sont débloqués !');
+}
+
 function adminClaimDaily(){claimDailyReward(true);closeModal();openJournal();showToast('🎁 ADMIN : récompense journalière récupérée !')}
 function adminResetDaily(){save.dailyClaimDate='';save.dailyStreak=0;persist();closeModal();openDailyRewards();showToast('🔄 ADMIN : récompenses journalières réinitialisées.')}
 
@@ -1015,6 +1057,10 @@ function runJournalCommand(){
     const id=raw.match(/^\/pouvoir\s+([a-z0-9_-]+)\s+12$/i)[1];
     adminCharacterPower(id,12);return;
   }
+  if(/^\/arcenciel(?:\s+(\w+))?$/i.test(raw)){
+    const m=raw.match(/^\/arcenciel(?:\s+(\w+))?$/i);if(m[1]&&chars[m[1]]){save.selected=m[1];state.selected=m[1];adminUnlockRainbowSkins(true);}else adminUnlockRainbowSkins(false);return;
+  }
+  if(/^\/rainbows$/i.test(raw)){adminUnlockRainbowSkins(false);return;}
   showToast('Commande inconnue.');
 }
 function openModal(title,body){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modal').classList.add('open')}
