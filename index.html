@@ -76,7 +76,20 @@
 .chapterNode button{width:100%;margin-top:8px}
 #characters{justify-content:flex-start;align-items:center;overflow-x:hidden;touch-action:pan-y}
 #worldmap{overflow-x:hidden;touch-action:pan-y}
-#worldmap .panel{width:min(980px,calc(100vw - 24px));overflow-x:hidden}.characterPanel{width:min(980px,calc(100vw - 32px));margin:auto}.characterGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.characterCard{position:relative;overflow:hidden}.characterCard.locked{opacity:.58}.characterCard.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c22}.characterCard .heroMini{height:118px;display:grid;place-items:center}.characterCard .heroMini .skinPreview{transform:scale(1.05)}.characterActions{display:grid;gap:7px;margin-top:9px}.levelPill{display:inline-block;padding:4px 8px;border-radius:999px;background:#242031;border:1px solid #7d6695;color:#f0cf70;font-weight:900;font-size:12px}.upgradeBox{background:#0d111c;border:1px solid #3c4356;border-radius:14px;padding:12px;margin-top:10px}.charStat{display:flex;justify-content:space-between;gap:8px;margin:3px 0}.lockedLabel{color:#ffb6b6}.shopPotion{border-color:#5da77d}.skinLegend{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid #6d5b87;font-size:11px}.skinGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skinPreview{transform:scale(1.05)}
+#worldmap .panel{width:min(980px,calc(100vw - 24px));overflow-x:hidden}
+.characterPanel{width:min(980px,calc(100vw - 32px));margin:auto}
+.characterTopBar{position:sticky;top:0;z-index:25;background:#080b13f7;padding:4px 0 10px;margin-bottom:8px;backdrop-filter:blur(8px);border-bottom:1px solid #343b50}
+.characterFilters{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:10px 0 12px}
+.characterFilters .filterBtn{padding:9px 11px;font-size:12px;border-radius:11px}
+.characterFilters .filterBtn.active{border-color:#e7c76c;background:linear-gradient(#5b4823,#2b2112);box-shadow:0 0 0 2px #e7c76c22}
+.filterLabel{font-size:12px;font-weight:900;opacity:.75;margin-right:2px}
+.worldCard{cursor:pointer}
+.worldCard .worldHead{cursor:pointer}
+.worldChapters{display:none}
+.worldCard.open .worldChapters{display:block}
+.worldToggle{margin-left:auto;flex:none}
+.worldCard.open .worldToggle{transform:rotate(180deg)}
+.characterGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.characterCard{position:relative;overflow:hidden}.characterCard.locked{opacity:.58}.characterCard.selected{border-color:#e7c76c;box-shadow:0 0 0 2px #e7c76c22}.characterCard .heroMini{height:118px;display:grid;place-items:center}.characterCard .heroMini .skinPreview{transform:scale(1.05)}.characterActions{display:grid;gap:7px;margin-top:9px}.levelPill{display:inline-block;padding:4px 8px;border-radius:999px;background:#242031;border:1px solid #7d6695;color:#f0cf70;font-weight:900;font-size:12px}.upgradeBox{background:#0d111c;border:1px solid #3c4356;border-radius:14px;padding:12px;margin-top:10px}.charStat{display:flex;justify-content:space-between;gap:8px;margin:3px 0}.lockedLabel{color:#ffb6b6}.shopPotion{border-color:#5da77d}.skinLegend{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid #6d5b87;font-size:11px}.skinGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skinPreview{transform:scale(1.05)}
 .skin-obsidian .body,.skin-obsidian .battleSkin .body{background:linear-gradient(145deg,#303848,#070910)}.skin-obsidian .cape,.battleSkin.skin-obsidian .cape{background:linear-gradient(145deg,#566078,#0a0d16)}.skin-obsidian .visor,.battleSkin.skin-obsidian .visor{background:#d9e4ff;box-shadow:0 0 18px #9ab7ff}.skin-obsidian .mark,.battleSkin.skin-obsidian .mark{background:#a8c4ff}.skin-solar .body,.skin-solar .battleSkin .body{background:linear-gradient(145deg,#d9a72f,#4d2506)}.skin-solar .cape,.battleSkin.skin-solar .cape{background:linear-gradient(145deg,#ffe16a,#7b3d08)}.skin-solar .visor,.battleSkin.skin-solar .visor{background:#fff4ad;box-shadow:0 0 20px #ffd43b}.skin-solar .mark,.battleSkin.skin-solar .mark{background:#fff0a0}.skin-celestial .body,.skin-celestial .battleSkin .body{background:linear-gradient(145deg,#4e72d9,#17104a)}.skin-celestial .cape,.battleSkin.skin-celestial .cape{background:linear-gradient(145deg,#8d7bff,#21145f)}.skin-celestial .visor,.battleSkin.skin-celestial .visor{background:#d8d1ff;box-shadow:0 0 22px #9f8cff}.skin-celestial .mark,.battleSkin.skin-celestial .mark{background:#bba9ff}.skin-bloodmoon .body,.skin-bloodmoon .battleSkin .body{background:linear-gradient(145deg,#711b38,#17060e)}.skin-bloodmoon .cape,.battleSkin.skin-bloodmoon .cape{background:linear-gradient(145deg,#c33b68,#2a0714)}.skin-bloodmoon .visor,.battleSkin.skin-bloodmoon .visor{background:#ff6e9d;box-shadow:0 0 20px #ff3d7d}.skin-bloodmoon .mark,.battleSkin.skin-bloodmoon .mark{background:#ffd27d}.skin-dragon .body,.skin-dragon .battleSkin .body{background:linear-gradient(145deg,#3c8c61,#071e14)}.skin-dragon .cape,.battleSkin.skin-dragon .cape{background:linear-gradient(145deg,#6ed28e,#092d1d)}.skin-dragon .visor,.battleSkin.skin-dragon .visor{background:#b8ffcf;box-shadow:0 0 20px #4cff8a}.skin-dragon .mark,.battleSkin.skin-dragon .mark{background:#f5d56c}
 @media(max-width:520px){.characterGrid{grid-template-columns:1fr}.chapterNodes{grid-template-columns:1fr}.skinPreview{transform:scale(.95)}}
 .accountRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
@@ -452,9 +465,9 @@
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V23 • économie rééquilibrée + 20 mondes + 18 personnages + progression niveau 17</div></section>
-<section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde débloqué. Ta progression est conservée.</p></div><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
-<section id="characters" class="screen"><div class="panel characterPanel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Après le lancement d’un chapitre, aucun écran de sélection obligatoire ne s’affiche.</p></div><div class="row"><button id="characterBackBtn" onclick="show('menu')">Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div><div id="characterSummary" class="notice"></div><div id="characterGrid" class="characterGrid"></div></div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V25 • filtres personnages + mondes regroupés + navigation Retour persistante</div></section>
+<section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde. Ses 5 chapitres apparaissent seulement quand tu l’ouvres.</p></div><div class="row"><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
+<section id="characters" class="screen"><div class="panel characterPanel"><div class="characterTopBar"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Le bouton Retour reste accessible même quand tu fais défiler la liste.</p></div><div class="row"><button id="characterBackBtn" onclick="characterBack()">↩ Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div></div><div id="characterSummary" class="notice"></div><div class="characterFilters"><span class="filterLabel">CATÉGORIE :</span><button class="filterBtn active" data-stat="hp" onclick="setCharacterSort('hp')">❤️ PV</button><button class="filterBtn" data-stat="atk" onclick="setCharacterSort('atk')">⚔️ Attaque</button><button class="filterBtn" data-stat="resistance" onclick="setCharacterSort('resistance')">🛡️ Résistance</button><button class="filterBtn" data-stat="crit" onclick="setCharacterSort('crit')">🎯 Critique</button><button class="filterBtn" data-stat="control" onclick="setCharacterSort('control')">🌀 Contrôle</button><button class="filterBtn" data-stat="level" onclick="setCharacterSort('level')">⚡ Niveau</button><button class="filterBtn" onclick="toggleCharacterSortDirection()" id="characterSortDirection">↓ PLUS</button></div><div id="characterSortInfo" class="tiny muted" style="margin:-5px 0 10px">Tri : plus de PV en premier</div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
 <section id="gameplay" class="screen"><div id="arena"><div class="ground"></div><div class="mist"></div><div id="particles"></div><div id="chapterTag"></div><div id="chest" class="chest">🎁</div><div id="fighters"><div id="hero" class="fighter heroPos"><div id="heroSprite" class="sprite"><div class="battleSkin skin-default"><span class="cape"></span><span class="head"></span><span class="visor"></span><span class="body"></span><span class="mark"></span><span class="blade"></span></div></div><div class="name" id="heroName"></div><div class="bar"><i id="heroHP"></i></div><div class="tiny" id="heroHPText"></div><div id="heroDmg" class="damage"></div><div id="heroSlash" class="slash">✦</div></div><div id="fightFlash" class="fightFlash"></div><div id="enemy" class="fighter enemyPos enemy"><div id="enemySprite" class="sprite">👹</div><div class="name" id="enemyName"></div><div class="bar enemyBar"><i id="enemyHP"></i></div><div class="tiny" id="enemyHPText"></div><div id="enemyDmg" class="damage"></div></div></div></div><div id="hud"><div class="hudBox"><b id="hudHero"></b><div>⚡ Pouvoir <b id="hudPower"></b>/15</div><div class="bar"><i id="hudHP"></i></div></div><div class="hudBox" style="text-align:right">💰 <b id="hudGold"></b><br><span id="hudEnemy"></span><br>🧪 Potions : <b id="hudPotions"></b></div></div><div id="controls"><button class="ctrl attack" onclick="normalAttack()">⚔️ ATTAQUER</button><button id="p1Btn" class="ctrl p1" onclick="usePower(1)">⚡ POUVOIR 1<span class="cool" id="p1Cd"></span></button><button id="p7Btn" class="ctrl p7" onclick="usePower(7)">⚡ ÉVEIL 7<span class="cool" id="p7Cd"></span></button><button id="p9Btn" class="ctrl p9" onclick="usePower(9)">🔥 FRAPPE 9<span class="cool" id="p9Cd"></span></button><button id="p11Btn" class="ctrl p11" onclick="usePower(11)">👑 SUPRÊME 11<span class="cool" id="p11Cd"></span></button><button id="p15Btn" class="ctrl p15" onclick="usePower(15)">🌟 ULTIME 15<span class="cool" id="p15Cd"></span></button><button id="p20Btn" class="ctrl p20" onclick="usePower(20)">💥 ULTIME 20<span class="cool" id="p20Cd"></span></button><button class="ctrl heal" onclick="healAttack()">🧪 POTION<span class="cool" id="healCd"></span></button></div><div id="toast"></div><div id="cutscene"><div class="cs"><div class="csIcon" id="csIcon">🌑</div><h2 id="csTitle"></h2><p id="csText"></p><div class="cinBar"><i id="cinProgress"></i></div><br><button class="gold" onclick="advanceCutscene()">CONTINUER</button></div></div></section>
 <section id="result" class="screen"><div class="resultIcon" id="resultIcon">🏆</div><div id="resultTitle" class="resultTitle victory">VICTOIRE</div><div id="resultText"></div><div class="scoreline" id="resultScore"></div><div class="row" style="justify-content:center;margin-top:12px"><button class="gold" onclick="resultContinue()">CONTINUER</button><button onclick="show('menu')">MENU</button></div></section>
@@ -573,7 +586,7 @@ for(let w=0;w<20;w++){
 
 let save=loadSave();
 if(save.v14SkinsReset)localStorage.setItem('shadowLegacyV10',JSON.stringify(save));
-let state={chapter:0,enemyIndex:0,enemy:null,selected:'kaien',storyStep:0,cutsceneStep:0,mode:'intro',busy:false,finished:false,lastFrame:0,cd:{1:0,7:0,9:0,11:0,15:0,20:0,heal:0},enemyTimer:null,attackReadyAt:0,score:0};
+let state={openWorld:0,chapter:0,enemyIndex:0,enemy:null,selected:'kaien',storyStep:0,cutsceneStep:0,mode:'intro',busy:false,finished:false,lastFrame:0,cd:{1:0,7:0,9:0,11:0,15:0,20:0,heal:0},enemyTimer:null,attackReadyAt:0,score:0};
 const UPGRADE_COSTS={2:100,3:180,4:280,5:420,6:650,7:900,8:1200,9:1500,10:1900,11:2300,12:2800,13:3400,14:4000,15:4700,16:5500,17:6500,18:7500,19:8500,20:17670};
 const MAX_CHARACTER_LEVEL=20;
 function freshCharacterLevels(){return Object.fromEntries(Object.keys(chars).map(id=>[id,1]))}
@@ -629,12 +642,77 @@ function characterSkinPanel(id){
   }).join('');
   return `<details class="characterSkinTab" ${current!==base?'open':''}><summary>🎨 Skins du personnage • ${skinPack[current]?.name||'Base'}</summary><div class="characterSkinGrid">${items}</div></details>`;
 }
-function renderCharacters(){const grid=$('characterGrid');if(!grid)return;const selected=save.selected;const s=stats();$('characterSummary').innerHTML=`🎮 <b>${chars[selected].name}</b> est sélectionné • Niveau <b>${charLevel(selected)}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces<br><span class="muted">Les améliorations, pouvoirs, talents et skins sont propres à chaque personnage.</span><br><span class="tiny">💰 Objectif économique des 100 chapitres : <b>${TOTAL_PERMANENT_SPEND.toLocaleString('fr-FR')}</b> pièces. Cela permet d’acheter tout le contenu hors skins Arc-en-ciel et de Les skins Arc-en-ciel sont exclus de cet équilibre et restent des achats bonus. Les 100 chapitres rapportent ${TOTAL_CHAPTER_GOLD.toLocaleString('fr-FR')} pièces, plus ${COMBAT_GOLD_TOTAL.toLocaleString('fr-FR')} de récompenses fixes de combat, avec les 350 pièces de départ.</span>`;grid.innerHTML=Object.entries(chars).map(([id,c])=>{const unlocked=isCharUnlocked(id),lvl=charLevel(id),st=stats(id),sel=selected===id;const cost=lvl>=MAX_CHARACTER_LEVEL?0:upgradeCost(lvl+1);const buyUnlock=unlocked?`<button class="${sel?'gold':'purple'}" onclick="selectCharacter('${id}')">${sel?'✓ SÉLECTIONNÉ':'CHOISIR'}</button>`:`<button class="gold" onclick="unlockCharacter('${id}')">🔓 ${c.unlock.toLocaleString('fr-FR')} 💰<br>DÉBLOQUER</button>`;const up=unlocked?(lvl>=MAX_CHARACTER_LEVEL?`<button disabled>⚡ NIVEAU MAX</button>`:`<button class="gold" onclick="upgradeCharacter('${id}')">⚡ AMÉLIORER • 💰 ${cost.toLocaleString('fr-FR')}</button>`):'';return `<div class="card characterCard ${sel?'selected':''} ${unlocked?'':'locked'}"><div class="heroMini">${skinArt(skinPack[equippedSkinFor(id)]?.cls||'skin-default')}</div><h3 style="margin:4px 0">${c.icon} ${c.name}</h3><span class="tag">${c.role}</span> <span class="levelPill">Niveau ${lvl}/${MAX_CHARACTER_LEVEL}</span><p class="muted" style="margin:7px 0">${c.desc}</p><div class="charStat"><span>❤️ PV</span><b>${st.maxHP}</b></div><div class="charStat"><span>⚔️ Dégâts</span><b>${st.atk}</b></div><div class="charStat"><span>✨ Pouvoir</span><b>${c.power}</b></div><div class="charStat"><span>🎯 Critique</span><b>${Math.round((c.crit||0)*100)}%</b></div><div class="charStat"><span>🛡️ Résistance</span><b>${Math.round((st.reduction||0)*100)}%</b></div><div class="charStat"><span>🌀 Contrôle</span><b>${Math.round((c.control||0)*100)}%</b></div><div class="characterActions">${buyUnlock}${up}</div>${unlocked?`${characterSkinPanel(id)}<div class="characterPowerBox"><b>⚡ Pouvoirs achetables</b>${specialPowerButtons(id,lvl)}${talentButton(id,8)}${talentButton(id,10)}<div class="equipment17">${lvl>=20?`🛡️ <b>${c.equipment20||c.equipment17||'Équipement ultime'}</b> • ÉQUIPÉ automatiquement`:'🔒 Équipement : niveau 20'}</div></div>`:''}</div>`}).join('')}
+let characterSortStat='hp';
+let characterSortDesc=true;
+
+function characterStatValue(id, stat){
+  const c=chars[id], st=stats(id);
+  if(stat==='hp') return st.maxHP;
+  if(stat==='atk') return st.atk;
+  if(stat==='resistance') return st.reduction||0;
+  if(stat==='crit') return c.crit||0;
+  if(stat==='control') return c.control||0;
+  if(stat==='level') return charLevel(id);
+  return 0;
+}
+function setCharacterSort(stat){
+  characterSortStat=stat;
+  characterSortDesc=true;
+  renderCharacters();
+}
+function toggleCharacterSortDirection(){
+  characterSortDesc=!characterSortDesc;
+  renderCharacters();
+}
+function updateCharacterFilterUI(){
+  document.querySelectorAll('.characterFilters .filterBtn[data-stat]').forEach(b=>{
+    b.classList.toggle('active',b.dataset.stat===characterSortStat);
+  });
+  const dir=$('characterSortDirection');
+  if(dir)dir.textContent=characterSortDesc?'↓ PLUS':'↑ MOINS';
+  const labels={hp:'PV',atk:'attaque',resistance:'résistance',crit:'critique',control:'contrôle',level:'niveau'};
+  const info=$('characterSortInfo');
+  if(info)info.textContent=`Tri : ${characterSortDesc?'plus de':'moins de'} ${labels[characterSortStat]} en premier`;
+}
+function renderCharacters(){
+  const grid=$('characterGrid');if(!grid)return;
+  const selected=save.selected;
+  const s=stats();
+  $('characterSummary').innerHTML=`🎮 <b>${chars[selected].name}</b> est sélectionné • Niveau <b>${charLevel(selected)}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces<br><span class="muted">Utilise une catégorie pour classer rapidement les personnages par PV, attaque, résistance, critique, contrôle ou niveau.</span><br><span class="tiny">💰 Objectif économique des 100 chapitres : <b>${TOTAL_PERMANENT_SPEND.toLocaleString('fr-FR')}</b> pièces. Les skins Arc-en-ciel restent des achats bonus.</span>`;
+  const entries=Object.entries(chars).sort(([a],[b])=>{
+    const va=characterStatValue(a,characterSortStat),vb=characterStatValue(b,characterSortStat);
+    if(va!==vb)return characterSortDesc?(vb-va):(va-vb);
+    return chars[a].name.localeCompare(chars[b].name,'fr');
+  });
+  grid.innerHTML=entries.map(([id,c])=>{
+    const unlocked=isCharUnlocked(id),lvl=charLevel(id),st=stats(id),sel=selected===id;
+    const cost=lvl>=MAX_CHARACTER_LEVEL?0:upgradeCost(lvl+1);
+    const buyUnlock=unlocked?`<button class="${sel?'gold':'purple'}" onclick="selectCharacter('${id}')">${sel?'✓ SÉLECTIONNÉ':'CHOISIR'}</button>`:`<button class="gold" onclick="unlockCharacter('${id}')">🔓 ${c.unlock.toLocaleString('fr-FR')} 💰<br>DÉBLOQUER</button>`;
+    const up=unlocked?(lvl>=MAX_CHARACTER_LEVEL?`<button disabled>⚡ NIVEAU MAX</button>`:`<button class="gold" onclick="upgradeCharacter('${id}')">⚡ AMÉLIORER • 💰 ${cost.toLocaleString('fr-FR')}</button>`):'';
+    return `<div class="card characterCard ${sel?'selected':''} ${unlocked?'':'locked'}"><div class="heroMini">${skinArt(skinPack[equippedSkinFor(id)]?.cls||'skin-default')}</div><h3 style="margin:4px 0">${c.icon} ${c.name}</h3><span class="tag">${c.role}</span> <span class="levelPill">Niveau ${lvl}/${MAX_CHARACTER_LEVEL}</span><p class="muted" style="margin:7px 0">${c.desc}</p><div class="charStat"><span>❤️ PV</span><b>${st.maxHP}</b></div><div class="charStat"><span>⚔️ Dégâts</span><b>${st.atk}</b></div><div class="charStat"><span>✨ Pouvoir</span><b>${c.power}</b></div><div class="charStat"><span>🎯 Critique</span><b>${Math.round((c.crit||0)*100)}%</b></div><div class="charStat"><span>🛡️ Résistance</span><b>${Math.round((st.reduction||0)*100)}%</b></div><div class="charStat"><span>🌀 Contrôle</span><b>${Math.round((c.control||0)*100)}%</b></div><div class="characterActions">${buyUnlock}${up}</div>${unlocked?`${characterSkinPanel(id)}<div class="characterPowerBox"><b>⚡ Pouvoirs achetables</b>${specialPowerButtons(id,lvl)}${talentButton(id,8)}${talentButton(id,10)}<div class="equipment17">${lvl>=20?`🛡️ <b>${c.equipment20||c.equipment17||'Équipement ultime'}</b> • ÉQUIPÉ automatiquement`:'🔒 Équipement : niveau 20'}</div></div>`:''}</div>`;
+  }).join('');
+  updateCharacterFilterUI();
+}
 
 let characterReturn='menu';
-function openCharacters(from='menu'){characterReturn=from==='map'?'worldmap':(from==='launch'?'launch':'menu');show('characters')}
-function characterContinue(){if(characterReturn==='launch'){startGame();return}show(characterReturn);if(characterReturn==='worldmap')renderWorldMap()}
-function selectCharacter(id){if(!isCharUnlocked(id))return;save.selected=id;state.selected=id;save.skin=equippedSkinFor(id);persist();renderCharacters();showToast(`${chars[id].name} sélectionné.`)}
+function openCharacters(from='menu'){
+  characterReturn=from==='map'?'worldmap':(from==='launch'?'launch':'menu');
+  show('characters');
+}
+function characterBack(){
+  if(characterReturn==='worldmap'){show('worldmap');renderWorldMap();return}
+  if(characterReturn==='launch'){show('menu');return}
+  show(characterReturn||'menu');
+}
+function characterContinue(){
+  if(characterReturn==='launch'){startGame();return}
+  if(characterReturn==='worldmap'){show('worldmap');renderWorldMap();return}
+  show(characterReturn||'menu');
+}
+function selectCharacter(id){
+  if(!isCharUnlocked(id))return;
+  save.selected=id;state.selected=id;save.skin=equippedSkinFor(id);persist();renderCharacters();showToast(`${chars[id].name} sélectionné.`);
+}
 function unlockCharacter(id){const c=chars[id];if(!c||isCharUnlocked(id))return;if(save.gold<c.unlock){showToast('Pas assez de pièces.');return}save.gold-=c.unlock;save.characterUnlocked[id]=true;save.characterLevels[id]=1;persist();renderCharacters();showToast(`🔓 ${c.name} est maintenant disponible !`)}
 function upgradeCharacter(id){if(!isCharUnlocked(id))return;const lvl=charLevel(id);if(lvl>=MAX_CHARACTER_LEVEL)return;const cost=upgradeCost(lvl+1);if(save.gold<cost){showToast(`Il faut ${cost} pièces.`);return}save.gold-=cost;save.characterLevels[id]=lvl+1;save.characterEquipment=save.characterEquipment||{};if(lvl+1>=20)save.characterEquipment[id]=true;checkAchievements();persist();renderCharacters();if(id===save.selected){game.hp=stats().maxHP}showToast(`⚡ ${chars[id].name} passe au niveau ${lvl+1} !${lvl+1>=20?' 🛡️ Équipement ultime obtenu !':''}`)}
 function buySpecialPowerFor(id,level){const x=specialPowerData[level];if(!x||!isCharUnlocked(id)||charLevel(id)<level)return;save.characterPowers[id]=save.characterPowers[id]||{7:false,9:false,11:false,15:false,20:false};if(save.characterPowers[id][level]){showToast('Pouvoir déjà acheté pour ce personnage.');return}if(save.gold<x.cost){showToast('Pas assez de pièces.');return}save.gold-=x.cost;save.characterPowers[id][level]=true;persist();renderCharacters();showToast(`${x.icon} ${x.name} acheté pour ${chars[id].name} !`)}
@@ -645,8 +723,13 @@ function worldOfChapter(i){return Math.floor(i/5)}
 function worldUnlocked(w){if(w===0)return true;return chapters.slice((w-1)*5,w*5).every((_,j)=>save.completedChapters.includes((w-1)*5+j))}
 function chapterUnlocked(i){return i===0||save.completedChapters.includes(i-1)}
 function openWorldMap(){
+  if(typeof state.openWorld!=='number')state.openWorld=0;
   renderWorldMap();
   show('worldmap');
+}
+function toggleWorld(wi){
+  state.openWorld=(state.openWorld===wi)?-1:wi;
+  renderWorldMap();
 }
 function renderWorldMap(){
   const mapName=$('mapCharacterName');if(mapName)mapName.textContent=chars[save.selected].name;
@@ -654,16 +737,17 @@ function renderWorldMap(){
   body.innerHTML=worldNames.map((w,wi)=>{
     const unlocked=worldUnlocked(wi);
     const doneCount=[0,1,2,3,4].filter(k=>save.completedChapters.includes(wi*5+k)).length;
-    const nodes=[0,1,2,3,4].map(k=>{
+    const isOpen=state.openWorld===wi;
+    const nodes=isOpen?[0,1,2,3,4].map(k=>{
       const idx=wi*5+k,ch=chapters[idx],done=save.completedChapters.includes(idx),can=chapterUnlocked(idx);
       return `<div class="chapterNode ${done?'done':''} ${can?'':'locked'}">
         <b>${done?'✓ ':''}${ch.name}</b><div class="tiny">${done?'Terminé':can?'Prêt à jouer':'🔒 À débloquer'}</div>
         <button class="${can?'gold':''}" ${can?'onclick="playChapter('+idx+')"':'disabled'}>${done?'REJOUER':'JOUER'}</button>
       </div>`;
-    }).join('');
-    return `<div class="worldCard ${unlocked?'unlocked':'locked'}">
-      <div class="worldHead"><div class="worldOrb"></div><div><h3 style="margin:0">${w.name}</h3><div class="muted">${w.desc}</div><div class="tiny">${doneCount}/5 chapitres terminés</div></div></div>
-      <div class="chapterNodes">${nodes}</div>
+    }).join(''):'';
+    return `<div class="worldCard ${unlocked?'unlocked':'locked'} ${isOpen?'open':''}" onclick="toggleWorld(${wi})">
+      <div class="worldHead"><div class="worldOrb"></div><div><h3 style="margin:0">${w.name}</h3><div class="muted">${w.desc}</div><div class="tiny">${doneCount}/5 chapitres terminés</div></div><button class="worldToggle" onclick="event.stopPropagation();toggleWorld(${wi})">${isOpen?'▲':'▼'}</button></div>
+      <div class="worldChapters" onclick="event.stopPropagation()"><div class="chapterNodes">${nodes}</div></div>
     </div>`;
   }).join('');
 }
