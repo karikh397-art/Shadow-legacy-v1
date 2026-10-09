@@ -465,7 +465,7 @@
 <body>
 <div id="app">
 <section id="loading" class="screen active"><div class="loadLogo">SHADOW</div><div class="loadSub">LEGACY</div><div class="loader"><i></i></div><div class="tiny">Chargement de l'ombre…</div></section>
-<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V25 • filtres personnages + mondes regroupés + navigation Retour persistante</div></section>
+<section id="menu" class="screen"><div id="menuBg"></div><div class="spacer"></div><div class="logo">SHADOW<br>LEGACY</div><div class="sub">LE DESTIN SE RÉVEILLE</div><div class="menuStats" id="menuStats"></div><div class="menuBtns"><button class="gold" onclick="openCharacters('launch')">▶ JOUER</button><button onclick="openShop()">🛒 BOUTIQUE</button><button onclick="openCharacters()">👥 PERSONNAGES</button><button onclick="openScores()">🏆 CLASSEMENT</button><button onclick="openJournal()">💬 JOURNAL & SUCCÈS</button><button onclick="openDailyRewards()">🎁 RÉCOMPENSES</button><button onclick="openSettings()">⚙ RÉGLAGES</button><button onclick="openAccount()">☁️ COMPTE</button></div><div class="tiny">V26 • dégâts entiers + 25 mondes + 5 skins premium minimum par personnage</div></section>
 <section id="worldmap" class="screen"><div class="panel"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">🗺️ Carte des mondes</h2><p class="muted" style="margin:5px 0 0">Choisis un monde. Ses 5 chapitres apparaissent seulement quand tu l’ouvres.</p></div><div class="row"><button onclick="show('menu')">Retour</button><button onclick="openCharacters('map')">👥 Personnages</button></div></div><div class="notice tiny">🎮 Personnage actuel : <b id="mapCharacterName"></b> — change-le ici avant de lancer un chapitre.</div><div id="worldMapBody" class="worldMap" style="margin-top:14px"></div></div></section>
 <section id="characters" class="screen"><div class="panel characterPanel"><div class="characterTopBar"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">👥 Personnages</h2><p class="muted" style="margin:5px 0 0">Choisis ton personnage ici avant de jouer. Le bouton Retour reste accessible même quand tu fais défiler la liste.</p></div><div class="row"><button id="characterBackBtn" onclick="characterBack()">↩ Retour</button><button class="gold" onclick="characterContinue()">▶ JOUER</button></div></div></div><div id="characterSummary" class="notice"></div><div class="characterFilters"><span class="filterLabel">CATÉGORIE :</span><button class="filterBtn active" data-stat="hp" onclick="setCharacterSort('hp')">❤️ PV</button><button class="filterBtn" data-stat="atk" onclick="setCharacterSort('atk')">⚔️ Attaque</button><button class="filterBtn" data-stat="resistance" onclick="setCharacterSort('resistance')">🛡️ Résistance</button><button class="filterBtn" data-stat="crit" onclick="setCharacterSort('crit')">🎯 Critique</button><button class="filterBtn" data-stat="control" onclick="setCharacterSort('control')">🌀 Contrôle</button><button class="filterBtn" data-stat="level" onclick="setCharacterSort('level')">⚡ Niveau</button><button class="filterBtn" onclick="toggleCharacterSortDirection()" id="characterSortDirection">↓ PLUS</button></div><div id="characterSortInfo" class="tiny muted" style="margin:-5px 0 10px">Tri : plus de PV en premier</div><div id="characterGrid" class="characterGrid"></div></div></section>
 <section id="story" class="screen"><div class="panel"><div class="storyArt" id="storyArt">🌑</div><div class="storyTitle" id="storyTitle"></div><p class="storyText" id="storyText"></p><div class="row" style="justify-content:center"><button class="gold" onclick="nextStory()">CONTINUER</button></div></div></section>
@@ -519,7 +519,12 @@ const worldNames=[
  {name:'Monde XVII — La Dimension Brisée',desc:'La réalité elle-même se fissure autour des héros.'},
  {name:'Monde XVIII — Le Sanctuaire des Anciens',desc:'Les gardiens ancestraux protègent les derniers secrets.'},
  {name:'Monde XIX — Le Royaume Infini',desc:'Un royaume sans fin où chaque victoire ouvre une nouvelle porte.'},
- {name:'Monde XX — L’Apogée du Néant',desc:'Le sommet de l’aventure et le dernier défi de Shadow Legacy.'}
+ {name:'Monde XX — L’Apogée du Néant',desc:'Le sommet de l’aventure et le dernier défi de Shadow Legacy.'},
+ {name:'Monde XXI — Les Abysses Stellaires',desc:'Des profondeurs cosmiques où les étoiles elles-mêmes semblent s’éteindre.'},
+ {name:'Monde XXII — La Forteresse Éternelle',desc:'Une citadelle gigantesque dont les défenses se reforment sans cesse.'},
+ {name:'Monde XXIII — Le Royaume des Esprits',desc:'Un monde spectral où les anciens héros veillent encore.'},
+ {name:'Monde XXIV — La Couronne du Chaos',desc:'Le chaos déforme les terres et libère des ennemis redoutables.'},
+ {name:'Monde XXV — Le Dernier Héritage',desc:'Le véritable dernier chapitre de Shadow Legacy et l’épreuve ultime.'}
 ];
 const chapterNames=[
  ['Le Sanctuaire', 'La Cité Brisée', 'La Montagne Rouge', 'Le Temple Gelé', 'La Porte Oubliée'],
@@ -541,7 +546,12 @@ const chapterNames=[
  ['La Faille', 'Les Fragments du Monde', 'Le Labyrinthe Brisé', 'La Chambre Instable', 'Le Cœur de la Faille'],
  ['Les Ruines Anciennes', 'Le Temple des Gardiens', 'La Crypte Sacrée', 'La Salle des Anciens', 'Le Gardien Originel'],
  ['La Route Infinie', 'Les Mille Portes', 'La Cité Sans Fin', 'Le Palais Infini', 'Le Cœur de l’Infini'],
- ['Le Dernier Passage', 'La Salle du Destin', 'Le Royaume Absolu', 'Le Cœur du Néant', 'L’Apogée du Néant']
+ ['Le Dernier Passage', 'La Salle du Destin', 'Le Royaume Absolu', 'Le Cœur du Néant', 'L’Apogée du Néant'],
+ ['La Faille Stellaire', 'Les Étoiles Mortes', 'Le Gouffre Cosmique', 'La Nébuleuse Noire', 'Le Cœur Stellaire'],
+ ['La Porte Éternelle', 'Les Remparts Infinis', 'La Salle des Sentinelles', 'Le Bastion Originel', 'Le Noyau Éternel'],
+ ['Le Bois des Esprits', 'La Rivière Spectrale', 'La Cité des Âmes', 'Le Temple des Anciens', 'Le Roi des Esprits'],
+ ['La Plaine du Chaos', 'Les Ruines Chaotiques', 'La Tour Déformée', 'Le Palais du Chaos', 'Le Cœur du Chaos'],
+ ['Le Chemin de l’Héritage', 'La Salle des Légendes', 'Le Royaume Final', 'Le Sanctuaire Ultime', 'Le Dernier Héritage']
 ];
 const chapterIcons=['🌑', '🏯', '⛰️', '❄️', '🚪', '🐺', '🏔️', '🧊', '🗼', '👑', '🌲', '✨', '🌌', '🌿', '🌳', '💎', '🏙️', '🔷', '🏛️', '🪞', '🏜️', '🔥', '⚒️', '🌋', '🌅', '🪐', '🌉', '🌊', '🗼', '🌀', '🌫️', '👻', '🏰', '🌁', '🕯️', '🌙', '🌌', '🌿', '🏯', '👑', '🚪', '🌑', '🕳️', '🏰', '⚫', '👑', '🏛️', '🛡️', '🌑', '👑', '☁️', '🌸', '🌺', '🌤️', '🪽', '🌟', '⚒️', '🔨', '⛓️', '🗿', '⚔️', '🌊', '⛵', '🐚', '🌧️', '🌀', '⏳', '🕰️', '⌛', '🔮', '🧭', '🌋', '🔥', '🪨', '🌅', '⭐', '🌠', '🌌', '🛰️', '🌌', '🌀', '💥', '🧩', '🪞', '🏛️', '🗝️', '🕯️', '🧿', '🌌', '🚪', '♾️', '🏙️', '👑', '🌑', '🌀', '⚫', '👑', '✨', '🌠', '🌑'];
 const enemyTemplates=[
@@ -551,12 +561,18 @@ const resistantEnemyTemplate=['Forteresse du Néant','🧱',520,26,0.55];
 const bossTemplates=[
  ['Gardien du Sanctuaire','👹',330,20],['Seigneur de la Cité','👺',390,22],['Duc des Pics','👑',455,25],['Reine du Givre','❄️',520,28],['Gardien Astral','🌌',590,31],['Roi Cristallin','💎',660,34],['Seigneur des Cendres','🔥',740,37],['Maître du Vide','🌀',820,40],['Général du Néant','😈',910,44],['Roi du Néant','👑',1050,49],
  ['Archange Céleste','🪽',1250,56],['Titan de la Forge','🗿',1400,62],['Roi des Tempêtes','🌊',1550,68],['Maître du Temps','🕰️',1720,74],['Seigneur du Magma','🔥',1900,82],['Empereur Stellaire','🌌',2100,90],['Roi de la Faille','🌀',2350,98],['Ancien Originel','🗿',2650,106],['Roi de l’Infini','♾️',3000,116],['Apogée du Néant','👑',3500,130]
+,
+ ['Empereur Stellaire Déchu','🌌',3800,136],
+ ['Gardien Éternel','🛡️',4100,142],
+ ['Roi des Esprits','👻',4400,148],
+ ['Souverain du Chaos','🌀',4700,154],
+ ['Héritier Ultime','👑',5000,160]
 ];
 const chapters=[];
 // Courbe de difficulté V24.1 : les PV dépendent uniquement du chapitre et restent monotones.
 // Aucun ennemi d'un chapitre plus avancé ne peut avoir moins de PV qu'un ennemi d'un chapitre précédent.
 const MAX_ENEMY_HP=4000;
-for(let w=0;w<20;w++){
+for(let w=0;w<25;w++){
   for(let c=0;c<5;c++){
     const i=w*5+c;
     const count=Math.min(8,3+Math.floor(i/16)); // 3 au début, puis jusqu'à 8 à la fin.
@@ -598,7 +614,7 @@ const TOTAL_PERMANENT_SPEND=2600000;
 const COMBAT_GOLD_TOTAL=154100;
 const TOTAL_CHAPTER_GOLD=TOTAL_PERMANENT_SPEND-350-COMBAT_GOLD_TOTAL;
 function chapterCompletionReward(index){const n=chapters.length;return Math.round(TOTAL_CHAPTER_GOLD*(index+1)/n)-Math.round(TOTAL_CHAPTER_GOLD*index/n)}
-function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true,lioraBase:true,draxBase:true,seleneBase:true,torenBase:true,zephBase:true,ariaBase:true,brutusBase:true,gromBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],activityLog:[{text:'Bienvenue dans SHADOW LEGACY ! Ton journal de progression est prêt.',type:'system',time:Date.now()}],achievements:{world1:false,world2:false,world3:false,world4:false,world5:false,world6:false,world7:false,world8:false,world9:false,world10:false,world11:false,world12:false,world13:false,world14:false,world15:false,world16:false,world17:false,world18:false,world19:false,world20:false,chapters10:false,chapters25:false,chapters50:false,chapters100:false,level12:false,level17:false,level20:false,equipment17:false,firstSkin:false,tenSkins:false,gold10000:false},cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase',liora:'lioraBase',drax:'draxBase',selene:'seleneBase',toren:'torenBase',zeph:'zephBase',aria:'ariaBase',brutus:'brutusBase',grom:'gromBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),characterEquipment:freshCharacterEquipment(),v14SkinsReset:false,dailyClaimDate:'',dailyStreak:0}}
+function defaultSave(){return {gold:350,selected:'kaien',skin:'default',skins:{default:true,aikoBase:true,renBase:true,miaBase:true,soraBase:true,yunaBase:true,ryoBase:true,kuroBase:true,elaraBase:true,vexBase:true,orionBase:true,nyxBase:true,lioraBase:true,draxBase:true,seleneBase:true,torenBase:true,zephBase:true,ariaBase:true,brutusBase:true,gromBase:true},potions:2,completedChapters:[],wins:0,defeats:0,bestScore:0,settings:{music:true,sfx:true,vibration:true},friends:['Ami_ombre'],history:[],activityLog:[{text:'Bienvenue dans SHADOW LEGACY ! Ton journal de progression est prêt.',type:'system',time:Date.now()}],achievements:{world1:false,world2:false,world3:false,world4:false,world5:false,world6:false,world7:false,world8:false,world9:false,world10:false,world11:false,world12:false,world13:false,world14:false,world15:false,world16:false,world17:false,world18:false,world19:false,world20:false,world21:false,world22:false,world23:false,world24:false,world25:false,chapters10:false,chapters25:false,chapters50:false,chapters100:false,chapters125:false,level12:false,level17:false,level20:false,equipment17:false,firstSkin:false,tenSkins:false,gold10000:false},cloudEmail:'',characterSkins:{kaien:'default',aiko:'aikoBase',ren:'renBase',mia:'miaBase',sora:'soraBase',yuna:'yunaBase',ryo:'ryoBase',kuro:'kuroBase',elara:'elaraBase',vex:'vexBase',orion:'orionBase',nyx:'nyxBase',liora:'lioraBase',drax:'draxBase',selene:'seleneBase',toren:'torenBase',zeph:'zephBase',aria:'ariaBase',brutus:'brutusBase',grom:'gromBase'},characterLevels:freshCharacterLevels(),characterUnlocked:freshCharacterUnlocks(),characterPowers:freshCharacterPowers(),characterTalents:freshCharacterTalents(),characterEquipment:freshCharacterEquipment(),v14SkinsReset:false,dailyClaimDate:'',dailyStreak:0}}
 function upgradeCost(nextLevel){return UPGRADE_COSTS[nextLevel]||5500}
 function charLevel(id=save.selected){return Math.max(1,Number(save.characterLevels?.[id]||1))}
 function isCharUnlocked(id){return !!save.characterUnlocked?.[id]}
@@ -627,7 +643,7 @@ function baseSkinFor(id){const key=id==='kaien'?'default':id+'Base';return skinP
 function equippedSkinFor(id=save.selected){const map=save.characterSkins||{};const sid=map[id];if(sid&&skinPack?.[sid]&&skinPack[sid].owner===id&&(skinPack[sid].base||save.skins?.[sid]))return sid;return baseSkinFor(id)}
 function stats(key=save.selected){const c=chars[key]||chars.kaien;const p=charLevel(key);const t=save.characterTalents?.[key]||{};let maxHP=Math.round(c.baseHP+(p-1)*c.hpStep),atk=Math.round((c.baseAtk+(p-1)*c.atkStep)*10)/10,reduction=c.reduction||0,control=c.control||0,healBonus=c.healBonus||0;if(p>=15){atk=Math.round(atk*1.08*10)/10;maxHP+=35}if(p>=20){atk=Math.round(atk*1.12*10)/10;maxHP+=60}if(save.characterEquipment?.[key]){atk=Math.round(atk*1.10*10)/10;maxHP+=55;reduction+=.05}if(t[8]==='shield')maxHP+=14;if(t[8]==='resistance')reduction+=.08;if(t[8]==='heal')healBonus+=.12;if(t[10]==='shield')maxHP+=18;if(t[10]==='resistance')reduction+=.10;if(t[10]==='heal')healBonus+=.15;return {maxHP,atk,crit:c.crit||0,reduction:Math.min(.65,reduction),control,healBonus}}
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');if(id==='menu')updateMenu();if(id==='characters')renderCharacters()}
-function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Niveau <b>${charLevel()}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🧪 ${save.potions} • 🗺️ ${done}/100 chapitres`}
+function updateMenu(){const s=stats();const done=save.completedChapters.length;$('menuStats').innerHTML=`${chars[save.selected].name} • ⚡ Niveau <b>${charLevel()}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 ${save.gold} • 🧪 ${save.potions} • 🗺️ ${done}/125 chapitres`}
 function renderChars(){renderCharacters()}
 function talentButton(id,level){const t=save.characterTalents?.[id]||{8:null,10:null};const choice=t[level];if(charLevel(id)<level)return `<div class="talentLock">🔒 Talent du niveau ${level}</div>`;if(choice)return `<div class="talentChosen">${choice==='shield'?'🛡️ Bouclier':choice==='resistance'?'🧱 Résistance':'🧪 Soins améliorés'} • choisi</div>`;return `<div class="talentChoices"><b>Talent ${level}</b><div class="row"><button class="purple" onclick="chooseTalent('${id}',${level},'shield')">🛡️ Bouclier</button><button class="purple" onclick="chooseTalent('${id}',${level},'resistance')">🧱 Résistance</button><button class="green" onclick="chooseTalent('${id}',${level},'heal')">🧪 Soins</button></div></div>`}
 function specialPowerButtons(id,lvl){const powers=save.characterPowers?.[id]||{7:false,9:false,11:false,15:false,20:false};return [7,9,11,15,20].map(n=>{const x=specialPowerData[n];if(lvl<n)return `<div class="powerMini">🔒 ${x.name} — niveau ${n}</div>`;if(powers[n])return `<div class="powerMini owned">✓ ${x.name}</div>`;return `<button class="powerMiniBtn" onclick="buySpecialPowerFor('${id}',${n})">⚡ ${x.name} • 💰 ${x.cost}</button>`}).join('')}
@@ -678,7 +694,7 @@ function renderCharacters(){
   const grid=$('characterGrid');if(!grid)return;
   const selected=save.selected;
   const s=stats();
-  $('characterSummary').innerHTML=`🎮 <b>${chars[selected].name}</b> est sélectionné • Niveau <b>${charLevel(selected)}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces<br><span class="muted">Utilise une catégorie pour classer rapidement les personnages par PV, attaque, résistance, critique, contrôle ou niveau.</span><br><span class="tiny">💰 Objectif économique des 100 chapitres : <b>${TOTAL_PERMANENT_SPEND.toLocaleString('fr-FR')}</b> pièces. Les skins Arc-en-ciel restent des achats bonus.</span>`;
+  $('characterSummary').innerHTML=`🎮 <b>${chars[selected].name}</b> est sélectionné • Niveau <b>${charLevel(selected)}/${MAX_CHARACTER_LEVEL}</b> • ❤️ ${s.maxHP} PV • ⚔️ ${s.atk} dégâts • 💰 <b>${save.gold.toLocaleString('fr-FR')}</b> pièces<br><span class="muted">Utilise une catégorie pour classer rapidement les personnages par PV, attaque, résistance, critique, contrôle ou niveau.</span><br><span class="tiny">💰 Objectif économique des 125 chapitres : <b>${TOTAL_PERMANENT_SPEND.toLocaleString('fr-FR')}</b> pièces. Les skins Arc-en-ciel restent des achats bonus.</span>`;
   const entries=Object.entries(chars).sort(([a],[b])=>{
     const va=characterStatValue(a,characterSortStat),vb=characterStatValue(b,characterSortStat);
     if(va!==vb)return characterSortDesc?(vb-va):(va-vb);
@@ -786,14 +802,21 @@ function healAttack(){
   showDamage('heroDmg','+'+amount,'heal');showToast(`Potion utilisée • ${save.potions} restante(s)`);playSfx('heal');persist();updateBattleLoop()
 }
 function hitEnemy(dmg,kind){
-  state.busy=true;dmg=Math.max(1,Math.round(dmg));const mitigation=state.enemy.resistance||0;dmg=Math.max(1,dmg*(1-mitigation));state.enemy.hp=clamp(state.enemy.hp-dmg,0,state.enemy.maxHP);
-  showDamage('enemyDmg','-'+dmg,kind);
+  state.busy=true;dmg=Math.max(1,Math.round(dmg));const mitigation=state.enemy.resistance||0;dmg=Math.max(1,Math.floor(dmg*(1-mitigation)));state.enemy.hp=clamp(state.enemy.hp-dmg,0,state.enemy.maxHP);
+  showDamage('enemyDmg','-'+Math.floor(dmg),kind);
   $('hero').classList.add('attackAnim');$('enemy').classList.add('hit');$('heroSlash').classList.add('show');$('fightFlash').classList.remove('show');void $('fightFlash').offsetWidth;$('fightFlash').classList.add('show');
   setTimeout(()=>{$('hero').classList.remove('attackAnim');$('enemy').classList.remove('hit');$('heroSlash').classList.remove('show')},320);
   setTimeout(()=>{state.busy=false;if(state.enemy.hp<=0)winEnemy();},340);
   updateBattleLoop()
 }
-function showDamage(id,text,type){const el=$(id);el.textContent=text;el.style.color=type==='heal'?'#75e19a':'#fff';el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop')}
+function showDamage(id,text,type){
+  const el=$(id);
+  const m=String(text).match(/^([+\-]?)(\d+(?:[.,]\d+)?)/);
+  const clean=m?m[1]+Math.floor(Number(m[2].replace(',','.'))):String(text);
+  el.textContent=clean;
+  el.style.color=type==='heal'?'#75e19a':'#fff';
+  el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');
+}
 function enemyAutoAttack(){if(state.busy||!state.enemy||state.enemy.hp<=0)return;const heroStats=stats();const dmg=Math.max(1,Math.round(state.enemy.atk*(.88+Math.random()*.2)*(1-(heroStats.reduction||0))));$('enemy').classList.add('attackAnim');$('hero').classList.add('hit');$('fightFlash').classList.remove('show');void $('fightFlash').offsetWidth;$('fightFlash').classList.add('show');setTimeout(()=>{$('enemy').classList.remove('attackAnim')},320);game.hp=clamp(game.hp-dmg,0,stats().maxHP);showDamage('heroDmg','-'+dmg,'enemy');$('hero').classList.add('hit');setTimeout(()=>$('hero').classList.remove('hit'),250);playSfx('hit');updateBattleLoop();if(game.hp<=0)loseGame()}
 function updateBattleLoop(){renderBattle();updateCooldowns()}
 function updateCooldowns(){
@@ -850,7 +873,7 @@ function bossVictory(){
   const wasDone=save.completedChapters.includes(state.chapter);
   if(!wasDone){save.completedChapters.push(state.chapter);const reward=chapterCompletionReward(state.chapter);save.gold+=reward;addActivity(`💰 Récompense du chapitre ${state.chapter+1} : +${reward.toLocaleString('fr-FR')} pièces.`,'achievement');showToast(`💰 Chapitre ${state.chapter+1} : +${reward.toLocaleString('fr-FR')} pièces !`)}
   save.completedChapters.sort((a,b)=>a-b);
-  if(!wasDone){const nextWorld=Math.floor(state.chapter/5)+1;if(state.chapter%5===4 && nextWorld<20){addActivity(`🌍 Nouveau monde débloqué : ${worldNames[nextWorld].name}`,'achievement');}else if(state.chapter===99){addActivity('👑 Tu as terminé les 100 chapitres : l’Apogée du Néant est vaincue !','achievement');}else{addActivity(`📖 Chapitre terminé : ${chapters[state.chapter].name}`,'system');}}
+  if(!wasDone){const nextWorld=Math.floor(state.chapter/5)+1;if(state.chapter%5===4 && nextWorld<25){addActivity(`🌍 Nouveau monde débloqué : ${worldNames[nextWorld].name}`,'achievement');}else if(state.chapter===124){addActivity('👑 Tu as terminé les 125 chapitres : l’Apogée du Néant est vaincue !','achievement');}else{addActivity(`📖 Chapitre terminé : ${chapters[state.chapter].name}`,'system');}}
   checkAchievements();
   const s=stats();game.hp=s.maxHP;persist();
   showCutscene(chapters[state.chapter].name+' — Victoire','Le boss est vaincu ! Tes PV sont entièrement régénérés. Le chapitre est maintenant sauvegardé sur ta carte des mondes.','✦');
@@ -892,6 +915,27 @@ const skinPack={
   ariaCosmic:{name:'Aria — Cosmique',price:15000,cls:'skin-aria-cosmic',owner:'aria',rarity:'Légendaire'},ariaGalaxy:{name:'Aria — Galaxie infinie',price:30000,cls:'skin-aria-cosmic',owner:'aria',rarity:'Mythique'},
   rainbowLiora:{name:'Liora — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'liora',rarity:'ULTIME'},rainbowDrax:{name:'Drax — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'drax',rarity:'ULTIME'},rainbowSelene:{name:'Selene — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'selene',rarity:'ULTIME'},rainbowToren:{name:'Toren — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'toren',rarity:'ULTIME'},rainbowZeph:{name:'Zeph — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-bow',owner:'zeph',rarity:'ULTIME'},rainbowAria:{name:'Aria — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'aria',rarity:'ULTIME'},
   rainbowKaien:{name:'Kaien — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'kaien',rarity:'ULTIME'},rainbowAiko:{name:'Aiko — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'aiko',rarity:'ULTIME'},rainbowRen:{name:'Ren — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'ren',rarity:'ULTIME'},rainbowMia:{name:'Mia — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'mia',rarity:'ULTIME'},rainbowSora:{name:'Sora — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-bow',owner:'sora',rarity:'ULTIME'},rainbowYuna:{name:'Yuna — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'yuna',rarity:'ULTIME'},rainbowRyo:{name:'Ryo — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'ryo',rarity:'ULTIME'},rainbowKuro:{name:'Kuro — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-gun',owner:'kuro',rarity:'ULTIME'},rainbowElara:{name:'Elara — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'elara',rarity:'ULTIME'},rainbowVex:{name:'Vex — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-gun',owner:'vex',rarity:'ULTIME'},rainbowOrion:{name:'Orion — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'orion',rarity:'ULTIME'},rainbowNyx:{name:'Nyx — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow skin-sword',owner:'nyx',rarity:'ULTIME'},brutusBase:{name:'Brutus — Force brute',price:0,cls:'skin-brutus',owner:'brutus',rarity:'Base',base:true},gromBase:{name:'Grom — Bastion vivant',price:0,cls:'skin-grom',owner:'grom',rarity:'Base',base:true},rainbowBrutus:{name:'Brutus — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'brutus',rarity:'ULTIME'},rainbowGrom:{name:'Grom — Légende Arc-en-ciel',price:50000,cls:'skin-rainbow',owner:'grom',rarity:'ULTIME'}
+
+  lioraCollection1:{name:'Liora — Néon 1',price:900,cls:'skin-rentitan',owner:'liora',rarity:'Rare'},
+  lioraCollection2:{name:'Liora — Spectral 2',price:3200,cls:'skin-miaprism',owner:'liora',rarity:'Épique'},
+  draxCollection1:{name:'Drax — Néon 1',price:900,cls:'skin-miaprism',owner:'drax',rarity:'Rare'},
+  draxCollection2:{name:'Drax — Spectral 2',price:3200,cls:'skin-sorastar',owner:'drax',rarity:'Épique'},
+  seleneCollection1:{name:'Selene — Néon 1',price:900,cls:'skin-sorastar',owner:'selene',rarity:'Rare'},
+  seleneCollection2:{name:'Selene — Spectral 2',price:3200,cls:'skin-yunanova',owner:'selene',rarity:'Épique'},
+  torenCollection1:{name:'Toren — Néon 1',price:900,cls:'skin-yunanova',owner:'toren',rarity:'Rare'},
+  torenCollection2:{name:'Toren — Spectral 2',price:3200,cls:'skin-ryoember',owner:'toren',rarity:'Épique'},
+  zephCollection1:{name:'Zeph — Néon 1',price:900,cls:'skin-ryoember',owner:'zeph',rarity:'Rare'},
+  zephCollection2:{name:'Zeph — Spectral 2',price:3200,cls:'skin-kuroabyss',owner:'zeph',rarity:'Épique'},
+  ariaCollection1:{name:'Aria — Néon 1',price:900,cls:'skin-kuroabyss',owner:'aria',rarity:'Rare'},
+  ariaCollection2:{name:'Aria — Spectral 2',price:3200,cls:'skin-elarabloom',owner:'aria',rarity:'Épique'},
+  brutusCollection1:{name:'Brutus — Néon 1',price:900,cls:'skin-elarabloom',owner:'brutus',rarity:'Rare'},
+  brutusCollection2:{name:'Brutus — Spectral 2',price:3200,cls:'skin-nyxeclipse',owner:'brutus',rarity:'Épique'},
+  brutusCollection3:{name:'Brutus — Impérial 3',price:7500,cls:'skin-ember',owner:'brutus',rarity:'Légendaire'},
+  brutusCollection4:{name:'Brutus — Astral 4',price:12000,cls:'skin-frost',owner:'brutus',rarity:'Mythique'},
+  gromCollection1:{name:'Grom — Néon 1',price:900,cls:'skin-nyxeclipse',owner:'grom',rarity:'Rare'},
+  gromCollection2:{name:'Grom — Spectral 2',price:3200,cls:'skin-ember',owner:'grom',rarity:'Épique'},
+  gromCollection3:{name:'Grom — Impérial 3',price:7500,cls:'skin-frost',owner:'grom',rarity:'Légendaire'},
+  gromCollection4:{name:'Grom — Astral 4',price:12000,cls:'skin-violet',owner:'grom',rarity:'Mythique'},
 };
 function skinArt(cls='skin-default',battle=false){return `<div class="${battle?'battleSkin':'skinPreview'} ${cls}"><span class="aura"></span><span class="cape"></span><span class="shoulder"></span><span class="sash"></span><span class="body"></span><span class="armor"></span><span class="head"></span><span class="horn"></span><span class="visor"></span><span class="rune"></span><span class="mark"></span><span class="blade"></span><span class="gem"></span><span class="trim"></span><span class="weapon"></span><span class="weapon2"></span></div>`}
 function enemySkinFor(name,boss){const n=name.toLowerCase();if(n.includes('loup'))return 'enemy-wolf';if(n.includes('lave')||n.includes('flamme')||n.includes('infernal'))return 'enemy-magma';if(n.includes('glace')||n.includes('givre')||n.includes('polaire')||n.includes('gelé'))return 'enemy-frost';if(n.includes('néant')||n.includes('abyss')||n.includes('abyssal'))return 'enemy-void';if(n.includes('mage')||n.includes('prêtre')||n.includes('oracle'))return 'enemy-crystal';if(n.includes('royal')||n.includes('roi')||n.includes('duc')||n.includes('seigneur'))return 'enemy-royal';if(n.includes('spectre')||n.includes('fantôme'))return 'enemy-spectral';if(n.includes('golem')||n.includes('colosse')||n.includes('titan'))return 'enemy-beast';if(n.includes('corrompu')||n.includes('plague')||n.includes('toxique'))return 'enemy-plague';return boss?'enemy-boss':'enemy-shadow'}
@@ -985,12 +1029,13 @@ function checkAchievements(){
   if(done>=10)changed=unlockAchievement('chapters10','Dix victoires','Termine 10 chapitres.')||changed;
   if(done>=25)changed=unlockAchievement('chapters25','Vétéran','Termine 25 chapitres.')||changed;
   if(done>=50)changed=unlockAchievement('chapters50','Légende','Termine 50 chapitres.')||changed;
-  if(done>=100)changed=unlockAchievement('chapters100','Apogée','Termine les 100 chapitres.')||changed;
+  if(done>=100)changed=unlockAchievement('chapters100','Apogée','Termine les 125 chapitres.')||changed;
   if(Object.values(save.characterLevels||{}).some(v=>Number(v)>=12))changed=unlockAchievement('level12','Niveau ultime','Monte un personnage au niveau 12.')||changed;
   if(Object.values(save.characterLevels||{}).some(v=>Number(v)>=17))changed=unlockAchievement('level17','Maître des héros','Monte un personnage au niveau 17.')||changed;
   if(Object.values(save.characterEquipment||{}).some(Boolean))changed=unlockAchievement('equipment17','Équipement ultime','Atteins le niveau 17 avec un personnage.')||changed;
   if(skins>=1)changed=unlockAchievement('firstSkin','Nouvelle apparence','Achète ton premier skin premium.')||changed;
   if(skins>=10)changed=unlockAchievement('tenSkins','Collectionneur','Achète 10 skins premium.')||changed;
+  if(done>=125)changed=unlockAchievement('chapters125','Héritage ultime','Terminer les 125 chapitres.')||changed;
   if(save.gold>=10000)changed=unlockAchievement('gold10000','Trésorier','Possède 10 000 pièces ou plus.')||changed;
   if(changed)persist();
 }
@@ -1045,7 +1090,7 @@ function adminFinishGame(){
 
   // Tous les succès et statistiques de fin.
   save.achievements=save.achievements||{};
-  [...Array.from({length:20},(_,i)=>'world'+(i+1)),
+  [...Array.from({length:25},(_,i)=>'world'+(i+1)),
    'chapters10','chapters25','chapters50','chapters100',
    'level12','level17','level20','equipment17','firstSkin','tenSkins','gold10000']
     .forEach(k=>save.achievements[k]=true);
@@ -1189,7 +1234,7 @@ function adminClaimDaily(){claimDailyReward(true);closeModal();openJournal();sho
 function adminResetDaily(){save.dailyClaimDate='';save.dailyStreak=0;persist();closeModal();openDailyRewards();showToast('🔄 ADMIN : récompenses journalières réinitialisées.')}
 
 function openJournal(){
-  const achievements=[...Array.from({length:20},(_,i)=>['world'+(i+1),`🌍 Monde ${i+1}`,`Terminer les 5 chapitres du monde ${i+1}.`]),['chapters10','⚔️ Dix victoires','Terminer 10 chapitres.'],['chapters25','🏆 Vétéran','Terminer 25 chapitres.'],['chapters50','👑 Légende','Terminer 50 chapitres.'],['chapters100','🌟 Apogée','Terminer les 100 chapitres.'],['level12','⚡ Niveau 12','Monter un personnage au niveau 12.'],['level17','🔥 Niveau 17','Monter un personnage au niveau 17.'],['equipment17','🛡️ Équipement ultime','Atteindre le niveau 17 et obtenir l’équipement.'],['firstSkin','🎨 Nouvelle apparence','Acheter un premier skin premium.'],['tenSkins','🧳 Collectionneur','Acheter 10 skins premium.'],['gold10000','💰 Trésorier','Posséder 10 000 pièces ou plus.']];
+  const achievements=[...Array.from({length:20},(_,i)=>['world'+(i+1),`🌍 Monde ${i+1}`,`Terminer les 5 chapitres du monde ${i+1}.`]),['chapters10','⚔️ Dix victoires','Terminer 10 chapitres.'],['chapters25','🏆 Vétéran','Terminer 25 chapitres.'],['chapters50','👑 Légende','Terminer 50 chapitres.'],['chapters100','🌟 Apogée','Terminer les 125 chapitres.'],['level12','⚡ Niveau 12','Monter un personnage au niveau 12.'],['level17','🔥 Niveau 17','Monter un personnage au niveau 17.'],['equipment17','🛡️ Équipement ultime','Atteindre le niveau 17 et obtenir l’équipement.'],['firstSkin','🎨 Nouvelle apparence','Acheter un premier skin premium.'],['tenSkins','🧳 Collectionneur','Acheter 10 skins premium.'],['gold10000','💰 Trésorier','Posséder 10 000 pièces ou plus.']];
   const achHtml=achievements.map(a=>{const done=!!save.achievements?.[a[0]];return `<div class="achievement ${done?'done':'locked'}"><b>${done?'✅':'🔒'} ${a[1]}</b><span class="tiny">${a[2]}</span></div>`}).join('');
   const logs=(save.activityLog||[]).map(x=>`<div class="activityItem"><div>${x.type==='achievement'?'🏆':'📜'} ${x.text}</div><div class="time">${new Date(x.time).toLocaleString('fr-FR')}</div></div>`).join('');
   openModal('💬 Journal & succès',`<div class="notice"><b>Journal personnel</b><br><span class="muted">Ce chat est uniquement ton journal : aucun message avec d'autres joueurs.</span></div><h3>🏆 Succès</h3><div class="achievementGrid">${achHtml}</div><h3>📜 Historique</h3><div class="activityList">${logs||'<div class="muted">Aucun événement.</div>'}</div>`);
